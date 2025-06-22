@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Primary Colors */
+    --color-primary: #4A90A4; /* Trustworthy Mediterranean blue - blue-600 */
+    --color-primary-50: #EBF4F6; /* Light blue tint - blue-50 */
+    --color-primary-100: #D7E9ED; /* Lighter blue - blue-100 */
+    --color-primary-200: #B0D3DB; /* Light blue - blue-200 */
+    --color-primary-300: #88BDC9; /* Medium light blue - blue-300 */
+    --color-primary-400: #66A6B6; /* Medium blue - blue-400 */
+    --color-primary-500: #4A90A4; /* Base primary - blue-500 */
+    --color-primary-600: #3E7A8A; /* Darker blue - blue-600 */
+    --color-primary-700: #326470; /* Dark blue - blue-700 */
+    --color-primary-800: #264E56; /* Very dark blue - blue-800 */
+    --color-primary-900: #1A383C; /* Darkest blue - blue-900 */
+
+    /* Secondary Colors */
+    --color-secondary: #7BA05B; /* Natural sage green - green-600 */
+    --color-secondary-50: #F2F6EE; /* Light green tint - green-50 */
+    --color-secondary-100: #E5EDDD; /* Lighter green - green-100 */
+    --color-secondary-200: #CBDBBB; /* Light green - green-200 */
+    --color-secondary-300: #B1C999; /* Medium light green - green-300 */
+    --color-secondary-400: #96B577; /* Medium green - green-400 */
+    --color-secondary-500: #7BA05B; /* Base secondary - green-500 */
+    --color-secondary-600: #68874D; /* Darker green - green-600 */
+    --color-secondary-700: #556E3F; /* Dark green - green-700 */
+    --color-secondary-800: #425531; /* Very dark green - green-800 */
+    --color-secondary-900: #2F3C23; /* Darkest green - green-900 */
+
+    /* Accent Colors */
+    --color-accent: #E8B86D; /* Warm golden tone - amber-400 */
+    --color-accent-50: #FDF8F0; /* Light amber tint - amber-50 */
+    --color-accent-100: #FBF1E1; /* Lighter amber - amber-100 */
+    --color-accent-200: #F7E3C3; /* Light amber - amber-200 */
+    --color-accent-300: #F3D5A5; /* Medium light amber - amber-300 */
+    --color-accent-400: #EFC787; /* Medium amber - amber-400 */
+    --color-accent-500: #E8B86D; /* Base accent - amber-500 */
+    --color-accent-600: #D4A55C; /* Darker amber - amber-600 */
+    --color-accent-700: #B8924B; /* Dark amber - amber-700 */
+    --color-accent-800: #9C7F3A; /* Very dark amber - amber-800 */
+    --color-accent-900: #806C29; /* Darkest amber - amber-900 */
+
+    /* Background Colors */
+    --color-background: #FDFCFA; /* Soft off-white - neutral-50 */
+    --color-surface: #F8F6F3; /* Elevated surface - neutral-100 */
+    --color-surface-hover: #F3F1EE; /* Surface hover state - neutral-200 */
+
+    /* Text Colors */
+    --color-text-primary: #2D3748; /* Deep charcoal - gray-800 */
+    --color-text-secondary: #718096; /* Balanced gray - gray-500 */
+    --color-text-muted: #A0AEC0; /* Muted text - gray-400 */
+    --color-text-inverse: #FFFFFF; /* White text - white */
+
+    /* Status Colors */
+    --color-success: #68A063; /* Harmonious green - green-600 */
+    --color-success-light: #C6F6D5; /* Light success - green-100 */
+    --color-warning: #D69E2E; /* Earthy amber - yellow-600 */
+    --color-warning-light: #FEFCBF; /* Light warning - yellow-100 */
+    --color-error: #C53030; /* Clear red - red-600 */
+    --color-error-light: #FED7D7; /* Light error - red-100 */
+
+    /* Border Colors */
+    --color-border: rgba(113, 128, 150, 0.2); /* Subtle border - gray-500 with opacity */
+    --color-border-light: rgba(113, 128, 150, 0.1); /* Lighter border - gray-500 with opacity */
+    --color-border-focus: #4A90A4; /* Focus border - primary */
+
+    /* Shadow Colors */
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1); /* Small shadow */
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08); /* Medium shadow */
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12); /* Large shadow */
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--color-background);
+    color: var(--color-text-primary);
+    line-height: 1.6;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 600;
+    line-height: 1.3;
+  }
+
+  .font-caption {
+    font-family: 'Source Sans Pro', sans-serif;
+  }
+
+  .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 hover:bg-primary-600 focus:outline-none focus:ring-2 focus:ring-primary-300 active:transform active:scale-95;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 hover:bg-secondary-600 focus:outline-none focus:ring-2 focus:ring-secondary-300 active:transform active:scale-95;
+  }
+
+  .btn-outline {
+    @apply border border-primary text-primary px-6 py-3 rounded-lg font-medium transition-all duration-300 hover:bg-primary hover:text-white focus:outline-none focus:ring-2 focus:ring-primary-300 active:transform active:scale-95;
+  }
+
+  .card {
+    @apply bg-surface rounded-lg shadow-sm border border-border-light transition-all duration-300 hover:shadow-md hover:transform hover:translate-y-[-2px];
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 border border-border rounded-lg bg-background focus:outline-none focus:ring-2 focus:ring-primary-300 focus:border-primary transition-all duration-200;
+  }
+
+  .nav-link {
+    @apply text-text-secondary hover:text-primary transition-colors duration-200 font-medium;
+  }
+
+  .nav-link-active {
+    @apply text-primary font-semibold;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .animate-gentle-bounce {
+    animation: gentleBounce 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  @keyframes gentleBounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-4px); }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes slideUp {
+    from { 
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to { 
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
