@@ -355,7 +355,7 @@ const PublicPetAdoptionHomepage = () => {
                 onClick={() => navigate('/professionals')}
                 className="nav-link flex items-center space-x-2 px-4 py-2 rounded-lg hover:bg-primary-50 transition-all duration-200"
               >
-                <Icon name="Stethoscope" size={18} />
+                <Icon name="Search" size={18} />
                 <span className="hidden sm:inline">Profesionales</span>
               </button>
               
@@ -371,16 +371,16 @@ const PublicPetAdoptionHomepage = () => {
                 onClick={handleProfessionalLogin}
                 className="nav-link flex items-center space-x-2 px-4 py-2 rounded-lg hover:bg-secondary-50 transition-all duration-200"
               >
-                <Icon name="Stethoscope" size={18} />
-                <span className="hidden sm:inline">Profesionales Login</span>
+                <Icon name="UserCheck" size={18} />
+                <span className="hidden sm:inline">Acceso Profesionales</span>
               </button>
               
               <button
                 onClick={handleLogin}
                 className="nav-link flex items-center space-x-2 px-4 py-2 rounded-lg hover:bg-primary-50 transition-all duration-200"
               >
-                <Icon name="LogIn" size={18} />
-                <span className="hidden sm:inline">Protectoras</span>
+                <Icon name="Building2" size={18} />
+                <span className="hidden sm:inline">Acceso Protectoras</span>
               </button>
             </div>
           </div>
