@@ -637,20 +637,28 @@ Gracias.`
         </section>
 
         {/* CTA Section */}
-        <section className="bg-primary py-16 mt-16">
+        <section className="bg-secondary py-16 mt-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-3xl font-heading font-bold text-white mb-4">
               ¿Eres un profesional del sector?
             </h2>
-            <p className="text-primary-100 mb-8 max-w-2xl mx-auto">
+            <p className="text-secondary-100 mb-8 max-w-2xl mx-auto">
               Únete a nuestro directorio y conecta con miles de dueños de mascotas en toda España
             </p>
-            <button
-              onClick={() => navigate('/professional-register')}
-              className="bg-white text-primary px-8 py-4 rounded-lg font-semibold hover:bg-primary-50 transition-colors duration-200"
-            >
-              Registrar mi negocio
-            </button>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <button
+                onClick={() => navigate('/professional-login')}
+                className="bg-white text-secondary px-8 py-4 rounded-lg font-semibold hover:bg-secondary-50 transition-colors duration-200"
+              >
+                Iniciar Sesión
+              </button>
+              <button
+                onClick={() => navigate('/professional-register')}
+                className="bg-accent text-white px-8 py-4 rounded-lg font-semibold hover:bg-accent-600 transition-colors duration-200"
+              >
+                Registrar mi negocio
+              </button>
+            </div>
           </div>
         </section>
       </main>
