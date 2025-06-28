@@ -15,7 +15,6 @@ import QuickActionsFAB from 'components/ui/QuickActionsFAB';
 const PublicPetAdoptionHomepage = () => {
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(true);
-  const [showNotifications, setShowNotifications] = useState(false);
   const [filters, setFilters] = useState({
     search: '',
     species: '',
@@ -363,24 +362,13 @@ const PublicPetAdoptionHomepage = () => {
                 <Icon name="User" size={18} />
                 <span className="hidden sm:inline">Mi Panel</span>
               </button>
-
-              {/* Notifications Button */}
-              <button
-                onClick={() => setShowNotifications(true)}
-                className="relative nav-link flex items-center space-x-2 px-4 py-2 rounded-lg hover:bg-primary-50 transition-all duration-200"
-              >
-                <Icon name="Bell" size={18} />
-                <span className="hidden sm:inline">Notificaciones</span>
-                {/* Notification badge */}
-                <span className="absolute -top-1 -right-1 w-3 h-3 bg-error rounded-full"></span>
-              </button>
               
               <button
                 onClick={handleLogin}
                 className="nav-link flex items-center space-x-2 px-4 py-2 rounded-lg hover:bg-primary-50 transition-all duration-200"
               >
                 <Icon name="LogIn" size={18} />
-                <span className="hidden sm:inline">Refugios</span>
+                <span className="hidden sm:inline">Protectoras</span>
               </button>
             </div>
           </div>
@@ -422,7 +410,7 @@ const PublicPetAdoptionHomepage = () => {
                 50+
               </div>
               <div className="text-sm text-text-secondary">
-                Refugios Activos
+                Protectoras Activas
               </div>
             </div>
             <div className="text-center">
@@ -510,13 +498,13 @@ const PublicPetAdoptionHomepage = () => {
                 </span>
               </div>
               <p className="text-text-secondary">
-                Conectando refugios con familias amorosas para dar una segunda oportunidad a las mascotas.
+                Conectando protectoras con familias amorosas para dar una segunda oportunidad a las mascotas.
               </p>
             </div>
             
             <div>
               <h4 className="font-heading font-semibold text-text-primary mb-4">
-                Para Refugios
+                Para Protectoras
               </h4>
               <ul className="space-y-2">
                 <li>
@@ -524,7 +512,7 @@ const PublicPetAdoptionHomepage = () => {
                     onClick={handleLogin}
                     className="text-text-secondary hover:text-primary transition-colors duration-200"
                   >
-                    Registrar Refugio
+                    Registrar Protectora
                   </button>
                 </li>
                 <li>
