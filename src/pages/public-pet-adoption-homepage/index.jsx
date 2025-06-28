@@ -329,6 +329,10 @@ const PublicPetAdoptionHomepage = () => {
     navigate('/authentication-login-register');
   };
 
+  const handleProfessionalLogin = () => {
+    navigate('/professional-login');
+  };
+
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
@@ -361,6 +365,14 @@ const PublicPetAdoptionHomepage = () => {
               >
                 <Icon name="User" size={18} />
                 <span className="hidden sm:inline">Mi Panel</span>
+              </button>
+
+              <button
+                onClick={handleProfessionalLogin}
+                className="nav-link flex items-center space-x-2 px-4 py-2 rounded-lg hover:bg-secondary-50 transition-all duration-200"
+              >
+                <Icon name="Stethoscope" size={18} />
+                <span className="hidden sm:inline">Profesionales Login</span>
               </button>
               
               <button
