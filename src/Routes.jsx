@@ -6,6 +6,9 @@ import PublicPetAdoptionHomepage from "pages/public-pet-adoption-homepage";
 import AuthenticationLoginRegister from "pages/authentication-login-register";
 import ShelterDashboard from "pages/shelter-dashboard";
 import AddEditPetForm from "pages/add-edit-pet-form";
+import PetDetail from "pages/pet-detail";
+import AdopterPanel from "pages/adopter-panel";
+import AdminPanel from "pages/admin-panel";
 import NotFound from "pages/NotFound";
 
 const Routes = () => {
@@ -19,6 +22,9 @@ const Routes = () => {
           <Route path="/authentication-login-register" element={<AuthenticationLoginRegister />} />
           <Route path="/shelter-dashboard" element={<ShelterDashboard />} />
           <Route path="/add-edit-pet-form" element={<AddEditPetForm />} />
+          <Route path="/pet/:id" element={<PetDetail />} />
+          <Route path="/adopter-panel" element={<AdopterPanel />} />
+          <Route path="/admin-panel" element={<AdminPanel />} />
           {/* Catch-all route for 404 */}
           <Route path="*" element={<NotFound />} />
         </RouterRoutes>

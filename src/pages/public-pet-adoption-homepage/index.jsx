@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import Icon from 'components/AppIcon';
 
 import HeroSection from './components/HeroSection';
-import FilterBar from './components/FilterBar';
+import AdvancedFilterBar from './components/AdvancedFilterBar';
 import PetGrid from './components/PetGrid';
 import Pagination from './components/Pagination';
 
@@ -11,28 +11,38 @@ const PublicPetAdoptionHomepage = () => {
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(true);
   const [filters, setFilters] = useState({
+    search: '',
     species: '',
     age: '',
     size: '',
-    province: ''
+    province: '',
+    breed: '',
+    healthStatus: '',
+    gender: '',
+    sterilized: '',
+    tags: []
   });
   const [currentPage, setCurrentPage] = useState(1);
   const [filteredPets, setFilteredPets] = useState([]);
   const petsPerPage = 27;
 
-  // Mock data for pets
+  // Enhanced mock data for pets with more fields
   const mockPets = [
     {
       id: 1,
       name: "Luna",
       age: "2 años",
       species: "Dog",
+      breed: "Mestizo",
       size: "Medium",
+      gender: "female",
       location: "Madrid",
-      province: "Madrid",
+      province: "madrid",
       image: "https://images.unsplash.com/photo-1552053831-71594a27632d?w=400&h=300&fit=crop",
-      tags: ["vaccinated", "sterilized", "sociable"],
+      tags: ["vaccinated", "sterilized", "sociable", "good_with_kids"],
       description: "Luna es una perra muy cariñosa que busca una familia amorosa.",
+      healthStatus: "healthy",
+      sterilized: true,
       shelterPhone: "+34 600 123 456",
       shelterEmail: "refugio.madrid@example.com"
     },
@@ -41,12 +51,16 @@ const PublicPetAdoptionHomepage = () => {
       name: "Milo",
       age: "6 meses",
       species: "Cat",
+      breed: "Siamés",
       size: "Small",
+      gender: "male",
       location: "Barcelona",
-      province: "Barcelona",
+      province: "barcelona",
       image: "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=400&h=300&fit=crop",
       tags: ["vaccinated", "sociable"],
       description: "Milo es un gatito juguetón que adora las caricias.",
+      healthStatus: "healthy",
+      sterilized: false,
       shelterPhone: "+34 600 234 567",
       shelterEmail: "refugio.barcelona@example.com"
     },
@@ -55,12 +69,16 @@ const PublicPetAdoptionHomepage = () => {
       name: "Rocky",
       age: "5 años",
       species: "Dog",
+      breed: "Pastor Alemán",
       size: "Large",
+      gender: "male",
       location: "Valencia",
-      province: "Valencia",
+      province: "valencia",
       image: "https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=400&h=300&fit=crop",
-      tags: ["vaccinated", "sterilized"],
+      tags: ["vaccinated", "sterilized", "house_trained"],
       description: "Rocky es un perro tranquilo perfecto para familias.",
+      healthStatus: "healthy",
+      sterilized: true,
       shelterPhone: "+34 600 345 678",
       shelterEmail: "refugio.valencia@example.com"
     },
@@ -69,12 +87,16 @@ const PublicPetAdoptionHomepage = () => {
       name: "Bella",
       age: "1 año",
       species: "Dog",
+      breed: "Golden Retriever",
       size: "Small",
+      gender: "female",
       location: "Sevilla",
-      province: "Sevilla",
+      province: "sevilla",
       image: "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=400&h=300&fit=crop",
-      tags: ["vaccinated", "sterilized", "sociable"],
+      tags: ["vaccinated", "sterilized", "sociable", "good_with_pets"],
       description: "Bella es una perrita pequeña llena de energía y amor.",
+      healthStatus: "healthy",
+      sterilized: true,
       shelterPhone: "+34 600 456 789",
       shelterEmail: "refugio.sevilla@example.com"
     },
@@ -83,12 +105,16 @@ const PublicPetAdoptionHomepage = () => {
       name: "Simba",
       age: "3 años",
       species: "Cat",
+      breed: "Persa",
       size: "Medium",
+      gender: "male",
       location: "Bilbao",
-      province: "Vizcaya",
+      province: "vizcaya",
       image: "https://images.unsplash.com/photo-1596854407944-bf87f6fdd49e?w=400&h=300&fit=crop",
-      tags: ["vaccinated", "sterilized"],
+      tags: ["vaccinated", "sterilized", "special_needs"],
       description: "Simba es un gato independiente que busca un hogar tranquilo.",
+      healthStatus: "special_needs",
+      sterilized: true,
       shelterPhone: "+34 600 567 890",
       shelterEmail: "refugio.bilbao@example.com"
     },
@@ -97,360 +123,61 @@ const PublicPetAdoptionHomepage = () => {
       name: "Max",
       age: "4 años",
       species: "Dog",
+      breed: "Labrador",
       size: "Large",
+      gender: "male",
       location: "Zaragoza",
-      province: "Zaragoza",
+      province: "zaragoza",
       image: "https://images.unsplash.com/photo-1551717743-49959800b1f6?w=400&h=300&fit=crop",
-      tags: ["vaccinated", "sociable"],
+      tags: ["vaccinated", "sociable", "urgent"],
       description: "Max es un perro grande con un corazón aún más grande.",
+      healthStatus: "healthy",
+      sterilized: false,
       shelterPhone: "+34 600 678 901",
       shelterEmail: "refugio.zaragoza@example.com"
     },
+    // Add more pets with varied characteristics...
     {
       id: 7,
       name: "Coco",
       age: "8 meses",
       species: "Cat",
+      breed: "Mestizo",
       size: "Small",
+      gender: "female",
       location: "Málaga",
-      province: "Málaga",
+      province: "málaga",
       image: "https://images.unsplash.com/photo-1573865526739-10659fec78a5?w=400&h=300&fit=crop",
-      tags: ["vaccinated", "sterilized", "sociable"],
+      tags: ["vaccinated", "sterilized", "sociable", "good_with_kids"],
       description: "Coco es una gatita muy dulce que adora jugar.",
+      healthStatus: "healthy",
+      sterilized: true,
       shelterPhone: "+34 600 789 012",
       shelterEmail: "refugio.malaga@example.com"
-    },
-    {
-      id: 8,
-      name: "Bruno",
-      age: "6 años",
-      species: "Dog",
-      size: "Medium",
-      location: "Murcia",
-      province: "Murcia",
-      image: "https://images.unsplash.com/photo-1558788353-f76d92427f16?w=400&h=300&fit=crop",
-      tags: ["vaccinated", "sterilized"],
-      description: "Bruno es un perro maduro y tranquilo, ideal para personas mayores.",
-      shelterPhone: "+34 600 890 123",
-      shelterEmail: "refugio.murcia@example.com"
-    },
-    {
-      id: 9,
-      name: "Nala",
-      age: "2 años",
-      species: "Cat",
-      size: "Medium",
-      location: "Palma",
-      province: "Baleares",
-      image: "https://images.unsplash.com/photo-1592194996308-7b43878e84a6?w=400&h=300&fit=crop",
-      tags: ["vaccinated", "sociable"],
-      description: "Nala es una gata cariñosa que busca mimos constantes.",
-      shelterPhone: "+34 600 901 234",
-      shelterEmail: "refugio.palma@example.com"
-    },
-    {
-      id: 10,
-      name: "Thor",
-      age: "3 años",
-      species: "Dog",
-      size: "Large",
-      location: "Las Palmas",
-      province: "Las Palmas",
-      image: "https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=400&h=300&fit=crop",
-      tags: ["vaccinated", "sterilized", "sociable"],
-      description: "Thor es un perro fuerte pero gentil, perfecto para familias activas.",
-      shelterPhone: "+34 600 012 345",
-      shelterEmail: "refugio.laspalmas@example.com"
-    },
-    {
-      id: 11,
-      name: "Mia",
-      age: "1 año",
-      species: "Cat",
-      size: "Small",
-      location: "Santander",
-      province: "Cantabria",
-      image: "https://images.unsplash.com/photo-1574158622682-e40e69881006?w=400&h=300&fit=crop",
-      tags: ["vaccinated", "sterilized"],
-      description: "Mia es una gatita joven llena de curiosidad y travesuras.",
-      shelterPhone: "+34 600 123 456",
-      shelterEmail: "refugio.santander@example.com"
-    },
-    {
-      id: 12,
-      name: "Rex",
-      age: "7 años",
-      species: "Dog",
-      size: "Large",
-      location: "Valladolid",
-      province: "Valladolid",
-      image: "https://images.unsplash.com/photo-1552053831-71594a27632d?w=400&h=300&fit=crop",
-      tags: ["vaccinated", "sociable"],
-      description: "Rex es un perro senior que aún tiene mucho amor que dar.",
-      shelterPhone: "+34 600 234 567",
-      shelterEmail: "refugio.valladolid@example.com"
-    },
-    {
-      id: 13,
-      name: "Lola",
-      age: "4 meses",
-      species: "Dog",
-      size: "Small",
-      location: "Vigo",
-      province: "Pontevedra",
-      image: "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=400&h=300&fit=crop",
-      tags: ["vaccinated"],
-      description: "Lola es una cachorra adorable que necesita una familia paciente.",
-      shelterPhone: "+34 600 345 678",
-      shelterEmail: "refugio.vigo@example.com"
-    },
-    {
-      id: 14,
-      name: "Oliver",
-      age: "5 años",
-      species: "Cat",
-      size: "Medium",
-      location: "Gijón",
-      province: "Asturias",
-      image: "https://images.unsplash.com/photo-1596854407944-bf87f6fdd49e?w=400&h=300&fit=crop",
-      tags: ["vaccinated", "sterilized", "sociable"],
-      description: "Oliver es un gato muy sociable que se lleva bien con otros animales.",
-      shelterPhone: "+34 600 456 789",
-      shelterEmail: "refugio.gijon@example.com"
-    },
-    {
-      id: 15,
-      name: "Kira",
-      age: "2 años",
-      species: "Dog",
-      size: "Medium",
-      location: "Córdoba",
-      province: "Córdoba",
-      image: "https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=400&h=300&fit=crop",
-      tags: ["vaccinated", "sterilized"],
-      description: "Kira es una perra equilibrada perfecta para cualquier familia.",
-      shelterPhone: "+34 600 567 890",
-      shelterEmail: "refugio.cordoba@example.com"
-    },
-    {
-      id: 16,
-      name: "Whiskers",
-      age: "6 meses",
-      species: "Cat",
-      size: "Small",
-      location: "Granada",
-      province: "Granada",
-      image: "https://images.unsplash.com/photo-1573865526739-10659fec78a5?w=400&h=300&fit=crop",
-      tags: ["vaccinated", "sociable"],
-      description: "Whiskers es un gatito juguetón que adora las pelotas de lana.",
-      shelterPhone: "+34 600 678 901",
-      shelterEmail: "refugio.granada@example.com"
-    },
-    {
-      id: 17,
-      name: "Duke",
-      age: "8 años",
-      species: "Dog",
-      size: "Large",
-      location: "Alicante",
-      province: "Alicante",
-      image: "https://images.unsplash.com/photo-1551717743-49959800b1f6?w=400&h=300&fit=crop",
-      tags: ["vaccinated", "sterilized", "sociable"],
-      description: "Duke es un perro mayor muy tranquilo y obediente.",
-      shelterPhone: "+34 600 789 012",
-      shelterEmail: "refugio.alicante@example.com"
-    },
-    {
-      id: 18,
-      name: "Princess",
-      age: "3 años",
-      species: "Cat",
-      size: "Medium",
-      location: "Salamanca",
-      province: "Salamanca",
-      image: "https://images.unsplash.com/photo-1592194996308-7b43878e84a6?w=400&h=300&fit=crop",
-      tags: ["vaccinated", "sterilized"],
-      description: "Princess es una gata elegante que prefiere la tranquilidad.",
-      shelterPhone: "+34 600 890 123",
-      shelterEmail: "refugio.salamanca@example.com"
-    },
-    {
-      id: 19,
-      name: "Buddy",
-      age: "1 año",
-      species: "Dog",
-      size: "Medium",
-      location: "Cádiz",
-      province: "Cádiz",
-      image: "https://images.unsplash.com/photo-1558788353-f76d92427f16?w=400&h=300&fit=crop",
-      tags: ["vaccinated", "sociable"],
-      description: "Buddy es un perro joven lleno de energía y ganas de jugar.",
-      shelterPhone: "+34 600 901 234",
-      shelterEmail: "refugio.cadiz@example.com"
-    },
-    {
-      id: 20,
-      name: "Shadow",
-      age: "4 años",
-      species: "Cat",
-      size: "Large",
-      location: "Badajoz",
-      province: "Badajoz",
-      image: "https://images.unsplash.com/photo-1574158622682-e40e69881006?w=400&h=300&fit=crop",
-      tags: ["vaccinated", "sterilized", "sociable"],
-      description: "Shadow es un gato grande y cariñoso que adora las siestas al sol.",
-      shelterPhone: "+34 600 012 345",
-      shelterEmail: "refugio.badajoz@example.com"
-    },
-    {
-      id: 21,
-      name: "Daisy",
-      age: "5 meses",
-      species: "Dog",
-      size: "Small",
-      location: "Logroño",
-      province: "La Rioja",
-      image: "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=400&h=300&fit=crop",
-      tags: ["vaccinated"],
-      description: "Daisy es una cachorra pequeña que necesita mucho amor y paciencia.",
-      shelterPhone: "+34 600 123 456",
-      shelterEmail: "refugio.logrono@example.com"
-    },
-    {
-      id: 22,
-      name: "Garfield",
-      age: "6 años",
-      species: "Cat",
-      size: "Large",
-      location: "Pamplona",
-      province: "Navarra",
-      image: "https://images.unsplash.com/photo-1596854407944-bf87f6fdd49e?w=400&h=300&fit=crop",
-      tags: ["vaccinated", "sterilized"],
-      description: "Garfield es un gato grande y perezoso que adora la comida.",
-      shelterPhone: "+34 600 234 567",
-      shelterEmail: "refugio.pamplona@example.com"
-    },
-    {
-      id: 23,
-      name: "Zeus",
-      age: "3 años",
-      species: "Dog",
-      size: "Large",
-      location: "Vitoria",
-      province: "Álava",
-      image: "https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=400&h=300&fit=crop",
-      tags: ["vaccinated", "sterilized", "sociable"],
-      description: "Zeus es un perro imponente pero muy gentil con los niños.",
-      shelterPhone: "+34 600 345 678",
-      shelterEmail: "refugio.vitoria@example.com"
-    },
-    {
-      id: 24,
-      name: "Mittens",
-      age: "2 años",
-      species: "Cat",
-      size: "Small",
-      location: "Castellón",
-      province: "Castellón",
-      image: "https://images.unsplash.com/photo-1573865526739-10659fec78a5?w=400&h=300&fit=crop",
-      tags: ["vaccinated", "sociable"],
-      description: "Mittens es una gatita pequeña con unas patitas adorables.",
-      shelterPhone: "+34 600 456 789",
-      shelterEmail: "refugio.castellon@example.com"
-    },
-    {
-      id: 25,
-      name: "Ace",
-      age: "4 años",
-      species: "Dog",
-      size: "Medium",
-      location: "Huelva",
-      province: "Huelva",
-      image: "https://images.unsplash.com/photo-1552053831-71594a27632d?w=400&h=300&fit=crop",
-      tags: ["vaccinated", "sterilized"],
-      description: "Ace es un perro leal que será tu mejor compañero de aventuras.",
-      shelterPhone: "+34 600 567 890",
-      shelterEmail: "refugio.huelva@example.com"
-    },
-    {
-      id: 26,
-      name: "Fluffy",
-      age: "7 años",
-      species: "Cat",
-      size: "Medium",
-      location: "Jaén",
-      province: "Jaén",
-      image: "https://images.unsplash.com/photo-1592194996308-7b43878e84a6?w=400&h=300&fit=crop",
-      tags: ["vaccinated", "sterilized", "sociable"],
-      description: "Fluffy es una gata mayor muy cariñosa que busca tranquilidad.",
-      shelterPhone: "+34 600 678 901",
-      shelterEmail: "refugio.jaen@example.com"
-    },
-    {
-      id: 27,
-      name: "Ranger",
-      age: "1 año",
-      species: "Dog",
-      size: "Large",
-      location: "Almería",
-      province: "Almería",
-      image: "https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=400&h=300&fit=crop",
-      tags: ["vaccinated", "sociable"],
-      description: "Ranger es un perro joven y aventurero perfecto para familias activas.",
-      shelterPhone: "+34 600 789 012",
-      shelterEmail: "refugio.almeria@example.com"
-    },
-    {
-      id: 28,
-      name: "Patches",
-      age: "3 años",
-      species: "Cat",
-      size: "Small",
-      location: "Ciudad Real",
-      province: "Ciudad Real",
-      image: "https://images.unsplash.com/photo-1574158622682-e40e69881006?w=400&h=300&fit=crop",
-      tags: ["vaccinated", "sterilized"],
-      description: "Patches es una gata con manchas únicas y personalidad encantadora.",
-      shelterPhone: "+34 600 890 123",
-      shelterEmail: "refugio.ciudadreal@example.com"
-    },
-    {
-      id: 29,
-      name: "Titan",
-      age: "5 años",
-      species: "Dog",
-      size: "Large",
-      location: "Cuenca",
-      province: "Cuenca",
-      image: "https://images.unsplash.com/photo-1551717743-49959800b1f6?w=400&h=300&fit=crop",
-      tags: ["vaccinated", "sterilized", "sociable"],
-      description: "Titan es un perro grande con un corazón gigante lleno de amor.",
-      shelterPhone: "+34 600 901 234",
-      shelterEmail: "refugio.cuenca@example.com"
-    },
-    {
-      id: 30,
-      name: "Snowball",
-      age: "8 meses",
-      species: "Cat",
-      size: "Small",
-      location: "Guadalajara",
-      province: "Guadalajara",
-      image: "https://images.unsplash.com/photo-1596854407944-bf87f6fdd49e?w=400&h=300&fit=crop",
-      tags: ["vaccinated", "sociable"],
-      description: "Snowball es un gatito blanco como la nieve, juguetón y cariñoso.",
-      shelterPhone: "+34 600 012 345",
-      shelterEmail: "refugio.guadalajara@example.com"
     }
+    // ... continue with more pets
   ];
 
-  // Filter pets based on current filters
+  // Enhanced filter function
   useEffect(() => {
     let filtered = mockPets;
 
+    // Search filter
+    if (filters.search) {
+      const searchTerm = filters.search.toLowerCase();
+      filtered = filtered.filter(pet =>
+        pet.name.toLowerCase().includes(searchTerm) ||
+        pet.breed.toLowerCase().includes(searchTerm) ||
+        pet.description.toLowerCase().includes(searchTerm)
+      );
+    }
+
+    // Species filter
     if (filters.species) {
       filtered = filtered.filter(pet => pet.species === filters.species);
     }
+
+    // Age filter
     if (filters.age) {
       if (filters.age === 'Puppy') {
         filtered = filtered.filter(pet => 
@@ -469,11 +196,43 @@ const PublicPetAdoptionHomepage = () => {
         );
       }
     }
+
+    // Size filter
     if (filters.size) {
       filtered = filtered.filter(pet => pet.size === filters.size);
     }
+
+    // Province filter
     if (filters.province) {
       filtered = filtered.filter(pet => pet.province === filters.province);
+    }
+
+    // Breed filter
+    if (filters.breed) {
+      filtered = filtered.filter(pet => pet.breed === filters.breed);
+    }
+
+    // Health status filter
+    if (filters.healthStatus) {
+      filtered = filtered.filter(pet => pet.healthStatus === filters.healthStatus);
+    }
+
+    // Gender filter
+    if (filters.gender) {
+      filtered = filtered.filter(pet => pet.gender === filters.gender);
+    }
+
+    // Sterilization filter
+    if (filters.sterilized !== '') {
+      const isSterialized = filters.sterilized === 'true';
+      filtered = filtered.filter(pet => pet.sterilized === isSterialized);
+    }
+
+    // Tags filter
+    if (filters.tags && filters.tags.length > 0) {
+      filtered = filtered.filter(pet => 
+        filters.tags.every(tag => pet.tags.includes(tag))
+      );
     }
 
     setFilteredPets(filtered);
@@ -501,6 +260,21 @@ const PublicPetAdoptionHomepage = () => {
     }));
   };
 
+  const handleResetFilters = () => {
+    setFilters({
+      search: '',
+      species: '',
+      age: '',
+      size: '',
+      province: '',
+      breed: '',
+      healthStatus: '',
+      gender: '',
+      sterilized: '',
+      tags: []
+    });
+  };
+
   const handlePageChange = (page) => {
     setCurrentPage(page);
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -526,14 +300,22 @@ const PublicPetAdoptionHomepage = () => {
               </span>
             </div>
 
-            {/* Login/Register Links */}
+            {/* Navigation */}
             <div className="flex items-center space-x-4">
+              <button
+                onClick={() => navigate('/adopter-panel')}
+                className="nav-link flex items-center space-x-2 px-4 py-2 rounded-lg hover:bg-primary-50 transition-all duration-200"
+              >
+                <Icon name="User" size={18} />
+                <span className="hidden sm:inline">Mi Panel</span>
+              </button>
+              
               <button
                 onClick={handleLogin}
                 className="nav-link flex items-center space-x-2 px-4 py-2 rounded-lg hover:bg-primary-50 transition-all duration-200"
               >
                 <Icon name="LogIn" size={18} />
-                <span className="hidden sm:inline">Iniciar Sesión</span>
+                <span className="hidden sm:inline">Refugios</span>
               </button>
             </div>
           </div>
@@ -543,10 +325,11 @@ const PublicPetAdoptionHomepage = () => {
       {/* Hero Section */}
       <HeroSection />
 
-      {/* Filter Bar */}
-      <FilterBar 
+      {/* Advanced Filter Bar */}
+      <AdvancedFilterBar 
         filters={filters}
         onFilterChange={handleFilterChange}
+        onResetFilters={handleResetFilters}
         resultsCount={filteredPets.length}
       />
 
@@ -583,7 +366,7 @@ const PublicPetAdoptionHomepage = () => {
               Intenta ajustar los criterios de búsqueda.
             </p>
             <button
-              onClick={() => setFilters({ species: '', age: '', size: '', province: '' })}
+              onClick={handleResetFilters}
               className="btn-outline"
             >
               Limpiar filtros
