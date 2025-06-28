@@ -7,10 +7,6 @@ import AdvancedFilterBar from './components/AdvancedFilterBar';
 import PetGrid from './components/PetGrid';
 import Pagination from './components/Pagination';
 import FloatingFavoritesButton from 'components/ui/FloatingFavoritesButton';
-import NotificationCenter from 'components/ui/NotificationCenter';
-import SmartAlerts from 'components/ui/SmartAlerts';
-import QuickFilters from 'components/ui/QuickFilters';
-import EnhancedSearchBar from './components/EnhancedSearchBar';
 import UnifiedSearchBar from 'components/ui/UnifiedSearchBar';
 import CrossSellingSidebar from 'components/ui/CrossSellingSidebar';
 import NavigationBreadcrumbs from 'components/ui/NavigationBreadcrumbs';
@@ -441,14 +437,6 @@ const PublicPetAdoptionHomepage = () => {
         </div>
       </section>
 
-      {/* Quick Filters */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <QuickFilters 
-          onFilterSelect={handleQuickFilter}
-          activeFilters={activeQuickFilters}
-        />
-      </div>
-
       {/* Advanced Filter Bar */}
       <AdvancedFilterBar 
         filters={filters}
@@ -499,9 +487,6 @@ const PublicPetAdoptionHomepage = () => {
         )}
       </main>
 
-      {/* Smart Alerts */}
-      <SmartAlerts />
-
       {/* Cross-Selling Sidebar */}
       <CrossSellingSidebar />
 
@@ -510,12 +495,6 @@ const PublicPetAdoptionHomepage = () => {
 
       {/* Quick Actions FAB */}
       <QuickActionsFAB />
-
-      {/* Notification Center */}
-      <NotificationCenter 
-        isOpen={showNotifications}
-        onClose={() => setShowNotifications(false)}
-      />
 
       {/* Footer */}
       <footer className="bg-surface border-t border-border-light mt-16">
