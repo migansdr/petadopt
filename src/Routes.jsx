@@ -9,6 +9,10 @@ import AddEditPetForm from "pages/add-edit-pet-form";
 import PetDetail from "pages/pet-detail";
 import AdopterPanel from "pages/adopter-panel";
 import AdminPanel from "pages/admin-panel";
+import ProfessionalsDirectory from "pages/professionals-directory";
+import ProfessionalDetail from "pages/professional-detail";
+import ProfessionalRegister from "pages/professional-register";
+import ProfessionalPanel from "pages/professional-panel";
 import NotFound from "pages/NotFound";
 
 const Routes = () => {
@@ -25,6 +29,13 @@ const Routes = () => {
           <Route path="/pet/:id" element={<PetDetail />} />
           <Route path="/adopter-panel" element={<AdopterPanel />} />
           <Route path="/admin-panel" element={<AdminPanel />} />
+          
+          {/* Professional Routes */}
+          <Route path="/professionals" element={<ProfessionalsDirectory />} />
+          <Route path="/professional/:id" element={<ProfessionalDetail />} />
+          <Route path="/professional-register" element={<ProfessionalRegister />} />
+          <Route path="/professional-panel" element={<ProfessionalPanel />} />
+          
           {/* Catch-all route for 404 */}
           <Route path="*" element={<NotFound />} />
         </RouterRoutes>
