@@ -5,6 +5,9 @@ import Image from 'components/AppImage';
 import AdaptiveHeader from 'components/ui/AdaptiveHeader';
 import LoadingSpinner from 'components/ui/LoadingSpinner';
 import ConfirmDialog from 'components/ui/ConfirmDialog';
+import SmartRecommendations from 'components/ui/SmartRecommendations';
+import NavigationBreadcrumbs from 'components/ui/NavigationBreadcrumbs';
+import CrossSellingSidebar from 'components/ui/CrossSellingSidebar';
 import { generateWhatsAppUrl, generateEmailUrl, formatTimeAgo } from 'utils/helpers';
 
 const PetDetail = () => {
@@ -146,6 +149,9 @@ Gracias.`;
     
     localStorage.setItem('favorites', JSON.stringify(newFavorites));
     setIsFavorite(!isFavorite);
+    
+    // Trigger favorites changed event
+    window.dispatchEvent(new CustomEvent('favoritesChanged'));
   };
 
   const handleReport = () => {
@@ -193,6 +199,7 @@ Gracias.`;
     return (
       <div className="min-h-screen bg-background">
         <AdaptiveHeader />
+        <NavigationBreadcrumbs />
         <div className="pt-16 flex items-center justify-center min-h-screen">
           <LoadingSpinner size="lg" text="Cargando información de la mascota..." />
         </div>
@@ -204,6 +211,7 @@ Gracias.`;
     return (
       <div className="min-h-screen bg-background">
         <AdaptiveHeader />
+        <NavigationBreadcrumbs />
         <div className="pt-16 flex items-center justify-center min-h-screen">
           <div className="text-center">
             <Icon name="AlertCircle" size={48} className="text-error mx-auto mb-4" />
@@ -228,24 +236,9 @@ Gracias.`;
   return (
     <div className="min-h-screen bg-background">
       <AdaptiveHeader />
+      <NavigationBreadcrumbs />
       
       <main className="pt-16">
-        {/* Breadcrumb */}
-        <div className="bg-surface border-b border-border-light">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-            <nav className="flex items-center space-x-2 text-sm">
-              <button
-                onClick={() => navigate('/')}
-                className="text-text-secondary hover:text-primary transition-colors duration-200"
-              >
-                Inicio
-              </button>
-              <Icon name="ChevronRight" size={16} className="text-text-muted" />
-              <span className="text-text-primary font-medium">{pet.name}</span>
-            </nav>
-          </div>
-        </div>
-
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {/* Main Content */}
@@ -467,6 +460,9 @@ Gracias.`;
                   </div>
                 </div>
               </div>
+
+              {/* Smart Recommendations */}
+              <SmartRecommendations currentItem={pet} type="pet" />
             </div>
 
             {/* Sidebar */}
@@ -566,6 +562,9 @@ Gracias.`;
           </div>
         </div>
       </main>
+
+      {/* Cross-Selling Sidebar */}
+      <CrossSellingSidebar />
 
       {/* Report Dialog */}
       <ConfirmDialog

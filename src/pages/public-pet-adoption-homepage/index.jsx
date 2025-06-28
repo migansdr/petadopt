@@ -7,10 +7,19 @@ import AdvancedFilterBar from './components/AdvancedFilterBar';
 import PetGrid from './components/PetGrid';
 import Pagination from './components/Pagination';
 import FloatingFavoritesButton from 'components/ui/FloatingFavoritesButton';
+import NotificationCenter from 'components/ui/NotificationCenter';
+import SmartAlerts from 'components/ui/SmartAlerts';
+import QuickFilters from 'components/ui/QuickFilters';
+import EnhancedSearchBar from './components/EnhancedSearchBar';
+import UnifiedSearchBar from 'components/ui/UnifiedSearchBar';
+import CrossSellingSidebar from 'components/ui/CrossSellingSidebar';
+import NavigationBreadcrumbs from 'components/ui/NavigationBreadcrumbs';
+import QuickActionsFAB from 'components/ui/QuickActionsFAB';
 
 const PublicPetAdoptionHomepage = () => {
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(true);
+  const [showNotifications, setShowNotifications] = useState(false);
   const [filters, setFilters] = useState({
     search: '',
     species: '',
@@ -23,6 +32,7 @@ const PublicPetAdoptionHomepage = () => {
     sterilized: '',
     tags: []
   });
+  const [activeQuickFilters, setActiveQuickFilters] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [filteredPets, setFilteredPets] = useState([]);
   const petsPerPage = 27;
@@ -58,7 +68,7 @@ const PublicPetAdoptionHomepage = () => {
       location: "Barcelona",
       province: "barcelona",
       image: "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=400&h=300&fit=crop",
-      tags: ["vaccinated", "sociable"],
+      tags: ["vaccinated", "sociable", "urgent"],
       description: "Milo es un gatito juguetón que adora las caricias.",
       healthStatus: "healthy",
       sterilized: false,
@@ -94,7 +104,7 @@ const PublicPetAdoptionHomepage = () => {
       location: "Sevilla",
       province: "sevilla",
       image: "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=400&h=300&fit=crop",
-      tags: ["vaccinated", "sterilized", "sociable", "good_with_pets"],
+      tags: ["vaccinated", "sterilized", "sociable", "good_with_pets", "good_with_kids"],
       description: "Bella es una perrita pequeña llena de energía y amor.",
       healthStatus: "healthy",
       sterilized: true,
@@ -137,7 +147,6 @@ const PublicPetAdoptionHomepage = () => {
       shelterPhone: "+34 600 678 901",
       shelterEmail: "refugio.zaragoza@example.com"
     },
-    // Add more pets with varied characteristics...
     {
       id: 7,
       name: "Coco",
@@ -156,7 +165,6 @@ const PublicPetAdoptionHomepage = () => {
       shelterPhone: "+34 600 789 012",
       shelterEmail: "refugio.malaga@example.com"
     }
-    // ... continue with more pets
   ];
 
   // Enhanced filter function
@@ -173,12 +181,11 @@ const PublicPetAdoptionHomepage = () => {
       );
     }
 
-    // Species filter
+    // Apply all other filters...
     if (filters.species) {
       filtered = filtered.filter(pet => pet.species === filters.species);
     }
 
-    // Age filter
     if (filters.age) {
       if (filters.age === 'Puppy') {
         filtered = filtered.filter(pet => 
@@ -198,38 +205,31 @@ const PublicPetAdoptionHomepage = () => {
       }
     }
 
-    // Size filter
     if (filters.size) {
       filtered = filtered.filter(pet => pet.size === filters.size);
     }
 
-    // Province filter
     if (filters.province) {
       filtered = filtered.filter(pet => pet.province === filters.province);
     }
 
-    // Breed filter
     if (filters.breed) {
       filtered = filtered.filter(pet => pet.breed === filters.breed);
     }
 
-    // Health status filter
     if (filters.healthStatus) {
       filtered = filtered.filter(pet => pet.healthStatus === filters.healthStatus);
     }
 
-    // Gender filter
     if (filters.gender) {
       filtered = filtered.filter(pet => pet.gender === filters.gender);
     }
 
-    // Sterilization filter
     if (filters.sterilized !== '') {
       const isSterialized = filters.sterilized === 'true';
       filtered = filtered.filter(pet => pet.sterilized === isSterialized);
     }
 
-    // Tags filter
     if (filters.tags && filters.tags.length > 0) {
       filtered = filtered.filter(pet => 
         filters.tags.every(tag => pet.tags.includes(tag))
@@ -261,6 +261,54 @@ const PublicPetAdoptionHomepage = () => {
     }));
   };
 
+  const handleSearch = (searchTerm) => {
+    setFilters(prev => ({
+      ...prev,
+      search: searchTerm
+    }));
+  };
+
+  const handleQuickFilter = (filterConfig) => {
+    if (filterConfig.clear) {
+      setActiveQuickFilters([]);
+      setFilters({
+        search: '',
+        species: '',
+        age: '',
+        size: '',
+        province: '',
+        breed: '',
+        healthStatus: '',
+        gender: '',
+        sterilized: '',
+        tags: []
+      });
+      return;
+    }
+
+    // Apply the quick filter
+    Object.entries(filterConfig.filter).forEach(([key, value]) => {
+      if (key === 'tags') {
+        setFilters(prev => ({
+          ...prev,
+          tags: [...prev.tags, ...value]
+        }));
+      } else {
+        setFilters(prev => ({
+          ...prev,
+          [key]: value
+        }));
+      }
+    });
+
+    // Track active quick filters
+    setActiveQuickFilters(prev => 
+      prev.includes(filterConfig.id) 
+        ? prev.filter(id => id !== filterConfig.id)
+        : [...prev, filterConfig.id]
+    );
+  };
+
   const handleResetFilters = () => {
     setFilters({
       search: '',
@@ -274,6 +322,7 @@ const PublicPetAdoptionHomepage = () => {
       sterilized: '',
       tags: []
     });
+    setActiveQuickFilters([]);
   };
 
   const handlePageChange = (page) => {
@@ -318,6 +367,17 @@ const PublicPetAdoptionHomepage = () => {
                 <Icon name="User" size={18} />
                 <span className="hidden sm:inline">Mi Panel</span>
               </button>
+
+              {/* Notifications Button */}
+              <button
+                onClick={() => setShowNotifications(true)}
+                className="relative nav-link flex items-center space-x-2 px-4 py-2 rounded-lg hover:bg-primary-50 transition-all duration-200"
+              >
+                <Icon name="Bell" size={18} />
+                <span className="hidden sm:inline">Notificaciones</span>
+                {/* Notification badge */}
+                <span className="absolute -top-1 -right-1 w-3 h-3 bg-error rounded-full"></span>
+              </button>
               
               <button
                 onClick={handleLogin}
@@ -331,8 +391,63 @@ const PublicPetAdoptionHomepage = () => {
         </div>
       </header>
 
-      {/* Hero Section */}
-      <HeroSection />
+      {/* Navigation Breadcrumbs */}
+      <NavigationBreadcrumbs />
+
+      {/* Hero Section with Unified Search */}
+      <section className="relative bg-gradient-to-br from-primary-50 to-secondary-50 py-16 lg:py-24 overflow-hidden">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold text-text-primary mb-6 leading-tight">
+              Adopta una mascota{' '}
+              <span className="text-primary">cerca de ti</span>
+            </h1>
+            
+            <p className="text-lg sm:text-xl text-text-secondary mb-8 max-w-2xl mx-auto">
+              Encuentra tu compañero perfecto entre miles de mascotas que buscan un hogar amoroso en toda España.
+            </p>
+
+            {/* Unified Search Bar */}
+            <UnifiedSearchBar onSearch={handleSearch} initialValue={filters.search} currentPage="pets" />
+          </div>
+
+          {/* Stats */}
+          <div className="grid grid-cols-3 gap-6 mt-12 pt-8 border-t border-border-light max-w-2xl mx-auto">
+            <div className="text-center">
+              <div className="text-2xl sm:text-3xl font-heading font-bold text-primary mb-1">
+                500+
+              </div>
+              <div className="text-sm text-text-secondary">
+                Mascotas Adoptadas
+              </div>
+            </div>
+            <div className="text-center">
+              <div className="text-2xl sm:text-3xl font-heading font-bold text-secondary mb-1">
+                50+
+              </div>
+              <div className="text-sm text-text-secondary">
+                Refugios Activos
+              </div>
+            </div>
+            <div className="text-center">
+              <div className="text-2xl sm:text-3xl font-heading font-bold text-accent mb-1">
+                17
+              </div>
+              <div className="text-sm text-text-secondary">
+                Provincias
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Quick Filters */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <QuickFilters 
+          onFilterSelect={handleQuickFilter}
+          activeFilters={activeQuickFilters}
+        />
+      </div>
 
       {/* Advanced Filter Bar */}
       <AdvancedFilterBar 
@@ -384,8 +499,23 @@ const PublicPetAdoptionHomepage = () => {
         )}
       </main>
 
+      {/* Smart Alerts */}
+      <SmartAlerts />
+
+      {/* Cross-Selling Sidebar */}
+      <CrossSellingSidebar />
+
       {/* Floating Favorites Button */}
       <FloatingFavoritesButton />
+
+      {/* Quick Actions FAB */}
+      <QuickActionsFAB />
+
+      {/* Notification Center */}
+      <NotificationCenter 
+        isOpen={showNotifications}
+        onClose={() => setShowNotifications(false)}
+      />
 
       {/* Footer */}
       <footer className="bg-surface border-t border-border-light mt-16">
