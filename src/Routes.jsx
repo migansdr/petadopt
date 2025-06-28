@@ -13,6 +13,7 @@ import ProfessionalsDirectory from "pages/professionals-directory";
 import ProfessionalDetail from "pages/professional-detail";
 import ProfessionalRegister from "pages/professional-register";
 import ProfessionalPanel from "pages/professional-panel";
+import ComparisonPage from "pages/comparison";
 import NotFound from "pages/NotFound";
 
 const Routes = () => {
@@ -35,6 +36,9 @@ const Routes = () => {
           <Route path="/professional/:id" element={<ProfessionalDetail />} />
           <Route path="/professional-register" element={<ProfessionalRegister />} />
           <Route path="/professional-panel" element={<ProfessionalPanel />} />
+          
+          {/* Comparison Route */}
+          <Route path="/compare" element={<ComparisonPage />} />
           
           {/* Catch-all route for 404 */}
           <Route path="*" element={<NotFound />} />

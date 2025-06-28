@@ -6,6 +6,7 @@ import HeroSection from './components/HeroSection';
 import AdvancedFilterBar from './components/AdvancedFilterBar';
 import PetGrid from './components/PetGrid';
 import Pagination from './components/Pagination';
+import FloatingFavoritesButton from 'components/ui/FloatingFavoritesButton';
 
 const PublicPetAdoptionHomepage = () => {
   const navigate = useNavigate();
@@ -382,6 +383,9 @@ const PublicPetAdoptionHomepage = () => {
           </div>
         )}
       </main>
+
+      {/* Floating Favorites Button */}
+      <FloatingFavoritesButton />
 
       {/* Footer */}
       <footer className="bg-surface border-t border-border-light mt-16">
