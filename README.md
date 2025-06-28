@@ -1,107 +1,174 @@
-# React
+# AdoptaEspaña - Plataforma de Adopción de Mascotas
 
-A modern React-based project utilizing the latest frontend technologies and tools for building responsive web applications.
+Una moderna plataforma web para conectar refugios de animales con familias que buscan adoptar mascotas en España.
 
-## 🚀 Features
+## 🚀 Características
 
-- **React 18** - React version with improved rendering and concurrent features
-- **Vite** - Lightning-fast build tool and development server
-- **Redux Toolkit** - State management with simplified Redux setup
-- **TailwindCSS** - Utility-first CSS framework with extensive customization
-- **React Router v6** - Declarative routing for React applications
-- **Data Visualization** - Integrated D3.js and Recharts for powerful data visualization
-- **Form Management** - React Hook Form for efficient form handling
-- **Animation** - Framer Motion for smooth UI animations
-- **Testing** - Jest and React Testing Library setup
+- **Búsqueda Avanzada**: Filtros por especie, edad, tamaño y ubicación
+- **Panel para Refugios**: Gestión completa de mascotas y perfil del refugio
+- **Diseño Responsivo**: Optimizado para móviles, tablets y escritorio
+- **Interfaz Intuitiva**: Experiencia de usuario moderna y accesible
+- **Contacto Directo**: WhatsApp y email integrados para facilitar adopciones
 
-## 📋 Prerequisites
+## 🛠️ Tecnologías
 
-- Node.js (v14.x or higher)
-- npm or yarn
+- **Frontend**: React 18, Vite
+- **Estilos**: TailwindCSS con sistema de diseño personalizado
+- **Iconos**: Lucide React
+- **Routing**: React Router v6
+- **Estado**: React Hooks + Local Storage
+- **Formularios**: React Hook Form
+- **Animaciones**: CSS Animations + Framer Motion
 
-## 🛠️ Installation
+## 📋 Requisitos Previos
 
-1. Install dependencies:
+- Node.js (v16 o superior)
+- npm o yarn
+
+## 🔧 Instalación
+
+1. **Clonar el repositorio**
+   ```bash
+   git clone https://github.com/tu-usuario/adoptaespana.git
+   cd adoptaespana
+   ```
+
+2. **Instalar dependencias**
    ```bash
    npm install
-   # or
-   yarn install
    ```
-   
-2. Start the development server:
+
+3. **Configurar variables de entorno**
    ```bash
-   npm start
-   # or
-   yarn start
+   cp .env.example .env
+   # Edita .env con tus configuraciones
    ```
 
-## 📁 Project Structure
+4. **Iniciar el servidor de desarrollo**
+   ```bash
+   npm run start
+   ```
+
+5. **Abrir en el navegador**
+   ```
+   http://localhost:4028
+   ```
+
+## 📁 Estructura del Proyecto
 
 ```
-react_app/
-├── public/             # Static assets
-├── src/
-│   ├── components/     # Reusable UI components
-│   ├── pages/          # Page components
-│   ├── styles/         # Global styles and Tailwind configuration
-│   ├── App.jsx         # Main application component
-│   ├── Routes.jsx      # Application routes
-│   └── index.jsx       # Application entry point
-├── .env                # Environment variables
-├── index.html          # HTML template
-├── package.json        # Project dependencies and scripts
-├── tailwind.config.js  # Tailwind CSS configuration
-└── vite.config.js      # Vite configuration
+src/
+├── components/          # Componentes reutilizables
+│   ├── ui/             # Componentes de interfaz
+│   ├── AppIcon.jsx     # Componente de iconos
+│   ├── AppImage.jsx    # Componente de imágenes
+│   └── ErrorBoundary.jsx
+├── pages/              # Páginas de la aplicación
+│   ├── public-pet-adoption-homepage/
+│   ├── authentication-login-register/
+│   ├── shelter-dashboard/
+│   └── add-edit-pet-form/
+├── hooks/              # Custom hooks
+├── utils/              # Utilidades y helpers
+├── styles/             # Estilos globales
+└── Routes.jsx          # Configuración de rutas
 ```
 
-## 🧩 Adding Routes
+## 🎨 Sistema de Diseño
 
-To add new routes to the application, update the `Routes.jsx` file:
+### Colores Principales
+- **Primary**: `#4A90A4` (Azul mediterráneo)
+- **Secondary**: `#7BA05B` (Verde salvia)
+- **Accent**: `#E8B86D` (Dorado cálido)
 
-```jsx
-import { useRoutes } from "react-router-dom";
-import HomePage from "pages/HomePage";
-import AboutPage from "pages/AboutPage";
+### Tipografía
+- **Headings**: Nunito Sans
+- **Body**: Inter
+- **Monospace**: JetBrains Mono
 
-const ProjectRoutes = () => {
-  let element = useRoutes([
-    { path: "/", element: <HomePage /> },
-    { path: "/about", element: <AboutPage /> },
-    // Add more routes as needed
-  ]);
+## 🔐 Autenticación (Demo)
 
-  return element;
-};
-```
+Para probar la funcionalidad de refugios:
 
-## 🎨 Styling
+- **Email**: `refugio@ejemplo.com`
+- **Contraseña**: `refugio123`
 
-This project uses Tailwind CSS for styling. The configuration includes:
+## 📱 Funcionalidades
 
-- Forms plugin for form styling
-- Typography plugin for text styling
-- Aspect ratio plugin for responsive elements
-- Container queries for component-specific responsive design
-- Fluid typography for responsive text
-- Animation utilities
+### Para Adoptantes
+- Búsqueda y filtrado de mascotas
+- Visualización de perfiles detallados
+- Contacto directo con refugios
+- Interfaz responsiva
 
-## 📱 Responsive Design
+### Para Refugios
+- Panel de control completo
+- Gestión de mascotas (crear, editar, eliminar)
+- Subida de múltiples imágenes
+- Estadísticas y actividad reciente
+- Sistema de borradores
 
-The app is built with responsive design using Tailwind CSS breakpoints.
+## 🚀 Despliegue
 
-
-## 📦 Deployment
-
-Build the application for production:
-
+### Build de Producción
 ```bash
 npm run build
 ```
 
-## 🙏 Acknowledgments
+### Previsualización Local
+```bash
+npm run serve
+```
 
-- Built with [Rocket.new](https://rocket.new)
-- Powered by React and Vite
-- Styled with Tailwind CSS
+### Variables de Entorno de Producción
+Asegúrate de configurar:
+- `VITE_APP_URL`: URL de producción
+- `VITE_API_BASE_URL`: URL de tu API (cuando esté disponible)
+- Analytics y tracking IDs
 
-Built with ❤️ on Rocket.new
+## 🔧 Configuración Adicional
+
+### SEO
+- Meta tags optimizados
+- Open Graph y Twitter Cards
+- Sitemap.xml incluido
+- Structured data (JSON-LD)
+
+### PWA
+- Manifest.json configurado
+- Service Worker ready
+- Iconos para diferentes dispositivos
+
+### Accesibilidad
+- Navegación por teclado
+- ARIA labels
+- Contraste de colores optimizado
+- Texto alternativo en imágenes
+
+## 🤝 Contribuir
+
+1. Fork el proyecto
+2. Crea una rama para tu feature (`git checkout -b feature/AmazingFeature`)
+3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
+4. Push a la rama (`git push origin feature/AmazingFeature`)
+5. Abre un Pull Request
+
+## 📄 Licencia
+
+Este proyecto está bajo la Licencia MIT - ver el archivo [LICENSE](LICENSE) para detalles.
+
+## 📞 Contacto
+
+- **Email**: info@adoptaespana.com
+- **Teléfono**: +34 900 123 456
+- **Website**: https://adoptaespana.com
+
+## 🙏 Agradecimientos
+
+- Imágenes de [Unsplash](https://unsplash.com)
+- Iconos de [Lucide](https://lucide.dev)
+- Inspiración de refugios reales de España
+
+---
+
+**Hecho con ❤️ para ayudar a las mascotas a encontrar un hogar**
