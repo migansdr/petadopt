@@ -54,34 +54,26 @@ const ProfessionalRegister = () => {
     { value: 'business', label: 'Negocio/Servicio', icon: 'Store' }
   ];
 
-  // Servicios ordenados alfabéticamente
+  // Servicios ordenados alfabéticamente (sin los eliminados)
   const serviceOptions = [
-    { value: 'accessories', label: 'Accesorios', icon: 'ShoppingBag' },
     { value: 'dog_trainer', label: 'Adiestramiento canino', icon: 'Award' },
     { value: 'agility_trainer', label: 'Adiestramiento de agility y deportes caninos', icon: 'Award' },
     { value: 'service_dog_trainer', label: 'Adiestramiento de perros de servicio o asistencia', icon: 'Award' },
-    { value: 'boarding', label: 'Alojamiento canino (groomer)', icon: 'Home' },
     { value: 'behavioral_therapist', label: 'Asesor/a de comportamiento', icon: 'Brain' },
-    { value: 'surgery', label: 'Cirugía', icon: 'Activity' },
-    { value: 'consultation', label: 'Consultas', icon: 'MessageCircle' },
-    { value: 'pet_sitter', label: 'Cuidador/a de perros a domicilio (pet sitter)', icon: 'Home' },
-    { value: 'dentistry', label: 'Odontología', icon: 'Smile' },
-    { value: 'canine_educator', label: 'Educador/a canino', icon: 'BookOpen' },
-    { value: 'food_delivery', label: 'Entrega a domicilio', icon: 'Package' },
     { value: 'canine_aesthetician', label: 'Esteticista canino', icon: 'Scissors' },
     { value: 'ethologist', label: 'Etólogo/a', icon: 'Brain' },
     { value: 'physiotherapist', label: 'Fisioterapeuta', icon: 'Activity' },
     { value: 'pet_photographer', label: 'Fotógrafo/a de perros', icon: 'Camera' },
     { value: 'grooming', label: 'Grooming/Peluquería', icon: 'Scissors' },
     { value: 'daycare', label: 'Guardería', icon: 'Users' },
+    { value: 'boarding', label: 'Hospedaje', icon: 'Home' },
     { value: 'obedience_instructor', label: 'Instructor/a de obediencia', icon: 'Award' },
     { value: 'nutritionist', label: 'Nutricionista', icon: 'Apple' },
     { value: 'dog_walker', label: 'Paseador/a de perros', icon: 'MapPin' },
+    { value: 'pet_sitter', label: 'Pet sitter (cuidador/a a domicilio)', icon: 'Home' },
     { value: 'behavioral_modification_therapist', label: 'Terapeuta de modificación conductual', icon: 'Brain' },
-    { value: 'pet_store', label: 'Tienda de mascotas', icon: 'Store' },
     { value: 'emergency', label: 'Urgencias', icon: 'AlertCircle' },
-    { value: 'veterinary', label: 'Veterinaria', icon: 'Stethoscope' },
-    { value: 'home_visits', label: 'Visitas a domicilio', icon: 'Truck' }
+    { value: 'veterinary', label: 'Veterinaria', icon: 'Stethoscope' }
   ];
 
   const timeSlots = [

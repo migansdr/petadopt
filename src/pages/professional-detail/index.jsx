@@ -21,7 +21,7 @@ const ProfessionalDetail = () => {
     id: id,
     name: 'Clínica Veterinaria San Antón',
     type: 'clinic',
-    services: ['veterinary', 'emergency', 'surgery', 'dentistry'],
+    services: ['veterinary', 'emergency', 'dentistry'],
     description: `Clínica veterinaria con más de 20 años de experiencia en el cuidado integral de mascotas. Nuestro equipo de veterinarios especializados ofrece servicios de medicina preventiva, cirugía, odontología veterinaria y atención de urgencias.
 
 **Nuestros servicios incluyen:**
@@ -117,64 +117,50 @@ Contamos con instalaciones modernas y equipamiento de última generación para b
 
   const getServiceLabel = (service) => {
     const labels = {
-      accessories: 'Accesorios',
       dog_trainer: 'Adiestramiento canino',
       agility_trainer: 'Adiestramiento de agility y deportes caninos',
       service_dog_trainer: 'Adiestramiento de perros de servicio o asistencia',
-      boarding: 'Alojamiento canino (groomer)',
       behavioral_therapist: 'Asesor/a de comportamiento',
-      surgery: 'Cirugía',
-      consultation: 'Consultas',
-      pet_sitter: 'Cuidador/a de perros a domicilio (pet sitter)',
-      dentistry: 'Odontología',
-      canine_educator: 'Educador/a canino',
-      food_delivery: 'Entrega a domicilio',
       canine_aesthetician: 'Esteticista canino',
       ethologist: 'Etólogo/a',
       physiotherapist: 'Fisioterapeuta',
       pet_photographer: 'Fotógrafo/a de perros',
       grooming: 'Grooming/Peluquería',
       daycare: 'Guardería',
+      boarding: 'Hospedaje',
       obedience_instructor: 'Instructor/a de obediencia',
       nutritionist: 'Nutricionista',
       dog_walker: 'Paseador/a de perros',
+      pet_sitter: 'Pet sitter (cuidador/a a domicilio)',
       behavioral_modification_therapist: 'Terapeuta de modificación conductual',
-      pet_store: 'Tienda de mascotas',
       emergency: 'Urgencias',
       veterinary: 'Veterinaria',
-      home_visits: 'Visitas a domicilio'
+      dentistry: 'Odontología'
     };
     return labels[service] || service;
   };
 
   const getServiceIcon = (service) => {
     const icons = {
-      accessories: 'ShoppingBag',
       dog_trainer: 'Award',
       agility_trainer: 'Award',
       service_dog_trainer: 'Award',
-      boarding: 'Home',
       behavioral_therapist: 'Brain',
-      surgery: 'Activity',
-      consultation: 'MessageCircle',
-      pet_sitter: 'Home',
-      dentistry: 'Smile',
-      canine_educator: 'BookOpen',
-      food_delivery: 'Package',
       canine_aesthetician: 'Scissors',
       ethologist: 'Brain',
       physiotherapist: 'Activity',
       pet_photographer: 'Camera',
       grooming: 'Scissors',
       daycare: 'Users',
+      boarding: 'Home',
       obedience_instructor: 'Award',
       nutritionist: 'Apple',
       dog_walker: 'MapPin',
+      pet_sitter: 'Home',
       behavioral_modification_therapist: 'Brain',
-      pet_store: 'Store',
       emergency: 'AlertCircle',
       veterinary: 'Stethoscope',
-      home_visits: 'Truck'
+      dentistry: 'Smile'
     };
     return icons[service] || 'Circle';
   };

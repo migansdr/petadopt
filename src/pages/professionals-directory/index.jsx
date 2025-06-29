@@ -57,7 +57,7 @@ const ProfessionalsDirectory = () => {
       id: 'prof_002',
       name: 'Dr. María González - Veterinaria',
       type: 'individual',
-      services: ['veterinary', 'home_visits', 'consultation'],
+      services: ['veterinary', 'home_visits'],
       description: 'Veterinaria especializada en medicina felina y consultas a domicilio. Más de 15 años de experiencia.',
       address: 'Consultas a domicilio en Barcelona y alrededores',
       city: 'Barcelona',
@@ -89,7 +89,7 @@ const ProfessionalsDirectory = () => {
       id: 'prof_003',
       name: 'PetGrooming Valencia',
       type: 'business',
-      services: ['grooming', 'training', 'daycare'],
+      services: ['grooming', 'dog_trainer', 'daycare'],
       description: 'Centro de estética canina y felina. Ofrecemos servicios de peluquería, adiestramiento y guardería.',
       address: 'Avenida del Puerto 45, Valencia',
       city: 'Valencia',
@@ -120,41 +120,9 @@ const ProfessionalsDirectory = () => {
     },
     {
       id: 'prof_004',
-      name: 'Tienda Mascotas Sevilla',
-      type: 'business',
-      services: ['pet_store', 'food_delivery', 'accessories'],
-      description: 'Tienda especializada en alimentación y accesorios para mascotas. Entrega a domicilio en Sevilla.',
-      address: 'Calle Sierpes 78, Sevilla',
-      city: 'Sevilla',
-      province: 'sevilla',
-      phone: '+34 95 234 5678',
-      email: 'ventas@tiendamascotas.com',
-      website: 'https://tiendamascotas-sevilla.com',
-      whatsapp: '+34 600 456 789',
-      logo: 'https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=200&h=200&fit=crop',
-      images: [
-        'https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=400&h=300&fit=crop'
-      ],
-      rating: 4.4,
-      reviewsCount: 156,
-      verified: false,
-      openingHours: {
-        monday: '10:00-20:00',
-        tuesday: '10:00-20:00',
-        wednesday: '10:00-20:00',
-        thursday: '10:00-20:00',
-        friday: '10:00-20:00',
-        saturday: '10:00-20:00',
-        sunday: '11:00-15:00'
-      },
-      emergencyAvailable: false,
-      joinDate: '2023-09-05T16:45:00Z'
-    },
-    {
-      id: 'prof_005',
       name: 'Centro Canino Bilbao',
       type: 'business',
-      services: ['training', 'boarding', 'daycare'],
+      services: ['dog_trainer', 'boarding', 'daycare'],
       description: 'Centro especializado en adiestramiento canino y servicios de hospedaje. Instalaciones modernas y seguras.',
       address: 'Polígono Industrial Asua, Bilbao',
       city: 'Bilbao',
@@ -185,35 +153,27 @@ const ProfessionalsDirectory = () => {
     }
   ];
 
-  // Servicios ordenados alfabéticamente
+  // Servicios ordenados alfabéticamente (sin los eliminados)
   const serviceOptions = [
     { value: '', label: 'Todos los servicios' },
-    { value: 'accessories', label: 'Accesorios' },
     { value: 'dog_trainer', label: 'Adiestramiento canino' },
     { value: 'agility_trainer', label: 'Adiestramiento de agility y deportes caninos' },
     { value: 'service_dog_trainer', label: 'Adiestramiento de perros de servicio o asistencia' },
-    { value: 'boarding', label: 'Alojamiento canino (groomer)' },
     { value: 'behavioral_therapist', label: 'Asesor/a de comportamiento' },
     { value: 'canine_aesthetician', label: 'Esteticista canino' },
     { value: 'ethologist', label: 'Etólogo/a' },
     { value: 'physiotherapist', label: 'Fisioterapeuta' },
     { value: 'pet_photographer', label: 'Fotógrafo/a de perros' },
     { value: 'grooming', label: 'Grooming/Peluquería' },
+    { value: 'daycare', label: 'Guardería' },
     { value: 'obedience_instructor', label: 'Instructor/a de obediencia' },
     { value: 'nutritionist', label: 'Nutricionista' },
     { value: 'dog_walker', label: 'Paseador/a de perros' },
     { value: 'pet_sitter', label: 'Pet sitter (cuidador/a a domicilio)' },
-    { value: 'pet_store', label: 'Tienda de mascotas' },
     { value: 'behavioral_modification_therapist', label: 'Terapeuta de modificación conductual' },
     { value: 'emergency', label: 'Urgencias' },
     { value: 'veterinary', label: 'Veterinaria' },
-    { value: 'home_visits', label: 'Visitas a domicilio' },
-    { value: 'daycare', label: 'Guardería' },
-    { value: 'surgery', label: 'Cirugía' },
-    { value: 'dentistry', label: 'Odontología' },
-    { value: 'food_delivery', label: 'Entrega a domicilio' },
-    { value: 'consultation', label: 'Consultas' },
-    { value: 'canine_educator', label: 'Educador/a canino' }
+    { value: 'boarding', label: 'Hospedaje' }
   ];
 
   const provinceOptions = [
