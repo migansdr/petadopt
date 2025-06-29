@@ -24,7 +24,7 @@ const ProfessionalsDirectory = () => {
       id: 'prof_001',
       name: 'Clínica Veterinaria San Antón',
       type: 'clinic',
-      services: ['veterinary', 'emergency', 'surgery', 'dentistry'],
+      services: ['veterinary', 'emergency', 'dentistry'],
       description: 'Clínica veterinaria con más de 20 años de experiencia. Especialistas en cirugía y medicina interna.',
       address: 'Calle Mayor 123, Madrid',
       city: 'Madrid',
@@ -122,8 +122,8 @@ const ProfessionalsDirectory = () => {
       id: 'prof_004',
       name: 'Centro Canino Bilbao',
       type: 'business',
-      services: ['dog_trainer', 'boarding', 'daycare'],
-      description: 'Centro especializado en adiestramiento canino y servicios de hospedaje. Instalaciones modernas y seguras.',
+      services: ['dog_trainer', 'daycare'],
+      description: 'Centro especializado en adiestramiento canino y servicios de guardería. Instalaciones modernas y seguras.',
       address: 'Polígono Industrial Asua, Bilbao',
       city: 'Bilbao',
       province: 'vizcaya',
@@ -153,7 +153,7 @@ const ProfessionalsDirectory = () => {
     }
   ];
 
-  // Servicios ordenados alfabéticamente (sin los eliminados)
+  // Servicios ordenados alfabéticamente (sin hospedaje)
   const serviceOptions = [
     { value: '', label: 'Todos los servicios' },
     { value: 'dog_trainer', label: 'Adiestramiento canino' },
@@ -172,8 +172,7 @@ const ProfessionalsDirectory = () => {
     { value: 'pet_sitter', label: 'Pet sitter (cuidador/a a domicilio)' },
     { value: 'behavioral_modification_therapist', label: 'Terapeuta de modificación conductual' },
     { value: 'emergency', label: 'Urgencias' },
-    { value: 'veterinary', label: 'Veterinaria' },
-    { value: 'boarding', label: 'Hospedaje' }
+    { value: 'veterinary', label: 'Veterinaria' }
   ];
 
   const provinceOptions = [

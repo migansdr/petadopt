@@ -54,7 +54,7 @@ const ProfessionalRegister = () => {
     { value: 'business', label: 'Negocio/Servicio', icon: 'Store' }
   ];
 
-  // Servicios ordenados alfabéticamente (sin los eliminados)
+  // Servicios ordenados alfabéticamente (sin hospedaje)
   const serviceOptions = [
     { value: 'dog_trainer', label: 'Adiestramiento canino', icon: 'Award' },
     { value: 'agility_trainer', label: 'Adiestramiento de agility y deportes caninos', icon: 'Award' },
@@ -66,7 +66,6 @@ const ProfessionalRegister = () => {
     { value: 'pet_photographer', label: 'Fotógrafo/a de perros', icon: 'Camera' },
     { value: 'grooming', label: 'Grooming/Peluquería', icon: 'Scissors' },
     { value: 'daycare', label: 'Guardería', icon: 'Users' },
-    { value: 'boarding', label: 'Hospedaje', icon: 'Home' },
     { value: 'obedience_instructor', label: 'Instructor/a de obediencia', icon: 'Award' },
     { value: 'nutritionist', label: 'Nutricionista', icon: 'Apple' },
     { value: 'dog_walker', label: 'Paseador/a de perros', icon: 'MapPin' },
