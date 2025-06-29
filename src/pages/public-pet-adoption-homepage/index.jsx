@@ -6,8 +6,6 @@ import AdvancedFilterBar from './components/AdvancedFilterBar';
 import PetGrid from './components/PetGrid';
 import Pagination from './components/Pagination';
 import FloatingFavoritesButton from 'components/ui/FloatingFavoritesButton';
-import UnifiedSearchBar from 'components/ui/UnifiedSearchBar';
-import CrossSellingSidebar from 'components/ui/CrossSellingSidebar';
 import NavigationBreadcrumbs from 'components/ui/NavigationBreadcrumbs';
 import QuickActionsFAB from 'components/ui/QuickActionsFAB';
 import { mockPets } from 'utils/mockData';
@@ -28,6 +26,7 @@ const PublicPetAdoptionHomepage = () => {
     tags: []
   });
   const [currentPage, setCurrentPage] = useState(1);
+  const [professionalSearch, setProfessionalSearch] = useState('');
   const petsPerPage = 27;
 
   // Memoized filtered pets for better performance
@@ -163,6 +162,14 @@ const PublicPetAdoptionHomepage = () => {
     navigate('/professional-login');
   };
 
+  const handleProfessionalSearch = () => {
+    if (professionalSearch.trim()) {
+      navigate(`/professionals?search=${encodeURIComponent(professionalSearch)}`);
+    } else {
+      navigate('/professionals');
+    }
+  };
+
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
@@ -179,24 +186,8 @@ const PublicPetAdoptionHomepage = () => {
               </span>
             </div>
 
-            {/* Navigation */}
+            {/* Navigation - Nuevo orden */}
             <div className="flex items-center space-x-4">
-              <button
-                onClick={() => navigate('/professionals')}
-                className="nav-link flex items-center space-x-2 px-4 py-2 rounded-lg hover:bg-primary-50 transition-all duration-200"
-              >
-                <Icon name="Search" size={18} />
-                <span className="hidden sm:inline">Profesionales</span>
-              </button>
-              
-              <button
-                onClick={() => navigate('/adopter-panel')}
-                className="nav-link flex items-center space-x-2 px-4 py-2 rounded-lg hover:bg-primary-50 transition-all duration-200"
-              >
-                <Icon name="User" size={18} />
-                <span className="hidden sm:inline">Mi Panel</span>
-              </button>
-
               <button
                 onClick={handleProfessionalLogin}
                 className="nav-link flex items-center space-x-2 px-4 py-2 rounded-lg hover:bg-secondary-50 transition-all duration-200"
@@ -212,6 +203,22 @@ const PublicPetAdoptionHomepage = () => {
                 <Icon name="Building2" size={18} />
                 <span className="hidden sm:inline">Acceso Protectoras</span>
               </button>
+
+              <button
+                onClick={() => navigate('/professionals')}
+                className="nav-link flex items-center space-x-2 px-4 py-2 rounded-lg hover:bg-primary-50 transition-all duration-200"
+              >
+                <Icon name="Search" size={18} />
+                <span className="hidden sm:inline">Profesionales</span>
+              </button>
+              
+              <button
+                onClick={() => navigate('/adopter-panel')}
+                className="nav-link flex items-center space-x-2 px-4 py-2 rounded-lg hover:bg-primary-50 transition-all duration-200"
+              >
+                <Icon name="User" size={18} />
+                <span className="hidden sm:inline">Mi Panel</span>
+              </button>
             </div>
           </div>
         </div>
@@ -220,7 +227,7 @@ const PublicPetAdoptionHomepage = () => {
       {/* Navigation Breadcrumbs */}
       <NavigationBreadcrumbs />
 
-      {/* Hero Section with Unified Search */}
+      {/* Hero Section Simplificado */}
       <section className="relative bg-gradient-to-br from-primary-50 to-secondary-50 py-16 lg:py-24 overflow-hidden">
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
@@ -233,34 +240,42 @@ const PublicPetAdoptionHomepage = () => {
               Encuentra tu compañero perfecto entre miles de mascotas que buscan un hogar amoroso en toda España.
             </p>
 
-            {/* Unified Search Bar */}
-            <UnifiedSearchBar onSearch={handleSearch} initialValue={filters.search} currentPage="pets" />
-          </div>
+            {/* Buscador de Mascotas */}
+            <div className="max-w-2xl mx-auto mb-8">
+              <div className="relative">
+                <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                  <Icon name="Search" size={20} className="text-text-muted" />
+                </div>
+                <input
+                  type="text"
+                  value={filters.search}
+                  onChange={(e) => handleSearch(e.target.value)}
+                  placeholder="Buscar mascotas por nombre, raza..."
+                  className="w-full pl-12 pr-4 py-4 text-lg border-2 border-border rounded-xl bg-background focus:outline-none focus:ring-2 focus:ring-primary-300 focus:border-primary transition-all duration-200 shadow-sm hover:shadow-md"
+                />
+              </div>
+            </div>
 
-          {/* Stats */}
-          <div className="grid grid-cols-3 gap-6 mt-12 pt-8 border-t border-border-light max-w-2xl mx-auto">
-            <div className="text-center">
-              <div className="text-2xl sm:text-3xl font-heading font-bold text-primary mb-1">
-                500+
-              </div>
-              <div className="text-sm text-text-secondary">
-                Mascotas Adoptadas
-              </div>
-            </div>
-            <div className="text-center">
-              <div className="text-2xl sm:text-3xl font-heading font-bold text-secondary mb-1">
-                50+
-              </div>
-              <div className="text-sm text-text-secondary">
-                Protectoras Activas
-              </div>
-            </div>
-            <div className="text-center">
-              <div className="text-2xl sm:text-3xl font-heading font-bold text-accent mb-1">
-                17
-              </div>
-              <div className="text-sm text-text-secondary">
-                Provincias
+            {/* Buscador de Profesionales */}
+            <div className="max-w-2xl mx-auto">
+              <div className="relative">
+                <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                  <Icon name="Stethoscope" size={20} className="text-text-muted" />
+                </div>
+                <input
+                  type="text"
+                  value={professionalSearch}
+                  onChange={(e) => setProfessionalSearch(e.target.value)}
+                  onKeyPress={(e) => e.key === 'Enter' && handleProfessionalSearch()}
+                  placeholder="Buscar veterinarios, peluquerías..."
+                  className="w-full pl-12 pr-16 py-4 text-lg border-2 border-border rounded-xl bg-background focus:outline-none focus:ring-2 focus:ring-secondary-300 focus:border-secondary transition-all duration-200 shadow-sm hover:shadow-md"
+                />
+                <button
+                  onClick={handleProfessionalSearch}
+                  className="absolute inset-y-0 right-0 pr-4 flex items-center text-secondary hover:text-secondary-600 transition-colors duration-200"
+                >
+                  <Icon name="ArrowRight" size={20} />
+                </button>
               </div>
             </div>
           </div>
@@ -316,9 +331,6 @@ const PublicPetAdoptionHomepage = () => {
           </div>
         )}
       </main>
-
-      {/* Cross-Selling Sidebar */}
-      <CrossSellingSidebar />
 
       {/* Floating Favorites Button */}
       <FloatingFavoritesButton />

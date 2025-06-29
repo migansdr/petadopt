@@ -5,17 +5,10 @@ import Icon from '../AppIcon';
 const UnifiedSearchBar = ({ onSearch, initialValue = '', currentPage = 'pets' }) => {
   const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState(initialValue);
-  const [activeTab, setActiveTab] = useState(currentPage);
   const [showSuggestions, setShowSuggestions] = useState(false);
   const [suggestions, setSuggestions] = useState([]);
   const searchRef = useRef(null);
   const containerRef = useRef(null);
-
-  const searchTabs = [
-    { id: 'pets', label: 'Mascotas', icon: 'Heart', placeholder: 'Buscar mascotas por nombre, raza...' },
-    { id: 'professionals', label: 'Profesionales', icon: 'Stethoscope', placeholder: 'Buscar veterinarios, peluquerías...' },
-    { id: 'all', label: 'Todo', icon: 'Search', placeholder: 'Buscar en toda la plataforma...' }
-  ];
 
   // Mock unified suggestions
   const mockData = {
@@ -37,7 +30,7 @@ const UnifiedSearchBar = ({ onSearch, initialValue = '', currentPage = 'pets' })
     } else {
       setSuggestions([]);
     }
-  }, [searchTerm, activeTab]);
+  }, [searchTerm, currentPage]);
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -54,7 +47,7 @@ const UnifiedSearchBar = ({ onSearch, initialValue = '', currentPage = 'pets' })
     const lowerTerm = term.toLowerCase();
     const suggestions = [];
 
-    if (activeTab === 'pets' || activeTab === 'all') {
+    if (currentPage === 'pets') {
       // Pet suggestions
       const petMatches = mockData.pets.filter(pet =>
         pet.name.toLowerCase().includes(lowerTerm) ||
@@ -73,53 +66,13 @@ const UnifiedSearchBar = ({ onSearch, initialValue = '', currentPage = 'pets' })
           action: () => navigate(`/pet/${pet.id}`)
         });
       });
-    }
 
-    if (activeTab === 'professionals' || activeTab === 'all') {
-      // Professional suggestions
-      const professionalMatches = mockData.professionals.filter(prof =>
-        prof.name.toLowerCase().includes(lowerTerm) ||
-        prof.location.toLowerCase().includes(lowerTerm) ||
-        prof.services.some(service => service.toLowerCase().includes(lowerTerm))
+      // Location suggestions for pets
+      const locationMatches = mockData.locations.filter(location =>
+        location.toLowerCase().includes(lowerTerm)
       );
 
-      professionalMatches.forEach(prof => {
-        suggestions.push({
-          id: `prof-${prof.id}`,
-          type: 'professional',
-          title: prof.name,
-          subtitle: `${prof.services.join(', ')} en ${prof.location}`,
-          icon: 'Stethoscope',
-          category: 'Profesionales',
-          action: () => navigate(`/professional/${prof.id}`)
-        });
-      });
-
-      // Service suggestions
-      const serviceMatches = mockData.services.filter(service =>
-        service.toLowerCase().includes(lowerTerm)
-      );
-
-      serviceMatches.forEach(service => {
-        suggestions.push({
-          id: `service-${service}`,
-          type: 'service',
-          title: `Buscar ${service}`,
-          subtitle: 'Filtrar profesionales por servicio',
-          icon: 'Filter',
-          category: 'Servicios',
-          action: () => navigate(`/professionals?service=${encodeURIComponent(service)}`)
-        });
-      });
-    }
-
-    // Location suggestions (for both)
-    const locationMatches = mockData.locations.filter(location =>
-      location.toLowerCase().includes(lowerTerm)
-    );
-
-    locationMatches.forEach(location => {
-      if (activeTab === 'pets' || activeTab === 'all') {
+      locationMatches.forEach(location => {
         suggestions.push({
           id: `pet-location-${location}`,
           type: 'location',
@@ -129,39 +82,27 @@ const UnifiedSearchBar = ({ onSearch, initialValue = '', currentPage = 'pets' })
           category: 'Ubicaciones',
           action: () => navigate(`/?province=${encodeURIComponent(location.toLowerCase())}`)
         });
-      }
+      });
+    }
 
-      if (activeTab === 'professionals' || activeTab === 'all') {
-        suggestions.push({
-          id: `prof-location-${location}`,
-          type: 'location',
-          title: `Profesionales en ${location}`,
-          subtitle: 'Ver servicios disponibles',
-          icon: 'MapPin',
-          category: 'Ubicaciones',
-          action: () => navigate(`/professionals?province=${encodeURIComponent(location.toLowerCase())}`)
-        });
-      }
-    });
-
-    setSuggestions(suggestions.slice(0, 8));
+    setSuggestions(suggestions.slice(0, 6));
   };
 
   const handleInputChange = (e) => {
     const value = e.target.value;
     setSearchTerm(value);
     setShowSuggestions(value.length >= 2);
+    if (onSearch) {
+      onSearch(value);
+    }
   };
 
   const handleSearch = () => {
     if (searchTerm.trim()) {
-      if (activeTab === 'pets') {
+      if (currentPage === 'pets') {
         navigate(`/?search=${encodeURIComponent(searchTerm)}`);
-      } else if (activeTab === 'professionals') {
-        navigate(`/professionals?search=${encodeURIComponent(searchTerm)}`);
       } else {
-        // Search all - could show a unified results page
-        navigate(`/?search=${encodeURIComponent(searchTerm)}`);
+        navigate(`/professionals?search=${encodeURIComponent(searchTerm)}`);
       }
       setShowSuggestions(false);
     }
@@ -175,15 +116,10 @@ const UnifiedSearchBar = ({ onSearch, initialValue = '', currentPage = 'pets' })
     }
   };
 
-  const handleTabChange = (tabId) => {
-    setActiveTab(tabId);
-    setSearchTerm('');
-    setShowSuggestions(false);
-  };
-
   const getCurrentPlaceholder = () => {
-    const tab = searchTabs.find(t => t.id === activeTab);
-    return tab ? tab.placeholder : 'Buscar...';
+    return currentPage === 'pets' 
+      ? 'Buscar mascotas por nombre, raza...' 
+      : 'Buscar profesionales...';
   };
 
   const getCategoryColor = (category) => {
@@ -202,25 +138,7 @@ const UnifiedSearchBar = ({ onSearch, initialValue = '', currentPage = 'pets' })
   };
 
   return (
-    <div ref={containerRef} className="relative w-full max-w-4xl mx-auto">
-      {/* Search Tabs */}
-      <div className="flex bg-surface rounded-t-xl border border-b-0 border-border-light overflow-hidden mb-0">
-        {searchTabs.map((tab) => (
-          <button
-            key={tab.id}
-            onClick={() => handleTabChange(tab.id)}
-            className={`flex-1 flex items-center justify-center space-x-2 py-3 px-4 font-medium transition-all duration-200 ${
-              activeTab === tab.id
-                ? 'bg-primary text-white'
-                : 'text-text-secondary hover:text-primary hover:bg-primary-50'
-            }`}
-          >
-            <Icon name={tab.icon} size={18} />
-            <span className="hidden sm:inline">{tab.label}</span>
-          </button>
-        ))}
-      </div>
-
+    <div ref={containerRef} className="relative w-full max-w-2xl mx-auto">
       {/* Search Input */}
       <div className="relative">
         <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
@@ -235,7 +153,7 @@ const UnifiedSearchBar = ({ onSearch, initialValue = '', currentPage = 'pets' })
           onKeyPress={handleKeyPress}
           onFocus={() => searchTerm.length >= 2 && setShowSuggestions(true)}
           placeholder={getCurrentPlaceholder()}
-          className="w-full pl-12 pr-12 py-4 text-lg border-2 border-t-0 border-border rounded-b-xl bg-background focus:outline-none focus:ring-2 focus:ring-primary-300 focus:border-primary transition-all duration-200 shadow-sm hover:shadow-md"
+          className="w-full pl-12 pr-12 py-4 text-lg border-2 border-border rounded-xl bg-background focus:outline-none focus:ring-2 focus:ring-primary-300 focus:border-primary transition-all duration-200 shadow-sm hover:shadow-md"
         />
         
         {searchTerm && (
@@ -243,6 +161,7 @@ const UnifiedSearchBar = ({ onSearch, initialValue = '', currentPage = 'pets' })
             onClick={() => {
               setSearchTerm('');
               setShowSuggestions(false);
+              if (onSearch) onSearch('');
             }}
             className="absolute inset-y-0 right-0 pr-4 flex items-center text-text-muted hover:text-text-primary transition-colors duration-200"
           >
