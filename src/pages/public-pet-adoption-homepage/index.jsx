@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Icon from 'components/AppIcon';
 
-import HeroSection from './components/HeroSection';
 import AdvancedFilterBar from './components/AdvancedFilterBar';
 import PetGrid from './components/PetGrid';
 import Pagination from './components/Pagination';
@@ -11,6 +10,7 @@ import UnifiedSearchBar from 'components/ui/UnifiedSearchBar';
 import CrossSellingSidebar from 'components/ui/CrossSellingSidebar';
 import NavigationBreadcrumbs from 'components/ui/NavigationBreadcrumbs';
 import QuickActionsFAB from 'components/ui/QuickActionsFAB';
+import { mockPets } from 'utils/mockData';
 
 const PublicPetAdoptionHomepage = () => {
   const navigate = useNavigate();
@@ -27,143 +27,11 @@ const PublicPetAdoptionHomepage = () => {
     sterilized: '',
     tags: []
   });
-  const [activeQuickFilters, setActiveQuickFilters] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [filteredPets, setFilteredPets] = useState([]);
   const petsPerPage = 27;
 
-  // Enhanced mock data for pets with more fields
-  const mockPets = [
-    {
-      id: 1,
-      name: "Luna",
-      age: "2 años",
-      species: "Dog",
-      breed: "Mestizo",
-      size: "Medium",
-      gender: "female",
-      location: "Madrid",
-      province: "madrid",
-      image: "https://images.unsplash.com/photo-1552053831-71594a27632d?w=400&h=300&fit=crop",
-      tags: ["vaccinated", "sterilized", "sociable", "good_with_kids"],
-      description: "Luna es una perra muy cariñosa que busca una familia amorosa.",
-      healthStatus: "healthy",
-      sterilized: true,
-      shelterPhone: "+34 600 123 456",
-      shelterEmail: "refugio.madrid@example.com"
-    },
-    {
-      id: 2,
-      name: "Milo",
-      age: "6 meses",
-      species: "Cat",
-      breed: "Siamés",
-      size: "Small",
-      gender: "male",
-      location: "Barcelona",
-      province: "barcelona",
-      image: "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=400&h=300&fit=crop",
-      tags: ["vaccinated", "sociable", "urgent"],
-      description: "Milo es un gatito juguetón que adora las caricias.",
-      healthStatus: "healthy",
-      sterilized: false,
-      shelterPhone: "+34 600 234 567",
-      shelterEmail: "refugio.barcelona@example.com"
-    },
-    {
-      id: 3,
-      name: "Rocky",
-      age: "5 años",
-      species: "Dog",
-      breed: "Pastor Alemán",
-      size: "Large",
-      gender: "male",
-      location: "Valencia",
-      province: "valencia",
-      image: "https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=400&h=300&fit=crop",
-      tags: ["vaccinated", "sterilized", "house_trained"],
-      description: "Rocky es un perro tranquilo perfecto para familias.",
-      healthStatus: "healthy",
-      sterilized: true,
-      shelterPhone: "+34 600 345 678",
-      shelterEmail: "refugio.valencia@example.com"
-    },
-    {
-      id: 4,
-      name: "Bella",
-      age: "1 año",
-      species: "Dog",
-      breed: "Golden Retriever",
-      size: "Small",
-      gender: "female",
-      location: "Sevilla",
-      province: "sevilla",
-      image: "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=400&h=300&fit=crop",
-      tags: ["vaccinated", "sterilized", "sociable", "good_with_pets", "good_with_kids"],
-      description: "Bella es una perrita pequeña llena de energía y amor.",
-      healthStatus: "healthy",
-      sterilized: true,
-      shelterPhone: "+34 600 456 789",
-      shelterEmail: "refugio.sevilla@example.com"
-    },
-    {
-      id: 5,
-      name: "Simba",
-      age: "3 años",
-      species: "Cat",
-      breed: "Persa",
-      size: "Medium",
-      gender: "male",
-      location: "Bilbao",
-      province: "vizcaya",
-      image: "https://images.unsplash.com/photo-1596854407944-bf87f6fdd49e?w=400&h=300&fit=crop",
-      tags: ["vaccinated", "sterilized", "special_needs"],
-      description: "Simba es un gato independiente que busca un hogar tranquilo.",
-      healthStatus: "special_needs",
-      sterilized: true,
-      shelterPhone: "+34 600 567 890",
-      shelterEmail: "refugio.bilbao@example.com"
-    },
-    {
-      id: 6,
-      name: "Max",
-      age: "4 años",
-      species: "Dog",
-      breed: "Labrador",
-      size: "Large",
-      gender: "male",
-      location: "Zaragoza",
-      province: "zaragoza",
-      image: "https://images.unsplash.com/photo-1551717743-49959800b1f6?w=400&h=300&fit=crop",
-      tags: ["vaccinated", "sociable", "urgent"],
-      description: "Max es un perro grande con un corazón aún más grande.",
-      healthStatus: "healthy",
-      sterilized: false,
-      shelterPhone: "+34 600 678 901",
-      shelterEmail: "refugio.zaragoza@example.com"
-    },
-    {
-      id: 7,
-      name: "Coco",
-      age: "8 meses",
-      species: "Cat",
-      breed: "Mestizo",
-      size: "Small",
-      gender: "female",
-      location: "Málaga",
-      province: "málaga",
-      image: "https://images.unsplash.com/photo-1573865526739-10659fec78a5?w=400&h=300&fit=crop",
-      tags: ["vaccinated", "sterilized", "sociable", "good_with_kids"],
-      description: "Coco es una gatita muy dulce que adora jugar.",
-      healthStatus: "healthy",
-      sterilized: true,
-      shelterPhone: "+34 600 789 012",
-      shelterEmail: "refugio.malaga@example.com"
-    }
-  ];
-
-  // Enhanced filter function
-  useEffect(() => {
+  // Memoized filtered pets for better performance
+  const filteredPets = useMemo(() => {
     let filtered = mockPets;
 
     // Search filter
@@ -176,7 +44,7 @@ const PublicPetAdoptionHomepage = () => {
       );
     }
 
-    // Apply all other filters...
+    // Apply all other filters
     if (filters.species) {
       filtered = filtered.filter(pet => pet.species === filters.species);
     }
@@ -231,8 +99,7 @@ const PublicPetAdoptionHomepage = () => {
       );
     }
 
-    setFilteredPets(filtered);
-    setCurrentPage(1);
+    return filtered;
   }, [filters]);
 
   // Simulate loading
@@ -243,6 +110,11 @@ const PublicPetAdoptionHomepage = () => {
     }, 1000);
     return () => clearTimeout(timer);
   }, [filters]);
+
+  // Reset page when filters change
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [filteredPets.length]);
 
   // Calculate pagination
   const totalPages = Math.ceil(filteredPets.length / petsPerPage);
@@ -263,47 +135,6 @@ const PublicPetAdoptionHomepage = () => {
     }));
   };
 
-  const handleQuickFilter = (filterConfig) => {
-    if (filterConfig.clear) {
-      setActiveQuickFilters([]);
-      setFilters({
-        search: '',
-        species: '',
-        age: '',
-        size: '',
-        province: '',
-        breed: '',
-        healthStatus: '',
-        gender: '',
-        sterilized: '',
-        tags: []
-      });
-      return;
-    }
-
-    // Apply the quick filter
-    Object.entries(filterConfig.filter).forEach(([key, value]) => {
-      if (key === 'tags') {
-        setFilters(prev => ({
-          ...prev,
-          tags: [...prev.tags, ...value]
-        }));
-      } else {
-        setFilters(prev => ({
-          ...prev,
-          [key]: value
-        }));
-      }
-    });
-
-    // Track active quick filters
-    setActiveQuickFilters(prev => 
-      prev.includes(filterConfig.id) 
-        ? prev.filter(id => id !== filterConfig.id)
-        : [...prev, filterConfig.id]
-    );
-  };
-
   const handleResetFilters = () => {
     setFilters({
       search: '',
@@ -317,7 +148,6 @@ const PublicPetAdoptionHomepage = () => {
       sterilized: '',
       tags: []
     });
-    setActiveQuickFilters([]);
   };
 
   const handlePageChange = (page) => {
