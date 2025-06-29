@@ -54,19 +54,34 @@ const ProfessionalRegister = () => {
     { value: 'business', label: 'Negocio/Servicio', icon: 'Store' }
   ];
 
+  // Servicios ordenados alfabéticamente
   const serviceOptions = [
-    { value: 'veterinary', label: 'Veterinaria', icon: 'Stethoscope' },
-    { value: 'grooming', label: 'Peluquería', icon: 'Scissors' },
-    { value: 'training', label: 'Adiestramiento', icon: 'Award' },
-    { value: 'pet_store', label: 'Tienda de mascotas', icon: 'Store' },
-    { value: 'boarding', label: 'Hospedaje', icon: 'Home' },
-    { value: 'daycare', label: 'Guardería', icon: 'Users' },
-    { value: 'emergency', label: 'Urgencias', icon: 'AlertCircle' },
+    { value: 'accessories', label: 'Accesorios', icon: 'ShoppingBag' },
+    { value: 'dog_trainer', label: 'Adiestramiento canino', icon: 'Award' },
+    { value: 'agility_trainer', label: 'Adiestramiento de agility y deportes caninos', icon: 'Award' },
+    { value: 'service_dog_trainer', label: 'Adiestramiento de perros de servicio o asistencia', icon: 'Award' },
+    { value: 'boarding', label: 'Alojamiento canino (groomer)', icon: 'Home' },
+    { value: 'behavioral_therapist', label: 'Asesor/a de comportamiento', icon: 'Brain' },
     { value: 'surgery', label: 'Cirugía', icon: 'Activity' },
+    { value: 'consultation', label: 'Consultas', icon: 'MessageCircle' },
+    { value: 'pet_sitter', label: 'Cuidador/a de perros a domicilio (pet sitter)', icon: 'Home' },
     { value: 'dentistry', label: 'Odontología', icon: 'Smile' },
-    { value: 'home_visits', label: 'Visitas a domicilio', icon: 'Truck' },
+    { value: 'canine_educator', label: 'Educador/a canino', icon: 'BookOpen' },
     { value: 'food_delivery', label: 'Entrega a domicilio', icon: 'Package' },
-    { value: 'consultation', label: 'Consultas', icon: 'MessageCircle' }
+    { value: 'canine_aesthetician', label: 'Esteticista canino', icon: 'Scissors' },
+    { value: 'ethologist', label: 'Etólogo/a', icon: 'Brain' },
+    { value: 'physiotherapist', label: 'Fisioterapeuta', icon: 'Activity' },
+    { value: 'pet_photographer', label: 'Fotógrafo/a de perros', icon: 'Camera' },
+    { value: 'grooming', label: 'Grooming/Peluquería', icon: 'Scissors' },
+    { value: 'daycare', label: 'Guardería', icon: 'Users' },
+    { value: 'obedience_instructor', label: 'Instructor/a de obediencia', icon: 'Award' },
+    { value: 'nutritionist', label: 'Nutricionista', icon: 'Apple' },
+    { value: 'dog_walker', label: 'Paseador/a de perros', icon: 'MapPin' },
+    { value: 'behavioral_modification_therapist', label: 'Terapeuta de modificación conductual', icon: 'Brain' },
+    { value: 'pet_store', label: 'Tienda de mascotas', icon: 'Store' },
+    { value: 'emergency', label: 'Urgencias', icon: 'AlertCircle' },
+    { value: 'veterinary', label: 'Veterinaria', icon: 'Stethoscope' },
+    { value: 'home_visits', label: 'Visitas a domicilio', icon: 'Truck' }
   ];
 
   const timeSlots = [
@@ -374,21 +389,21 @@ const ProfessionalRegister = () => {
         <label className="block text-sm font-medium text-text-primary mb-2">
           Servicios que ofreces *
         </label>
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 max-h-96 overflow-y-auto border border-border rounded-lg p-4">
           {serviceOptions.map((service) => (
             <button
               key={service.value}
               type="button"
               onClick={() => handleServiceToggle(service.value)}
-              className={`p-3 rounded-lg border-2 transition-all duration-200 ${
+              className={`p-3 rounded-lg border-2 transition-all duration-200 text-left ${
                 formData.services.includes(service.value)
                   ? 'border-primary bg-primary-50 text-primary'
                   : 'border-border hover:border-primary-300 hover:bg-surface'
               }`}
             >
-              <div className="flex flex-col items-center space-y-2">
-                <Icon name={service.icon} size={20} />
-                <span className="text-sm font-medium text-center">{service.label}</span>
+              <div className="flex items-center space-y-2">
+                <Icon name={service.icon} size={16} className="mr-2" />
+                <span className="text-sm font-medium">{service.label}</span>
               </div>
             </button>
           ))}
@@ -396,6 +411,9 @@ const ProfessionalRegister = () => {
         {errors.services && (
           <p className="mt-1 text-sm text-error">{errors.services}</p>
         )}
+        <p className="text-sm text-text-secondary mt-2">
+          Servicios seleccionados: {formData.services.length}
+        </p>
       </div>
 
       {/* Address */}

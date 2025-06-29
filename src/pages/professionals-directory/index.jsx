@@ -185,17 +185,35 @@ const ProfessionalsDirectory = () => {
     }
   ];
 
+  // Servicios ordenados alfabéticamente
   const serviceOptions = [
     { value: '', label: 'Todos los servicios' },
-    { value: 'veterinary', label: 'Veterinaria' },
-    { value: 'grooming', label: 'Peluquería' },
-    { value: 'training', label: 'Adiestramiento' },
+    { value: 'accessories', label: 'Accesorios' },
+    { value: 'dog_trainer', label: 'Adiestramiento canino' },
+    { value: 'agility_trainer', label: 'Adiestramiento de agility y deportes caninos' },
+    { value: 'service_dog_trainer', label: 'Adiestramiento de perros de servicio o asistencia' },
+    { value: 'boarding', label: 'Alojamiento canino (groomer)' },
+    { value: 'behavioral_therapist', label: 'Asesor/a de comportamiento' },
+    { value: 'canine_aesthetician', label: 'Esteticista canino' },
+    { value: 'ethologist', label: 'Etólogo/a' },
+    { value: 'physiotherapist', label: 'Fisioterapeuta' },
+    { value: 'pet_photographer', label: 'Fotógrafo/a de perros' },
+    { value: 'grooming', label: 'Grooming/Peluquería' },
+    { value: 'obedience_instructor', label: 'Instructor/a de obediencia' },
+    { value: 'nutritionist', label: 'Nutricionista' },
+    { value: 'dog_walker', label: 'Paseador/a de perros' },
+    { value: 'pet_sitter', label: 'Pet sitter (cuidador/a a domicilio)' },
     { value: 'pet_store', label: 'Tienda de mascotas' },
-    { value: 'boarding', label: 'Hospedaje' },
-    { value: 'daycare', label: 'Guardería' },
+    { value: 'behavioral_modification_therapist', label: 'Terapeuta de modificación conductual' },
     { value: 'emergency', label: 'Urgencias' },
+    { value: 'veterinary', label: 'Veterinaria' },
     { value: 'home_visits', label: 'Visitas a domicilio' },
-    { value: 'food_delivery', label: 'Entrega a domicilio' }
+    { value: 'daycare', label: 'Guardería' },
+    { value: 'surgery', label: 'Cirugía' },
+    { value: 'dentistry', label: 'Odontología' },
+    { value: 'food_delivery', label: 'Entrega a domicilio' },
+    { value: 'consultation', label: 'Consultas' },
+    { value: 'canine_educator', label: 'Educador/a canino' }
   ];
 
   const provinceOptions = [

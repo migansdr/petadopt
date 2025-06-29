@@ -117,38 +117,64 @@ Contamos con instalaciones modernas y equipamiento de última generación para b
 
   const getServiceLabel = (service) => {
     const labels = {
-      veterinary: 'Veterinaria',
-      grooming: 'Peluquería',
-      training: 'Adiestramiento',
-      pet_store: 'Tienda de mascotas',
-      boarding: 'Hospedaje',
-      daycare: 'Guardería',
-      emergency: 'Urgencias',
+      accessories: 'Accesorios',
+      dog_trainer: 'Adiestramiento canino',
+      agility_trainer: 'Adiestramiento de agility y deportes caninos',
+      service_dog_trainer: 'Adiestramiento de perros de servicio o asistencia',
+      boarding: 'Alojamiento canino (groomer)',
+      behavioral_therapist: 'Asesor/a de comportamiento',
       surgery: 'Cirugía',
-      dentistry: 'Odontología',
-      home_visits: 'Visitas a domicilio',
-      food_delivery: 'Entrega a domicilio',
       consultation: 'Consultas',
-      accessories: 'Accesorios'
+      pet_sitter: 'Cuidador/a de perros a domicilio (pet sitter)',
+      dentistry: 'Odontología',
+      canine_educator: 'Educador/a canino',
+      food_delivery: 'Entrega a domicilio',
+      canine_aesthetician: 'Esteticista canino',
+      ethologist: 'Etólogo/a',
+      physiotherapist: 'Fisioterapeuta',
+      pet_photographer: 'Fotógrafo/a de perros',
+      grooming: 'Grooming/Peluquería',
+      daycare: 'Guardería',
+      obedience_instructor: 'Instructor/a de obediencia',
+      nutritionist: 'Nutricionista',
+      dog_walker: 'Paseador/a de perros',
+      behavioral_modification_therapist: 'Terapeuta de modificación conductual',
+      pet_store: 'Tienda de mascotas',
+      emergency: 'Urgencias',
+      veterinary: 'Veterinaria',
+      home_visits: 'Visitas a domicilio'
     };
     return labels[service] || service;
   };
 
   const getServiceIcon = (service) => {
     const icons = {
-      veterinary: 'Stethoscope',
-      grooming: 'Scissors',
-      training: 'Award',
-      pet_store: 'Store',
+      accessories: 'ShoppingBag',
+      dog_trainer: 'Award',
+      agility_trainer: 'Award',
+      service_dog_trainer: 'Award',
       boarding: 'Home',
-      daycare: 'Users',
-      emergency: 'AlertCircle',
+      behavioral_therapist: 'Brain',
       surgery: 'Activity',
-      dentistry: 'Smile',
-      home_visits: 'Truck',
-      food_delivery: 'Package',
       consultation: 'MessageCircle',
-      accessories: 'ShoppingBag'
+      pet_sitter: 'Home',
+      dentistry: 'Smile',
+      canine_educator: 'BookOpen',
+      food_delivery: 'Package',
+      canine_aesthetician: 'Scissors',
+      ethologist: 'Brain',
+      physiotherapist: 'Activity',
+      pet_photographer: 'Camera',
+      grooming: 'Scissors',
+      daycare: 'Users',
+      obedience_instructor: 'Award',
+      nutritionist: 'Apple',
+      dog_walker: 'MapPin',
+      behavioral_modification_therapist: 'Brain',
+      pet_store: 'Store',
+      emergency: 'AlertCircle',
+      veterinary: 'Stethoscope',
+      home_visits: 'Truck'
     };
     return icons[service] || 'Circle';
   };
