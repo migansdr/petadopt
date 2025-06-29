@@ -186,16 +186,8 @@ const PublicPetAdoptionHomepage = () => {
               </span>
             </div>
 
-            {/* Navigation - Nuevo orden */}
+            {/* Navigation - Orden corregido: Acceso Protectoras, Acceso Profesionales, Directorio Profesional, Mi Panel */}
             <div className="flex items-center space-x-4">
-              <button
-                onClick={handleProfessionalLogin}
-                className="nav-link flex items-center space-x-2 px-4 py-2 rounded-lg hover:bg-secondary-50 transition-all duration-200"
-              >
-                <Icon name="UserCheck" size={18} />
-                <span className="hidden sm:inline">Acceso Profesionales</span>
-              </button>
-              
               <button
                 onClick={handleLogin}
                 className="nav-link flex items-center space-x-2 px-4 py-2 rounded-lg hover:bg-primary-50 transition-all duration-200"
@@ -205,11 +197,19 @@ const PublicPetAdoptionHomepage = () => {
               </button>
 
               <button
+                onClick={handleProfessionalLogin}
+                className="nav-link flex items-center space-x-2 px-4 py-2 rounded-lg hover:bg-secondary-50 transition-all duration-200"
+              >
+                <Icon name="UserCheck" size={18} />
+                <span className="hidden sm:inline">Acceso Profesionales</span>
+              </button>
+
+              <button
                 onClick={() => navigate('/professionals')}
                 className="nav-link flex items-center space-x-2 px-4 py-2 rounded-lg hover:bg-primary-50 transition-all duration-200"
               >
                 <Icon name="Search" size={18} />
-                <span className="hidden sm:inline">Profesionales</span>
+                <span className="hidden sm:inline">Directorio Profesional</span>
               </button>
               
               <button
