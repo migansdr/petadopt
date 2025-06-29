@@ -26,7 +26,6 @@ const PublicPetAdoptionHomepage = () => {
     tags: []
   });
   const [currentPage, setCurrentPage] = useState(1);
-  const [professionalSearch, setProfessionalSearch] = useState('');
   const petsPerPage = 27;
 
   // Memoized filtered pets for better performance
@@ -127,13 +126,6 @@ const PublicPetAdoptionHomepage = () => {
     }));
   };
 
-  const handleSearch = (searchTerm) => {
-    setFilters(prev => ({
-      ...prev,
-      search: searchTerm
-    }));
-  };
-
   const handleResetFilters = () => {
     setFilters({
       search: '',
@@ -160,14 +152,6 @@ const PublicPetAdoptionHomepage = () => {
 
   const handleProfessionalLogin = () => {
     navigate('/professional-login');
-  };
-
-  const handleProfessionalSearch = () => {
-    if (professionalSearch.trim()) {
-      navigate(`/professionals?search=${encodeURIComponent(professionalSearch)}`);
-    } else {
-      navigate('/professionals');
-    }
   };
 
   return (
@@ -227,10 +211,10 @@ const PublicPetAdoptionHomepage = () => {
       {/* Navigation Breadcrumbs */}
       <NavigationBreadcrumbs />
 
-      {/* Hero Section Simplificado */}
+      {/* Hero Section Simplificado - Sin buscadores */}
       <section className="relative bg-gradient-to-br from-primary-50 to-secondary-50 py-16 lg:py-24 overflow-hidden">
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
+          <div className="text-center">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold text-text-primary mb-6 leading-tight">
               Adopta una mascota{' '}
               <span className="text-primary">cerca de ti</span>
@@ -239,45 +223,6 @@ const PublicPetAdoptionHomepage = () => {
             <p className="text-lg sm:text-xl text-text-secondary mb-8 max-w-2xl mx-auto">
               Encuentra tu compañero perfecto entre miles de mascotas que buscan un hogar amoroso en toda España.
             </p>
-
-            {/* Buscador de Mascotas */}
-            <div className="max-w-2xl mx-auto mb-8">
-              <div className="relative">
-                <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                  <Icon name="Search" size={20} className="text-text-muted" />
-                </div>
-                <input
-                  type="text"
-                  value={filters.search}
-                  onChange={(e) => handleSearch(e.target.value)}
-                  placeholder="Buscar mascotas por nombre, raza..."
-                  className="w-full pl-12 pr-4 py-4 text-lg border-2 border-border rounded-xl bg-background focus:outline-none focus:ring-2 focus:ring-primary-300 focus:border-primary transition-all duration-200 shadow-sm hover:shadow-md"
-                />
-              </div>
-            </div>
-
-            {/* Buscador de Profesionales */}
-            <div className="max-w-2xl mx-auto">
-              <div className="relative">
-                <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                  <Icon name="Stethoscope" size={20} className="text-text-muted" />
-                </div>
-                <input
-                  type="text"
-                  value={professionalSearch}
-                  onChange={(e) => setProfessionalSearch(e.target.value)}
-                  onKeyPress={(e) => e.key === 'Enter' && handleProfessionalSearch()}
-                  placeholder="Buscar veterinarios, peluquerías..."
-                  className="w-full pl-12 pr-16 py-4 text-lg border-2 border-border rounded-xl bg-background focus:outline-none focus:ring-2 focus:ring-secondary-300 focus:border-secondary transition-all duration-200 shadow-sm hover:shadow-md"
-                />
-                <button
-                  onClick={handleProfessionalSearch}
-                  className="absolute inset-y-0 right-0 pr-4 flex items-center text-secondary hover:text-secondary-600 transition-colors duration-200"
-                >
-                  <Icon name="ArrowRight" size={20} />
-                </button>
-              </div>
-            </div>
           </div>
         </div>
       </section>
