@@ -374,15 +374,15 @@ const PublicPetAdoptionHomepage = () => {
                   Páginas legales
                 </h5>
                 <div className="flex flex-wrap gap-4">
-                  <button className="text-text-secondary hover:text-primary transition-colors duration-200 text-sm">
+                  <a href="/politica-cookies" className="text-text-secondary hover:text-primary transition-colors duration-200 text-sm">
                     Política de cookies
-                  </button>
-                  <button className="text-text-secondary hover:text-primary transition-colors duration-200 text-sm">
+                  </a>
+                  <a href="/politica-privacidad" className="text-text-secondary hover:text-primary transition-colors duration-200 text-sm">
                     Política de privacidad
-                  </button>
-                  <button className="text-text-secondary hover:text-primary transition-colors duration-200 text-sm">
+                  </a>
+                  <a href="/terminos-condiciones" className="text-text-secondary hover:text-primary transition-colors duration-200 text-sm">
                     Términos y Condiciones de uso
-                  </button>
+                  </a>
                 </div>
               </div>
               
