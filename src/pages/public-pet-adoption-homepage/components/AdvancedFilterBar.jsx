@@ -80,10 +80,38 @@ const AdvancedFilterBar = ({ filters, onFilterChange, resultsCount, onResetFilte
   const availableBreeds = filters.species ? breedOptions[filters.species] || [] : [];
 
   return (
-    <div id="filter-section" className="bg-surface border-b border-border-light shadow-sm sticky top-16 z-30">
+    <div id="filter-section" className="bg-surface border-b border-border-light shadow-sm sticky top-16 z-30 -mt-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Buscador Principal - Más grande y prominente */}
+        <div className="py-8">
+          <div className="max-w-3xl mx-auto">
+            <div className="relative">
+              <Icon 
+                name="Search" 
+                size={24} 
+                className="absolute left-4 top-1/2 transform -translate-y-1/2 text-text-muted" 
+              />
+              <input
+                type="text"
+                placeholder="Buscar mascotas por nombre, raza, descripción..."
+                value={filters.search || ''}
+                onChange={(e) => onFilterChange('search', e.target.value)}
+                className="w-full pl-14 pr-14 py-5 text-xl border-2 border-border rounded-2xl bg-background focus:outline-none focus:ring-2 focus:ring-primary-300 focus:border-primary transition-all duration-200 shadow-md hover:shadow-lg"
+              />
+              {filters.search && (
+                <button
+                  onClick={() => onFilterChange('search', '')}
+                  className="absolute right-4 top-1/2 transform -translate-y-1/2 text-text-muted hover:text-text-primary transition-colors duration-200"
+                >
+                  <Icon name="X" size={24} />
+                </button>
+              )}
+            </div>
+          </div>
+        </div>
+
         {/* Mobile Filter Toggle */}
-        <div className="lg:hidden py-4">
+        <div className="lg:hidden pb-4">
           <button
             onClick={() => setIsExpanded(!isExpanded)}
             className="w-full flex items-center justify-between p-4 bg-background rounded-lg border border-border hover:bg-surface-hover transition-all duration-200"
@@ -108,30 +136,9 @@ const AdvancedFilterBar = ({ filters, onFilterChange, resultsCount, onResetFilte
         </div>
 
         {/* Filter Controls */}
-        <div className={`${isExpanded ? 'block' : 'hidden'} lg:block py-6`}>
+        <div className={`${isExpanded ? 'block' : 'hidden'} lg:block pb-6`}>
           {/* Basic Filters */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-6 gap-4 mb-4">
-            {/* Search */}
-            <div className="xl:col-span-2">
-              <label className="block text-sm font-medium text-text-primary mb-2">
-                Buscar
-              </label>
-              <div className="relative">
-                <Icon 
-                  name="Search" 
-                  size={20} 
-                  className="absolute left-3 top-1/2 transform -translate-y-1/2 text-text-muted" 
-                />
-                <input
-                  type="text"
-                  placeholder="Nombre, raza, descripción..."
-                  value={filters.search || ''}
-                  onChange={(e) => onFilterChange('search', e.target.value)}
-                  className="input-field pl-10 text-sm"
-                />
-              </div>
-            </div>
-
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-4 mb-4">
             {/* Species */}
             <div>
               <label className="block text-sm font-medium text-text-primary mb-2">
@@ -206,6 +213,26 @@ const AdvancedFilterBar = ({ filters, onFilterChange, resultsCount, onResetFilte
                 ))}
               </select>
             </div>
+
+            {/* Actions */}
+            <div className="flex items-end">
+              <div className="w-full">
+                {hasActiveFilters && (
+                  <button
+                    onClick={onResetFilters}
+                    className="w-full btn-outline text-sm py-2 px-4 mb-2 flex items-center justify-center space-x-2"
+                  >
+                    <Icon name="X" size={16} />
+                    <span>Limpiar</span>
+                  </button>
+                )}
+                <div className="text-center">
+                  <span className="text-sm font-medium text-text-primary">
+                    {resultsCount} {resultsCount === 1 ? 'mascota' : 'mascotas'}
+                  </span>
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* Advanced Filters Toggle */}
@@ -217,21 +244,6 @@ const AdvancedFilterBar = ({ filters, onFilterChange, resultsCount, onResetFilte
               <Icon name={showAdvanced ? "ChevronUp" : "ChevronDown"} size={16} />
               <span className="text-sm font-medium">Filtros avanzados</span>
             </button>
-
-            <div className="flex items-center space-x-4">
-              {hasActiveFilters && (
-                <button
-                  onClick={onResetFilters}
-                  className="flex items-center space-x-2 text-text-secondary hover:text-error transition-colors duration-200"
-                >
-                  <Icon name="X" size={16} />
-                  <span className="text-sm">Limpiar filtros</span>
-                </button>
-              )}
-              <span className="text-sm font-medium text-text-primary">
-                {resultsCount} {resultsCount === 1 ? 'mascota' : 'mascotas'}
-              </span>
-            </div>
           </div>
 
           {/* Advanced Filters */}
@@ -294,21 +306,21 @@ const AdvancedFilterBar = ({ filters, onFilterChange, resultsCount, onResetFilte
                 </div>
               </div>
 
-              {/* Tags/Characteristics */}
+              {/* Tags/Characteristics - Ordenadas alfabéticamente */}
               <div>
                 <label className="block text-sm font-medium text-text-primary mb-3">
                   Características especiales
                 </label>
                 <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
                   {[
-                    { key: 'vaccinated', label: 'Vacunado', icon: 'Shield' },
-                    { key: 'sterilized', label: 'Esterilizado', icon: 'Heart' },
-                    { key: 'sociable', label: 'Sociable', icon: 'Users' },
-                    { key: 'urgent', label: 'Urgente', icon: 'AlertTriangle' },
                     { key: 'good_with_kids', label: 'Bueno con niños', icon: 'Baby' },
                     { key: 'good_with_pets', label: 'Bueno con mascotas', icon: 'PawPrint' },
                     { key: 'house_trained', label: 'Educado en casa', icon: 'Home' },
-                    { key: 'special_needs', label: 'Necesidades especiales', icon: 'Heart' }
+                    { key: 'sterilized', label: 'Esterilizado', icon: 'Heart' },
+                    { key: 'special_needs', label: 'Necesidades especiales', icon: 'Heart' },
+                    { key: 'sociable', label: 'Sociable', icon: 'Users' },
+                    { key: 'urgent', label: 'Urgente', icon: 'AlertTriangle' },
+                    { key: 'vaccinated', label: 'Vacunado', icon: 'Shield' }
                   ].map(tag => (
                     <button
                       key={tag.key}
@@ -326,23 +338,12 @@ const AdvancedFilterBar = ({ filters, onFilterChange, resultsCount, onResetFilte
                 </div>
               </div>
 
-              {/* Sterilization Status */}
+              {/* Sterilization Status - Orden corregido */}
               <div>
                 <label className="block text-sm font-medium text-text-primary mb-3">
                   Estado de esterilización
                 </label>
                 <div className="flex space-x-4">
-                  <label className="flex items-center space-x-2 cursor-pointer">
-                    <input
-                      type="radio"
-                      name="sterilized"
-                      value=""
-                      checked={filters.sterilized === '' || filters.sterilized === undefined}
-                      onChange={(e) => onFilterChange('sterilized', e.target.value)}
-                      className="w-4 h-4 text-primary border-border focus:ring-primary-300"
-                    />
-                    <span className="text-sm">Cualquiera</span>
-                  </label>
                   <label className="flex items-center space-x-2 cursor-pointer">
                     <input
                       type="radio"
@@ -364,6 +365,17 @@ const AdvancedFilterBar = ({ filters, onFilterChange, resultsCount, onResetFilte
                       className="w-4 h-4 text-primary border-border focus:ring-primary-300"
                     />
                     <span className="text-sm">No esterilizado</span>
+                  </label>
+                  <label className="flex items-center space-x-2 cursor-pointer">
+                    <input
+                      type="radio"
+                      name="sterilized"
+                      value=""
+                      checked={filters.sterilized === '' || filters.sterilized === undefined}
+                      onChange={(e) => onFilterChange('sterilized', e.target.value)}
+                      className="w-4 h-4 text-primary border-border focus:ring-primary-300"
+                    />
+                    <span className="text-sm">Cualquiera</span>
                   </label>
                 </div>
               </div>
