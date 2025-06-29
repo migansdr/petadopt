@@ -29,19 +29,6 @@ const HeroSection = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <button 
                 onClick={() => {
-                  const filterSection = document.getElementById('filter-section');
-                  if (filterSection) {
-                    filterSection.scrollIntoView({ behavior: 'smooth' });
-                  }
-                }}
-                className="btn-primary flex items-center justify-center space-x-2 text-lg px-8 py-4"
-              >
-                <Icon name="Search" size={20} />
-                <span>Buscar Mascotas</span>
-              </button>
-              
-              <button 
-                onClick={() => {
                   const statsSection = document.getElementById('stats-section');
                   if (statsSection) {
                     statsSection.scrollIntoView({ behavior: 'smooth' });
