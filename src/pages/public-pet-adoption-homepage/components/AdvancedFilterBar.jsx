@@ -80,38 +80,10 @@ const AdvancedFilterBar = ({ filters, onFilterChange, resultsCount, onResetFilte
   const availableBreeds = filters.species ? breedOptions[filters.species] || [] : [];
 
   return (
-    <div id="filter-section" className="bg-surface border-b border-border-light shadow-sm sticky top-16 z-30 -mt-8">
+    <div id="filter-section" className="bg-surface border-b border-border-light shadow-sm sticky top-16 z-30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Buscador Principal - Más grande y prominente */}
-        <div className="py-8">
-          <div className="max-w-3xl mx-auto">
-            <div className="relative">
-              <Icon 
-                name="Search" 
-                size={24} 
-                className="absolute left-4 top-1/2 transform -translate-y-1/2 text-text-muted" 
-              />
-              <input
-                type="text"
-                placeholder="Buscar mascotas por nombre, raza, descripción..."
-                value={filters.search || ''}
-                onChange={(e) => onFilterChange('search', e.target.value)}
-                className="w-full pl-14 pr-14 py-5 text-xl border-2 border-border rounded-2xl bg-background focus:outline-none focus:ring-2 focus:ring-primary-300 focus:border-primary transition-all duration-200 shadow-md hover:shadow-lg"
-              />
-              {filters.search && (
-                <button
-                  onClick={() => onFilterChange('search', '')}
-                  className="absolute right-4 top-1/2 transform -translate-y-1/2 text-text-muted hover:text-text-primary transition-colors duration-200"
-                >
-                  <Icon name="X" size={24} />
-                </button>
-              )}
-            </div>
-          </div>
-        </div>
-
         {/* Mobile Filter Toggle */}
-        <div className="lg:hidden pb-4">
+        <div className="lg:hidden py-4">
           <button
             onClick={() => setIsExpanded(!isExpanded)}
             className="w-full flex items-center justify-between p-4 bg-background rounded-lg border border-border hover:bg-surface-hover transition-all duration-200"
@@ -136,7 +108,7 @@ const AdvancedFilterBar = ({ filters, onFilterChange, resultsCount, onResetFilte
         </div>
 
         {/* Filter Controls */}
-        <div className={`${isExpanded ? 'block' : 'hidden'} lg:block pb-6`}>
+        <div className={`${isExpanded ? 'block' : 'hidden'} lg:block py-6`}>
           {/* Basic Filters */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-4 mb-4">
             {/* Species */}
@@ -250,6 +222,35 @@ const AdvancedFilterBar = ({ filters, onFilterChange, resultsCount, onResetFilte
           {showAdvanced && (
             <div className="bg-background rounded-lg p-4 border border-border-light space-y-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                {/* Search */}
+                <div>
+                  <label className="block text-sm font-medium text-text-primary mb-2">
+                    Buscar
+                  </label>
+                  <div className="relative">
+                    <Icon 
+                      name="Search" 
+                      size={16} 
+                      className="absolute left-3 top-1/2 transform -translate-y-1/2 text-text-muted" 
+                    />
+                    <input
+                      type="text"
+                      placeholder="Nombre, raza..."
+                      value={filters.search || ''}
+                      onChange={(e) => onFilterChange('search', e.target.value)}
+                      className="input-field pl-10 text-sm"
+                    />
+                    {filters.search && (
+                      <button
+                        onClick={() => onFilterChange('search', '')}
+                        className="absolute right-3 top-1/2 transform -translate-y-1/2 text-text-muted hover:text-text-primary transition-colors duration-200"
+                      >
+                        <Icon name="X" size={16} />
+                      </button>
+                    )}
+                  </div>
+                </div>
+
                 {/* Breed */}
                 {filters.species && availableBreeds.length > 0 && (
                   <div>
