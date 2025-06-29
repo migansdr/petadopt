@@ -7,7 +7,6 @@ import LoadingSpinner from 'components/ui/LoadingSpinner';
 import ConfirmDialog from 'components/ui/ConfirmDialog';
 import SmartRecommendations from 'components/ui/SmartRecommendations';
 import NavigationBreadcrumbs from 'components/ui/NavigationBreadcrumbs';
-import CrossSellingSidebar from 'components/ui/CrossSellingSidebar';
 import { generateWhatsAppUrl, generateEmailUrl, formatTimeAgo } from 'utils/helpers';
 
 const PetDetail = () => {
@@ -562,9 +561,6 @@ Gracias.`;
           </div>
         </div>
       </main>
-
-      {/* Cross-Selling Sidebar */}
-      <CrossSellingSidebar />
 
       {/* Report Dialog */}
       <ConfirmDialog
