@@ -211,7 +211,7 @@ const PublicPetAdoptionHomepage = () => {
       {/* Navigation Breadcrumbs */}
       <NavigationBreadcrumbs />
 
-      {/* Hero Section Simplificado - Sin buscadores */}
+      {/* Hero Section Simplificado - Sin buscadores ni botones */}
       <section className="relative bg-gradient-to-br from-primary-50 to-secondary-50 py-16 lg:py-24 overflow-hidden">
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
