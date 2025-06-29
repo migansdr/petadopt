@@ -365,11 +365,31 @@ const PublicPetAdoptionHomepage = () => {
               </div>
             </div>
           </div>
-          
-          <div className="border-t border-border-light mt-8 pt-8 text-center">
-            <p className="text-text-muted">
-              © {new Date().getFullYear()} AdoptaEspaña. Todos los derechos reservados.
-            </p>
+
+          {/* Páginas Legales */}
+          <div className="border-t border-border-light mt-8 pt-8">
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between space-y-4 md:space-y-0">
+              <div className="flex flex-col sm:flex-row sm:items-center space-y-2 sm:space-y-0 sm:space-x-6">
+                <h5 className="font-heading font-semibold text-text-primary">
+                  Páginas legales
+                </h5>
+                <div className="flex flex-wrap gap-4">
+                  <button className="text-text-secondary hover:text-primary transition-colors duration-200 text-sm">
+                    Política de cookies
+                  </button>
+                  <button className="text-text-secondary hover:text-primary transition-colors duration-200 text-sm">
+                    Política de privacidad
+                  </button>
+                  <button className="text-text-secondary hover:text-primary transition-colors duration-200 text-sm">
+                    Términos y Condiciones de uso
+                  </button>
+                </div>
+              </div>
+              
+              <p className="text-text-muted text-sm">
+                © {new Date().getFullYear()} AdoptaEspaña. Todos los derechos reservados.
+              </p>
+            </div>
           </div>
         </div>
       </footer>
