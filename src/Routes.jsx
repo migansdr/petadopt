@@ -16,6 +16,8 @@ import ProfessionalPanel from "pages/professional-panel";
 import ProfessionalLogin from "pages/professional-login";
 import ComparisonPage from "pages/comparison";
 import PoliticaCookies from "pages/politica-cookies";
+import PoliticaPrivacidad from "pages/politica-privacidad";
+import TerminosCondiciones from "pages/terminos-condiciones";
 import NotFound from "pages/NotFound";
 
 const Routes = () => {
@@ -45,6 +47,8 @@ const Routes = () => {
           
           {/* Legal Pages */}
           <Route path="/politica-cookies" element={<PoliticaCookies />} />
+          <Route path="/politica-privacidad" element={<PoliticaPrivacidad />} />
+          <Route path="/terminos-condiciones" element={<TerminosCondiciones />} />
           
           {/* Catch-all route for 404 */}
           <Route path="*" element={<NotFound />} />
