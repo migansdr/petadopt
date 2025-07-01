@@ -15,6 +15,7 @@ import ProfessionalRegister from "pages/professional-register";
 import ProfessionalPanel from "pages/professional-panel";
 import ProfessionalLogin from "pages/professional-login";
 import ComparisonPage from "pages/comparison";
+import PoliticaCookies from "pages/politica-cookies";
 import NotFound from "pages/NotFound";
 
 const Routes = () => {
@@ -41,6 +42,9 @@ const Routes = () => {
           
           {/* Comparison Route */}
           <Route path="/compare" element={<ComparisonPage />} />
+          
+          {/* Legal Pages */}
+          <Route path="/politica-cookies" element={<PoliticaCookies />} />
           
           {/* Catch-all route for 404 */}
           <Route path="*" element={<NotFound />} />
