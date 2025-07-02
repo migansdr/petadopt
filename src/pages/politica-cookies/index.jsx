@@ -34,6 +34,23 @@ const PoliticaCookies = () => {
           <div className="bg-surface rounded-xl p-8 shadow-sm border border-border-light">
             <div className="prose prose-lg max-w-none">
               
+              {/* Aviso Legal */}
+              <div className="mb-8 p-6 bg-warning-light rounded-lg border border-warning">
+                <div className="flex items-start space-x-3">
+                  <Icon name="AlertTriangle" size={24} className="text-warning flex-shrink-0 mt-1" />
+                  <div>
+                    <h3 className="font-heading font-semibold text-warning-700 mb-2">
+                      Aviso Legal Importante
+                    </h3>
+                    <p className="text-warning-700 text-sm">
+                      <strong>Esta política de cookies es un documento de demostración.</strong> 
+                      Antes de implementar en producción, es <strong>obligatorio consultar con un abogado especializado 
+                      en protección de datos</strong> para asegurar el cumplimiento del RGPD y la legislación española vigente.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
               {/* Sección 1 */}
               <div className="mb-8">
                 <h2 className="text-2xl font-heading font-bold text-text-primary mb-4 flex items-center">
@@ -221,7 +238,10 @@ const PoliticaCookies = () => {
                 </p>
                 <div className="bg-accent-50 rounded-lg p-4 border border-accent-200">
                   <p className="text-accent-700 font-medium">
-                    <strong>Última actualización:</strong> junio 2025
+                    <strong>Última actualización:</strong> 15 de enero de 2025
+                  </p>
+                  <p className="text-accent-600 text-sm mt-1">
+                    <strong>Próxima revisión programada:</strong> 15 de enero de 2026
                   </p>
                 </div>
               </div>

@@ -1,14 +1,68 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Icon from 'components/AppIcon';
 import AdaptiveHeader from 'components/ui/AdaptiveHeader';
 
 const PoliticaPrivacidad = () => {
   const navigate = useNavigate();
+  const [showRightsForm, setShowRightsForm] = useState(false);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    rightType: '',
+    description: '',
+    acceptTerms: false
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitSuccess, setSubmitSuccess] = useState(false);
 
   const handleBackToHome = () => {
     navigate('/');
   };
+
+  const handleInputChange = (e) => {
+    const { name, value, type, checked } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: type === 'checkbox' ? checked : value
+    }));
+  };
+
+  const handleSubmitRightsForm = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+      // Simular envío del formulario
+      await new Promise(resolve => setTimeout(resolve, 1500));
+      
+      // En producción, aquí se enviaría a la API
+      console.log('Solicitud de derechos enviada:', formData);
+      
+      setSubmitSuccess(true);
+      setFormData({
+        name: '',
+        email: '',
+        rightType: '',
+        description: '',
+        acceptTerms: false
+      });
+    } catch (error) {
+      console.error('Error al enviar solicitud:', error);
+      alert('Error al enviar la solicitud. Por favor, inténtalo de nuevo.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const rightsOptions = [
+    { value: 'access', label: 'Acceso a mis datos' },
+    { value: 'rectification', label: 'Rectificación de datos incorrectos' },
+    { value: 'deletion', label: 'Supresión de mis datos' },
+    { value: 'limitation', label: 'Limitación del tratamiento' },
+    { value: 'opposition', label: 'Oposición al tratamiento' },
+    { value: 'portability', label: 'Portabilidad de datos' }
+  ];
 
   return (
     <div className="min-h-screen bg-background">
@@ -34,6 +88,23 @@ const PoliticaPrivacidad = () => {
           <div className="bg-surface rounded-xl p-8 shadow-sm border border-border-light">
             <div className="prose prose-lg max-w-none">
               
+              {/* Aviso Legal */}
+              <div className="mb-8 p-6 bg-warning-light rounded-lg border border-warning">
+                <div className="flex items-start space-x-3">
+                  <Icon name="AlertTriangle" size={24} className="text-warning flex-shrink-0 mt-1" />
+                  <div>
+                    <h3 className="font-heading font-semibold text-warning-700 mb-2">
+                      Aviso Legal Importante
+                    </h3>
+                    <p className="text-warning-700 text-sm">
+                      <strong>Esta política de privacidad es un documento de demostración.</strong> 
+                      Antes de implementar en producción, es <strong>obligatorio consultar con un abogado especializado 
+                      en protección de datos</strong> para asegurar el cumplimiento del RGPD y la legislación española vigente.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
               {/* Sección 1 */}
               <div className="mb-8">
                 <h2 className="text-2xl font-heading font-bold text-text-primary mb-4 flex items-center">
@@ -310,16 +381,28 @@ const PoliticaPrivacidad = () => {
                     ¿Cómo ejercer tus derechos?
                   </h4>
                   <p className="text-accent-600 mb-3">
-                    Puedes ejercerlos escribiendo a:
+                    Puedes ejercerlos de las siguientes formas:
                   </p>
-                  <div className="bg-white rounded-lg p-4 border border-accent-200">
-                    <div className="flex items-center space-x-2 mb-2">
-                      <Icon name="Mail" size={16} className="text-accent" />
-                      <strong className="text-accent-700">info@adoptaespana.com</strong>
+                  <div className="space-y-3">
+                    <div className="bg-white rounded-lg p-4 border border-accent-200">
+                      <div className="flex items-center space-x-2 mb-2">
+                        <Icon name="Mail" size={16} className="text-accent" />
+                        <strong className="text-accent-700">Email:</strong>
+                        <span className="text-accent-700">info@adoptaespana.com</span>
+                      </div>
+                      <p className="text-accent-600 text-sm">
+                        (adjuntando DNI o documento acreditativo)
+                      </p>
                     </div>
-                    <p className="text-accent-600 text-sm">
-                      (adjuntando DNI o documento acreditativo)
-                    </p>
+                    <div className="bg-white rounded-lg p-4 border border-accent-200">
+                      <button
+                        onClick={() => setShowRightsForm(true)}
+                        className="flex items-center space-x-2 text-accent hover:text-accent-600 font-medium"
+                      >
+                        <Icon name="FileText" size={16} />
+                        <span>Usar formulario online</span>
+                      </button>
+                    </div>
                   </div>
                   <p className="text-accent-600 text-sm mt-3">
                     También puedes reclamar ante la <strong>Agencia Española de Protección de Datos (AEPD)</strong> si consideras que no hemos tratado adecuadamente tus datos.
@@ -370,7 +453,10 @@ const PoliticaPrivacidad = () => {
                 </p>
                 <div className="bg-accent-50 rounded-lg p-4 border border-accent-200">
                   <p className="text-accent-700 font-medium">
-                    <strong>Última actualización:</strong> junio 2025
+                    <strong>Última actualización:</strong> 15 de enero de 2025
+                  </p>
+                  <p className="text-accent-600 text-sm mt-1">
+                    <strong>Próxima revisión programada:</strong> 15 de enero de 2026
                   </p>
                 </div>
               </div>
@@ -414,6 +500,190 @@ const PoliticaPrivacidad = () => {
           </div>
         </section>
       </main>
+
+      {/* Formulario de Ejercicio de Derechos */}
+      {showRightsForm && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+          <div className="bg-background rounded-xl max-w-2xl w-full max-h-[90vh] overflow-hidden shadow-xl">
+            {/* Header */}
+            <div className="bg-primary text-white p-6">
+              <div className="flex items-center justify-between">
+                <div>
+                  <h2 className="text-xl font-heading font-bold mb-2">
+                    Ejercicio de Derechos RGPD
+                  </h2>
+                  <p className="text-primary-100 text-sm">
+                    Solicita el ejercicio de tus derechos de protección de datos
+                  </p>
+                </div>
+                <button
+                  onClick={() => setShowRightsForm(false)}
+                  className="p-2 hover:bg-primary-600 rounded-lg transition-colors duration-200"
+                >
+                  <Icon name="X" size={20} />
+                </button>
+              </div>
+            </div>
+
+            {/* Content */}
+            <div className="p-6 overflow-y-auto max-h-[60vh]">
+              {submitSuccess ? (
+                <div className="text-center py-8">
+                  <div className="w-16 h-16 bg-success-light rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Icon name="CheckCircle" size={32} className="text-success" />
+                  </div>
+                  <h3 className="text-xl font-heading font-semibold text-text-primary mb-2">
+                    Solicitud enviada correctamente
+                  </h3>
+                  <p className="text-text-secondary mb-6">
+                    Hemos recibido tu solicitud. Te responderemos en un plazo máximo de 30 días naturales.
+                  </p>
+                  <button
+                    onClick={() => {
+                      setShowRightsForm(false);
+                      setSubmitSuccess(false);
+                    }}
+                    className="btn-primary"
+                  >
+                    Cerrar
+                  </button>
+                </div>
+              ) : (
+                <form onSubmit={handleSubmitRightsForm} className="space-y-6">
+                  {/* Nombre */}
+                  <div>
+                    <label className="block text-sm font-medium text-text-primary mb-2">
+                      Nombre completo *
+                    </label>
+                    <input
+                      type="text"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleInputChange}
+                      required
+                      className="input-field"
+                      placeholder="Tu nombre completo"
+                    />
+                  </div>
+
+                  {/* Email */}
+                  <div>
+                    <label className="block text-sm font-medium text-text-primary mb-2">
+                      Email *
+                    </label>
+                    <input
+                      type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleInputChange}
+                      required
+                      className="input-field"
+                      placeholder="tu@email.com"
+                    />
+                  </div>
+
+                  {/* Tipo de derecho */}
+                  <div>
+                    <label className="block text-sm font-medium text-text-primary mb-2">
+                      Derecho que deseas ejercer *
+                    </label>
+                    <select
+                      name="rightType"
+                      value={formData.rightType}
+                      onChange={handleInputChange}
+                      required
+                      className="input-field"
+                    >
+                      <option value="">Selecciona un derecho</option>
+                      {rightsOptions.map(option => (
+                        <option key={option.value} value={option.value}>
+                          {option.label}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+
+                  {/* Descripción */}
+                  <div>
+                    <label className="block text-sm font-medium text-text-primary mb-2">
+                      Descripción de la solicitud
+                    </label>
+                    <textarea
+                      name="description"
+                      value={formData.description}
+                      onChange={handleInputChange}
+                      rows={4}
+                      className="input-field resize-none"
+                      placeholder="Describe tu solicitud con el mayor detalle posible..."
+                    />
+                  </div>
+
+                  {/* Términos */}
+                  <div>
+                    <label className="flex items-start space-x-3 cursor-pointer">
+                      <input
+                        type="checkbox"
+                        name="acceptTerms"
+                        checked={formData.acceptTerms}
+                        onChange={handleInputChange}
+                        required
+                        className="w-4 h-4 text-primary border-border rounded focus:ring-primary-300 mt-1"
+                      />
+                      <span className="text-sm text-text-secondary">
+                        Declaro que la información proporcionada es veraz y autorizo el tratamiento de mis datos 
+                        para tramitar esta solicitud de ejercicio de derechos RGPD. *
+                      </span>
+                    </label>
+                  </div>
+
+                  {/* Info adicional */}
+                  <div className="bg-accent-50 rounded-lg p-4 border border-accent-200">
+                    <div className="flex items-start space-x-3">
+                      <Icon name="Info" size={16} className="text-accent mt-0.5" />
+                      <div className="text-sm">
+                        <p className="font-medium text-accent-700 mb-1">Información importante</p>
+                        <ul className="text-accent-600 space-y-1">
+                          <li>• Responderemos en un plazo máximo de 30 días naturales</li>
+                          <li>• Podemos solicitar documentación adicional para verificar tu identidad</li>
+                          <li>• El ejercicio de estos derechos es gratuito</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Botones */}
+                  <div className="flex space-x-3 justify-end pt-4 border-t border-border-light">
+                    <button
+                      type="button"
+                      onClick={() => setShowRightsForm(false)}
+                      className="px-4 py-2 border border-border text-text-secondary rounded-lg hover:bg-surface transition-colors duration-200"
+                    >
+                      Cancelar
+                    </button>
+                    <button
+                      type="submit"
+                      disabled={isSubmitting || !formData.acceptTerms}
+                      className="btn-primary flex items-center space-x-2 min-w-[120px] justify-center"
+                    >
+                      {isSubmitting ? (
+                        <>
+                          <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white"></div>
+                          <span>Enviando...</span>
+                        </>
+                      ) : (
+                        <>
+                          <Icon name="Send" size={16} />
+                          <span>Enviar solicitud</span>
+                        </>
+                      )}
+                    </button>
+                  </div>
+                </form>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
