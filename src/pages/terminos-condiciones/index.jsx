@@ -51,189 +51,256 @@ const TerminosCondiciones = () => {
                 </div>
               </div>
 
-              {/* Sección 1 */}
+              {/* Sección 1 - Información General */}
               <div className="mb-8">
                 <h2 className="text-2xl font-heading font-bold text-text-primary mb-4 flex items-center">
                   <Icon name="Info" size={24} className="text-primary mr-3" />
-                  1. Objeto y ámbito de aplicación
+                  1. Información general
                 </h2>
-                <p className="text-text-secondary leading-relaxed">
-                  Los presentes términos y condiciones regulan el uso de la plataforma web AdoptaEspaña, 
-                  destinada a facilitar la adopción responsable de mascotas mediante la conexión entre 
-                  refugios, protectoras y personas interesadas en adoptar.
-                </p>
-              </div>
-
-              {/* Sección 2 */}
-              <div className="mb-8">
-                <h2 className="text-2xl font-heading font-bold text-text-primary mb-4 flex items-center">
-                  <Icon name="Users" size={24} className="text-primary mr-3" />
-                  2. Usuarios de la plataforma
-                </h2>
-                <div className="space-y-4">
-                  <div className="bg-background rounded-lg p-4 border border-border-light">
-                    <h3 className="font-heading font-semibold text-text-primary mb-2 flex items-center">
-                      <Icon name="Building2" size={18} className="text-secondary mr-2" />
-                      Refugios y Protectoras
-                    </h3>
-                    <p className="text-text-secondary text-sm">
-                      Organizaciones dedicadas al cuidado y protección de animales que publican mascotas disponibles para adopción.
-                    </p>
-                  </div>
-                  <div className="bg-background rounded-lg p-4 border border-border-light">
-                    <h3 className="font-heading font-semibold text-text-primary mb-2 flex items-center">
-                      <Icon name="Heart" size={18} className="text-accent mr-2" />
-                      Adoptantes
-                    </h3>
-                    <p className="text-text-secondary text-sm">
-                      Personas físicas interesadas en adoptar una mascota de forma responsable.
-                    </p>
-                  </div>
-                  <div className="bg-background rounded-lg p-4 border border-border-light">
-                    <h3 className="font-heading font-semibold text-text-primary mb-2 flex items-center">
-                      <Icon name="Stethoscope" size={18} className="text-primary mr-2" />
-                      Profesionales
-                    </h3>
-                    <p className="text-text-secondary text-sm">
-                      Veterinarios, peluquerías caninas y otros servicios profesionales relacionados con el cuidado animal.
-                    </p>
+                <div className="bg-background rounded-lg p-6 border border-border-light">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                    <div>
+                      <strong className="text-text-primary">Titular del sitio web:</strong>
+                      <p className="text-text-secondary">[Nombre comercial o razón social]</p>
+                    </div>
+                    <div>
+                      <strong className="text-text-primary">CIF/NIF:</strong>
+                      <p className="text-text-secondary">[Número de identificación fiscal]</p>
+                    </div>
+                    <div>
+                      <strong className="text-text-primary">Domicilio social:</strong>
+                      <p className="text-text-secondary">[Dirección completa]</p>
+                    </div>
+                    <div>
+                      <strong className="text-text-primary">Correo electrónico:</strong>
+                      <p className="text-text-secondary">[ejemplo@dominio.com]</p>
+                    </div>
+                    <div>
+                      <strong className="text-text-primary">Dominio web:</strong>
+                      <p className="text-text-secondary">[www.tudominio.com]</p>
+                    </div>
+                    <div>
+                      <strong className="text-text-primary">Objeto del sitio:</strong>
+                      <p className="text-text-secondary">Plataforma de adopción de animales y conexión entre usuarios y protectoras.</p>
+                    </div>
                   </div>
                 </div>
               </div>
 
-              {/* Sección 3 */}
+              {/* Sección 2 - Objeto y ámbito */}
               <div className="mb-8">
                 <h2 className="text-2xl font-heading font-bold text-text-primary mb-4 flex items-center">
-                  <Icon name="UserCheck" size={24} className="text-primary mr-3" />
-                  3. Registro y responsabilidades del usuario
+                  <Icon name="Target" size={24} className="text-primary mr-3" />
+                  2. Objeto y ámbito de aplicación
                 </h2>
                 <p className="text-text-secondary leading-relaxed mb-4">
-                  Para utilizar ciertas funcionalidades de la plataforma, los usuarios deberán registrarse proporcionando información veraz y actualizada.
-                </p>
-                <div className="space-y-3">
-                  <div className="flex items-start space-x-3">
-                    <Icon name="CheckCircle" size={20} className="text-success mt-0.5" />
-                    <span className="text-text-secondary">Proporcionar información veraz y actualizada</span>
-                  </div>
-                  <div className="flex items-start space-x-3">
-                    <Icon name="CheckCircle" size={20} className="text-success mt-0.5" />
-                    <span className="text-text-secondary">Mantener la confidencialidad de sus credenciales de acceso</span>
-                  </div>
-                  <div className="flex items-start space-x-3">
-                    <Icon name="CheckCircle" size={20} className="text-success mt-0.5" />
-                    <span className="text-text-secondary">Usar la plataforma de forma responsable y conforme a la ley</span>
-                  </div>
-                  <div className="flex items-start space-x-3">
-                    <Icon name="CheckCircle" size={20} className="text-success mt-0.5" />
-                    <span className="text-text-secondary">No publicar contenido falso, ofensivo o que infrinja derechos de terceros</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Sección 4 */}
-              <div className="mb-8">
-                <h2 className="text-2xl font-heading font-bold text-text-primary mb-4 flex items-center">
-                  <Icon name="Shield" size={24} className="text-primary mr-3" />
-                  4. Uso prohibido
-                </h2>
-                <p className="text-text-secondary leading-relaxed mb-4">
-                  Queda expresamente prohibido:
-                </p>
-                <div className="space-y-3">
-                  <div className="flex items-start space-x-3">
-                    <Icon name="XCircle" size={20} className="text-error mt-0.5" />
-                    <span className="text-text-secondary">Utilizar la plataforma para fines comerciales no autorizados</span>
-                  </div>
-                  <div className="flex items-start space-x-3">
-                    <Icon name="XCircle" size={20} className="text-error mt-0.5" />
-                    <span className="text-text-secondary">Publicar información falsa sobre mascotas o refugios</span>
-                  </div>
-                  <div className="flex items-start space-x-3">
-                    <Icon name="XCircle" size={20} className="text-error mt-0.5" />
-                    <span className="text-text-secondary">Realizar actividades que puedan dañar o sobrecargar la plataforma</span>
-                  </div>
-                  <div className="flex items-start space-x-3">
-                    <Icon name="XCircle" size={20} className="text-error mt-0.5" />
-                    <span className="text-text-secondary">Acosar, amenazar o molestar a otros usuarios</span>
-                  </div>
-                  <div className="flex items-start space-x-3">
-                    <Icon name="XCircle" size={20} className="text-error mt-0.5" />
-                    <span className="text-text-secondary">Promover el maltrato animal o prácticas irresponsables</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Sección 5 */}
-              <div className="mb-8">
-                <h2 className="text-2xl font-heading font-bold text-text-primary mb-4 flex items-center">
-                  <Icon name="Copyright" size={24} className="text-primary mr-3" />
-                  5. Propiedad intelectual
-                </h2>
-                <p className="text-text-secondary leading-relaxed mb-4">
-                  Todos los contenidos de la plataforma (textos, imágenes, logotipos, código fuente, etc.) 
-                  están protegidos por derechos de propiedad intelectual e industrial.
+                  Las presentes condiciones regulan el acceso, navegación y uso del sitio web, así como las responsabilidades 
+                  derivadas de la utilización de sus contenidos. El acceso y uso del sitio implica la aceptación plena y sin 
+                  reservas de estas condiciones.
                 </p>
                 <div className="bg-warning-light rounded-lg p-4 border border-warning">
-                  <p className="text-warning-700 text-sm">
-                    <strong>Importante:</strong> Los usuarios conservan los derechos sobre las imágenes y contenidos 
-                    que publican, pero otorgan a AdoptaEspaña una licencia para mostrarlos en la plataforma 
-                    con fines de facilitar la adopción.
+                  <p className="text-warning-700 font-medium">
+                    Si no estás de acuerdo, te pedimos que no utilices nuestros servicios.
                   </p>
                 </div>
               </div>
 
-              {/* Sección 6 */}
+              {/* Sección 3 - Condiciones de acceso */}
               <div className="mb-8">
                 <h2 className="text-2xl font-heading font-bold text-text-primary mb-4 flex items-center">
-                  <Icon name="AlertTriangle" size={24} className="text-primary mr-3" />
-                  6. Limitación de responsabilidad
+                  <Icon name="Key" size={24} className="text-primary mr-3" />
+                  3. Condiciones de acceso y uso
                 </h2>
-                <p className="text-text-secondary leading-relaxed mb-4">
-                  AdoptaEspaña actúa como intermediario entre refugios y adoptantes. No nos hacemos responsables de:
-                </p>
-                <div className="space-y-3">
-                  <div className="flex items-start space-x-3">
-                    <Icon name="Minus" size={20} className="text-warning mt-0.5" />
-                    <span className="text-text-secondary">La veracidad de la información publicada por los usuarios</span>
-                  </div>
-                  <div className="flex items-start space-x-3">
-                    <Icon name="Minus" size={20} className="text-warning mt-0.5" />
-                    <span className="text-text-secondary">El estado de salud o comportamiento de las mascotas</span>
-                  </div>
-                  <div className="flex items-start space-x-3">
-                    <Icon name="Minus" size={20} className="text-warning mt-0.5" />
-                    <span className="text-text-secondary">Los acuerdos o contratos entre refugios y adoptantes</span>
-                  </div>
-                  <div className="flex items-start space-x-3">
-                    <Icon name="Minus" size={20} className="text-warning mt-0.5" />
-                    <span className="text-text-secondary">Interrupciones temporales del servicio por mantenimiento</span>
+                <div className="space-y-4">
+                  <p className="text-text-secondary leading-relaxed">
+                    El acceso al sitio web es libre y gratuito, salvo para funcionalidades que requieran registro.
+                  </p>
+                  <p className="text-text-secondary leading-relaxed">
+                    El usuario se compromete a hacer un uso adecuado y lícito de los contenidos y servicios.
+                  </p>
+                  
+                  <div className="bg-error-light rounded-lg p-4 border border-error">
+                    <h4 className="font-semibold text-error mb-3">Se prohíbe:</h4>
+                    <ul className="space-y-2 text-error-700 text-sm">
+                      <li className="flex items-start space-x-2">
+                        <Icon name="XCircle" size={16} className="mt-0.5 flex-shrink-0" />
+                        <span>La reproducción o distribución no autorizada de contenidos.</span>
+                      </li>
+                      <li className="flex items-start space-x-2">
+                        <Icon name="XCircle" size={16} className="mt-0.5 flex-shrink-0" />
+                        <span>El uso del sitio con fines ilícitos, fraudulentos o lesivos para terceros.</span>
+                      </li>
+                      <li className="flex items-start space-x-2">
+                        <Icon name="XCircle" size={16} className="mt-0.5 flex-shrink-0" />
+                        <span>La introducción de virus, malware o cualquier código malicioso.</span>
+                      </li>
+                    </ul>
                   </div>
                 </div>
               </div>
 
-              {/* Sección 7 */}
+              {/* Sección 4 - Registro de usuario */}
               <div className="mb-8">
                 <h2 className="text-2xl font-heading font-bold text-text-primary mb-4 flex items-center">
-                  <Icon name="Scale" size={24} className="text-primary mr-3" />
-                  7. Legislación aplicable y jurisdicción
+                  <Icon name="UserPlus" size={24} className="text-primary mr-3" />
+                  4. Registro de usuario
+                </h2>
+                <p className="text-text-secondary leading-relaxed mb-4">
+                  Algunas funcionalidades (como enviar solicitudes de adopción o crear perfiles) requieren registro mediante formulario.
+                </p>
+                
+                <div className="bg-background rounded-lg p-4 border border-border-light">
+                  <h4 className="font-semibold text-text-primary mb-3">El usuario se compromete a:</h4>
+                  <ul className="space-y-2 text-text-secondary">
+                    <li className="flex items-start space-x-2">
+                      <Icon name="CheckCircle" size={16} className="text-success mt-0.5 flex-shrink-0" />
+                      <span>Proporcionar información veraz y actualizada.</span>
+                    </li>
+                    <li className="flex items-start space-x-2">
+                      <Icon name="CheckCircle" size={16} className="text-success mt-0.5 flex-shrink-0" />
+                      <span>Mantener la confidencialidad de sus credenciales.</span>
+                    </li>
+                    <li className="flex items-start space-x-2">
+                      <Icon name="CheckCircle" size={16} className="text-success mt-0.5 flex-shrink-0" />
+                      <span>Notificar cualquier uso no autorizado de su cuenta.</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              {/* Sección 5 - Responsabilidad */}
+              <div className="mb-8">
+                <h2 className="text-2xl font-heading font-bold text-text-primary mb-4 flex items-center">
+                  <Icon name="AlertTriangle" size={24} className="text-primary mr-3" />
+                  5. Responsabilidad
+                </h2>
+                <p className="text-text-secondary leading-relaxed mb-4">
+                  El titular del sitio web no será responsable:
+                </p>
+                <div className="space-y-3">
+                  <div className="flex items-start space-x-3 p-3 bg-background rounded-lg border border-border-light">
+                    <Icon name="Minus" size={16} className="text-warning mt-0.5 flex-shrink-0" />
+                    <span className="text-text-secondary text-sm">De interrupciones o errores en el acceso por causas técnicas ajenas a su control.</span>
+                  </div>
+                  <div className="flex items-start space-x-3 p-3 bg-background rounded-lg border border-border-light">
+                    <Icon name="Minus" size={16} className="text-warning mt-0.5 flex-shrink-0" />
+                    <span className="text-text-secondary text-sm">De los contenidos enlazados desde sitios de terceros.</span>
+                  </div>
+                  <div className="flex items-start space-x-3 p-3 bg-background rounded-lg border border-border-light">
+                    <Icon name="Minus" size={16} className="text-warning mt-0.5 flex-shrink-0" />
+                    <span className="text-text-secondary text-sm">De la veracidad o legalidad de los datos publicados por usuarios o protectoras colaboradoras.</span>
+                  </div>
+                  <div className="flex items-start space-x-3 p-3 bg-background rounded-lg border border-border-light">
+                    <Icon name="Minus" size={16} className="text-warning mt-0.5 flex-shrink-0" />
+                    <span className="text-text-secondary text-sm">De las decisiones derivadas de la información mostrada en la plataforma (ej. adopciones).</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Sección 6 - Propiedad intelectual */}
+              <div className="mb-8">
+                <h2 className="text-2xl font-heading font-bold text-text-primary mb-4 flex items-center">
+                  <Icon name="Copyright" size={24} className="text-primary mr-3" />
+                  6. Propiedad intelectual e industrial
+                </h2>
+                <p className="text-text-secondary leading-relaxed mb-4">
+                  Todos los contenidos del sitio (textos, imágenes, logos, diseño, código fuente, etc.) son propiedad del titular 
+                  o cuentan con licencia expresa para su uso.
+                </p>
+                <div className="bg-error-light rounded-lg p-4 border border-error">
+                  <p className="text-error-700 font-medium">
+                    Queda prohibida su reproducción, distribución, transformación o comunicación pública sin autorización expresa y por escrito.
+                  </p>
+                </div>
+              </div>
+
+              {/* Sección 7 - Enlaces externos */}
+              <div className="mb-8">
+                <h2 className="text-2xl font-heading font-bold text-text-primary mb-4 flex items-center">
+                  <Icon name="ExternalLink" size={24} className="text-primary mr-3" />
+                  7. Enlaces externos
                 </h2>
                 <p className="text-text-secondary leading-relaxed">
-                  Estos términos se rigen por la legislación española. Para cualquier controversia, 
-                  las partes se someten a los juzgados y tribunales de Madrid, renunciando expresamente 
-                  a cualquier otro fuero que pudiera corresponderles.
+                  Este sitio puede contener enlaces a sitios de terceros. El titular no se responsabiliza del contenido, 
+                  funcionamiento o disponibilidad de esos sitios, ni de posibles daños derivados de su uso.
                 </p>
               </div>
 
-              {/* Sección 8 */}
+              {/* Sección 8 - Protección de datos */}
+              <div className="mb-8">
+                <h2 className="text-2xl font-heading font-bold text-text-primary mb-4 flex items-center">
+                  <Icon name="Shield" size={24} className="text-primary mr-3" />
+                  8. Protección de datos personales
+                </h2>
+                <p className="text-text-secondary leading-relaxed mb-4">
+                  El tratamiento de datos personales se rige por nuestra Política de Privacidad, accesible en el siguiente enlace:
+                </p>
+                <div className="bg-primary-50 rounded-lg p-4 border border-primary-200">
+                  <button
+                    onClick={() => window.open('/politica-privacidad', '_blank')}
+                    className="flex items-center space-x-2 text-primary hover:text-primary-600 font-medium"
+                  >
+                    <Icon name="Shield" size={16} />
+                    <span>Política de Privacidad</span>
+                    <Icon name="ExternalLink" size={14} />
+                  </button>
+                </div>
+              </div>
+
+              {/* Sección 9 - Cookies */}
+              <div className="mb-8">
+                <h2 className="text-2xl font-heading font-bold text-text-primary mb-4 flex items-center">
+                  <Icon name="Cookie" size={24} className="text-primary mr-3" />
+                  9. Uso de cookies
+                </h2>
+                <p className="text-text-secondary leading-relaxed mb-4">
+                  El sitio utiliza cookies propias y de terceros con fines técnicos, analíticos y de personalización. 
+                  Puedes consultar los detalles y configurar tus preferencias en la Política de Cookies.
+                </p>
+                <div className="bg-accent-50 rounded-lg p-4 border border-accent-200">
+                  <button
+                    onClick={() => window.open('/politica-cookies', '_blank')}
+                    className="flex items-center space-x-2 text-accent hover:text-accent-600 font-medium"
+                  >
+                    <Icon name="Cookie" size={16} />
+                    <span>Política de Cookies</span>
+                    <Icon name="ExternalLink" size={14} />
+                  </button>
+                </div>
+              </div>
+
+              {/* Sección 10 - Modificaciones */}
               <div className="mb-8">
                 <h2 className="text-2xl font-heading font-bold text-text-primary mb-4 flex items-center">
                   <Icon name="RefreshCw" size={24} className="text-primary mr-3" />
-                  8. Modificaciones
+                  10. Modificaciones
                 </h2>
                 <p className="text-text-secondary leading-relaxed mb-4">
-                  AdoptaEspaña se reserva el derecho a modificar estos términos y condiciones en cualquier momento. 
-                  Los cambios serán notificados a través de la plataforma y entrarán en vigor inmediatamente.
+                  Nos reservamos el derecho de modificar en cualquier momento estas condiciones. Los cambios se comunicarán 
+                  a los usuarios registrados o se publicarán en esta misma sección.
                 </p>
+                <div className="bg-warning-light rounded-lg p-4 border border-warning">
+                  <p className="text-warning-700 font-medium">
+                    El uso del sitio tras la publicación de cambios implica la aceptación de los mismos.
+                  </p>
+                </div>
+              </div>
+
+              {/* Sección 11 - Legislación */}
+              <div className="mb-8">
+                <h2 className="text-2xl font-heading font-bold text-text-primary mb-4 flex items-center">
+                  <Icon name="Scale" size={24} className="text-primary mr-3" />
+                  11. Legislación y jurisdicción
+                </h2>
+                <p className="text-text-secondary leading-relaxed">
+                  Las presentes condiciones se rigen por la legislación española. Para la resolución de cualquier conflicto 
+                  que pudiera derivarse, las partes se someten a los juzgados y tribunales del domicilio del titular del sitio, 
+                  salvo que la legislación aplicable disponga lo contrario.
+                </p>
+              </div>
+
+              {/* Fecha de actualización */}
+              <div className="mb-8">
                 <div className="bg-accent-50 rounded-lg p-4 border border-accent-200">
                   <p className="text-accent-700 font-medium">
                     <strong>Última actualización:</strong> 15 de enero de 2025
