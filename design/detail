@@ -1,0 +1,194 @@
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Inter%3Awght%40400%3B500%3B700%3B900&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900"
+    />
+
+    <title>Stitch Design</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  </head>
+  <body>
+    <div class="relative flex size-full min-h-screen flex-col bg-gray-50 group/design-root overflow-x-hidden" style='font-family: Inter, "Noto Sans", sans-serif;'>
+      <div class="layout-container flex h-full grow flex-col">
+        <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#eaeff0] px-10 py-3">
+          <div class="flex items-center gap-8">
+            <div class="flex items-center gap-4 text-[#111618]">
+              <div class="size-4">
+                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g clip-path="url(#clip0_6_319)">
+                    <path
+                      d="M8.57829 8.57829C5.52816 11.6284 3.451 15.5145 2.60947 19.7452C1.76794 23.9758 2.19984 28.361 3.85056 32.3462C5.50128 36.3314 8.29667 39.7376 11.8832 42.134C15.4698 44.5305 19.6865 45.8096 24 45.8096C28.3135 45.8096 32.5302 44.5305 36.1168 42.134C39.7033 39.7375 42.4987 36.3314 44.1494 32.3462C45.8002 28.361 46.2321 23.9758 45.3905 19.7452C44.549 15.5145 42.4718 11.6284 39.4217 8.57829L24 24L8.57829 8.57829Z"
+                      fill="currentColor"
+                    ></path>
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_6_319"><rect width="48" height="48" fill="white"></rect></clipPath>
+                  </defs>
+                </svg>
+              </div>
+              <h2 class="text-[#111618] text-lg font-bold leading-tight tracking-[-0.015em]">AdoptaEspaña</h2>
+            </div>
+            <div class="flex items-center gap-9">
+              <a class="text-[#111618] text-sm font-medium leading-normal" href="#">Find a pet</a>
+              <a class="text-[#111618] text-sm font-medium leading-normal" href="#">Shelters</a>
+              <a class="text-[#111618] text-sm font-medium leading-normal" href="#">About us</a>
+            </div>
+          </div>
+          <div class="flex flex-1 justify-end gap-8">
+            <label class="flex flex-col min-w-40 !h-10 max-w-64">
+              <div class="flex w-full flex-1 items-stretch rounded-lg h-full">
+                <div
+                  class="text-[#607d85] flex border-none bg-[#eaeff0] items-center justify-center pl-4 rounded-l-lg border-r-0"
+                  data-icon="MagnifyingGlass"
+                  data-size="24px"
+                  data-weight="regular"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                    <path
+                      d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"
+                    ></path>
+                  </svg>
+                </div>
+                <input
+                  placeholder="Search"
+                  class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#111618] focus:outline-0 focus:ring-0 border-none bg-[#eaeff0] focus:border-none h-full placeholder:text-[#607d85] px-4 rounded-l-none border-l-0 pl-2 text-base font-normal leading-normal"
+                  value=""
+                />
+              </div>
+            </label>
+            <button
+              class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-[#4792a7] text-gray-50 text-sm font-bold leading-normal tracking-[0.015em]"
+            >
+              <span class="truncate">Adopt</span>
+            </button>
+            <div
+              class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
+              style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDtVdTvg5ISqj9qvuvh0HVAvQFgCB-9xTatDTE_x6OYcxEWqs-vZH787avZQLZImdoBBS2uJ1MszXZWxOt0XbniOKEe_XKKBjUVwuG6pFcF6KKRlwNT5DiKb1eY90OB5P61cB07m0N4FHEZ4zKS-WLw3LBcT8iFOpqe7-x7qReQnaL1hvVpmtVodHzKG1jB0UsVMM7Dn4RhTHDjWN5rhlJVDGvr2rCod11QwSEhYxFTrG0e5g-saPOwxTXTSRs6c-Ztyc2HRDdefv8");'
+            ></div>
+          </div>
+        </header>
+        <div class="gap-1 px-6 flex flex-1 justify-center py-5">
+          <div class="layout-content-container flex flex-col max-w-[920px] flex-1">
+            <div class="flex flex-wrap gap-2 p-4">
+              <a class="text-[#607d85] text-base font-medium leading-normal" href="#">Home</a>
+              <span class="text-[#607d85] text-base font-medium leading-normal">/</span>
+              <a class="text-[#607d85] text-base font-medium leading-normal" href="#">Pets</a>
+              <span class="text-[#607d85] text-base font-medium leading-normal">/</span>
+              <span class="text-[#111618] text-base font-medium leading-normal">Buddy</span>
+            </div>
+            <div class="flex w-full grow bg-gray-50 @container p-4">
+              <div class="w-full gap-1 overflow-hidden bg-gray-50 @[480px]:gap-2 aspect-[3/2] rounded-lg flex">
+                <div
+                  class="w-full bg-center bg-no-repeat bg-cover aspect-auto rounded-none flex-1"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAWJUTsRE9lWxSqEAJcpsiLV_Gx1-UkW86dKnqY5YCWFTujyMxdyRnpE0erzPJ30BAolypiScljtYFuiDoG_VTgEktiit7nWhdpRw69hg6Ktp-pg4fLVjs51sOqeVSbvtze4j26ZiPyermX5zQj5NBeQH9-LAQRVw3sG-3A6noh3pVm3ODBRbExWBx31Q8qrnHud9wTCUKFgkLjf6yI8mpmRSMeVXz6PNhunmOAwXl_vOGcaV4BqCYNX7MdT9bUDmoaaR38x9jTVyE");'
+                ></div>
+              </div>
+            </div>
+            <div class="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3 p-4">
+              <div class="flex flex-col gap-3">
+                <div
+                  class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-lg"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD5l4L3Ckh4jpoJ8Sg8GuogS_uloj7bxAYEXEew1noSOZLz_pldugeRMCQ-AJjfvSr5oXMQg-ljg6XmJCjMavPawQUylu-a4pQbfGOwCSLYYW9_laoQp10w2LDNvB6aLDaoPEEPjbiCULBQDR3iwq-UfY27oLPFezjoNdw-sVTmfLR6ouUna9_OgBBT_geURkGvK6yKv-BO1JH9luK-hf1yMqxXbbByOs79Om1hneGUKh9288KDFSd6vte7Up0QoMeI6wXBxN61q2c");'
+                ></div>
+              </div>
+              <div class="flex flex-col gap-3">
+                <div
+                  class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-lg"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB1QFRD0NnrfOcSQ_-557T0Aej58p4tV0E8Ryqu1-NZOlCBqFjSqbWTOfpkwD7eLduW4UYdPkcYFye4UVvlE_la8Ay48I8QAsOVqadyMB_k5wH-sKnqfxoZN1QGHydlxs1IrZSSs20HqevWFTSrGAAiOCM1pToFSMzaGl9L2Hxb1hM-zrCK8Re_GHuXvrSqSreuUGQTSWVYFIYkEVeIxfBdgkcGbYJzgJKqDsZywUPVplmaLIuaHtW7M-OYTgJfzgnjug3MszDiZy8");'
+                ></div>
+              </div>
+              <div class="flex flex-col gap-3">
+                <div
+                  class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-lg"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDZFL6UXENjkr_nQIZBP94usO8CZ1qTcElWiK5hHg94Jsukaul2jFov920l7Oe_0lE2xg5YjCT1Tu7qhEC-k_Z3cd7eBfSw1C4pSJ_LZfRY41udVtZVz1Caymor9sLFaqTNIJ1uk6hm1LEIoaVMtcR7PMvO6Fh5Va8vc16xR_MLjXEV87j8RlbSqEgBaIdj5a1kynI5_rewiPiGWQzCHsfYHAM7mMoqh1T-T-6X7okbhtvrSdp4BgcnaEJGPGOzJxKtD4y5t0HnomU");'
+                ></div>
+              </div>
+            </div>
+            <h2 class="text-[#111618] tracking-light text-[28px] font-bold leading-tight px-4 text-left pb-3 pt-5">Buddy</h2>
+            <p class="text-[#607d85] text-sm font-normal leading-normal pb-3 pt-1 px-4">Golden Retriever · 2 years old · Madrid</p>
+            <div class="flex gap-3 p-3 flex-wrap pr-4">
+              <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#eaeff0] pl-4 pr-4">
+                <p class="text-[#111618] text-sm font-medium leading-normal">Vaccinated</p>
+              </div>
+              <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#eaeff0] pl-4 pr-4">
+                <p class="text-[#111618] text-sm font-medium leading-normal">Friendly</p>
+              </div>
+              <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#eaeff0] pl-4 pr-4">
+                <p class="text-[#111618] text-sm font-medium leading-normal">House-trained</p>
+              </div>
+            </div>
+            <p class="text-[#111618] text-base font-normal leading-normal pb-3 pt-1 px-4">
+              Buddy is a playful and affectionate Golden Retriever who loves to be around people. He was found wandering alone and is now looking for a loving forever home. Buddy
+              is great with kids and other dogs, making him an ideal family pet. He enjoys long walks and playing fetch in the park. He's also house-trained and knows basic
+              commands. Buddy is vaccinated and ready to join his new family.
+            </p>
+            <h2 class="text-[#111618] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">SmartRecommendations</h2>
+            <div class="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3 p-4">
+              <div class="flex flex-1 gap-3 rounded-lg border border-[#d6dfe1] bg-gray-50 p-4 flex-col">
+                <div
+                  class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg w-10 shrink-0"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAP2XfwCT4OSF1pJMHr5UnZhaPYH-eqJK6OQDBLP42MJk-Aux1xtY3Pjp9ujsq17HIr9hYSSQ8Guw04_0C8ts8CxPF0UYgavwz-__o9w-CybcPofKVjdyKBrZiX-Foio0dY1MSfyvaeW7FHJuVL8icNwUAeTq0vZLYKHF8MJPy8AFY9_oSzzZna46JGGzNuPREL8Ji4V4Dx9CRnvGER33Of1CQ4aQwjzkBxpjsJrTLk-bpPHQYNTXv4H8spl73OGC5oZRuS5BQ4rs0");'
+                ></div>
+                <div class="flex flex-col gap-1">
+                  <h2 class="text-[#111618] text-base font-bold leading-tight">Veterinary Clinic</h2>
+                  <p class="text-[#607d85] text-sm font-normal leading-normal">Find a vet near you</p>
+                </div>
+              </div>
+              <div class="flex flex-1 gap-3 rounded-lg border border-[#d6dfe1] bg-gray-50 p-4 flex-col">
+                <div
+                  class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg w-10 shrink-0"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD80IpWkXVAo58fKxwxrF12ACJuKBqKub-QeBXDVlBv8Lfvj3hQIOH2c_ulcZ72RQZH2MNSnNzhaDV8S_7xi9MPp3_SXHDIrgrfzyDDMP6FsM-OWdmxXEBT023w3zsnnd9NG_YOZ9MGM98bBHloZBgjOO_XtTBeDDH_9kRDhHYNv9I0JpPFCmK1dVZD5n74N1BHoN2Wd3GowcsNzZn5tkq7W3B7mQ52zVGW91-Q2VD5LeHkeO885k7rg1ZBOCZctw8bWlr1kjcPh9k");'
+                ></div>
+                <div class="flex flex-col gap-1">
+                  <h2 class="text-[#111618] text-base font-bold leading-tight">Pet Grooming Salon</h2>
+                  <p class="text-[#607d85] text-sm font-normal leading-normal">Find a groomer near you</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="layout-content-container flex flex-col w-[360px]">
+            <div class="p-4">
+              <div class="flex items-stretch justify-between gap-4 rounded-lg">
+                <div class="flex flex-[2_2_0px] flex-col gap-4">
+                  <div class="flex flex-col gap-1">
+                    <p class="text-[#111618] text-base font-bold leading-tight">Animal Shelter Madrid</p>
+                    <p class="text-[#607d85] text-sm font-normal leading-normal">Madrid, Spain</p>
+                  </div>
+                  <button
+                    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-8 px-4 flex-row-reverse bg-[#eaeff0] text-[#111618] text-sm font-medium leading-normal w-fit"
+                  >
+                    <span class="truncate">View Shelter</span>
+                  </button>
+                </div>
+                <div
+                  class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg flex-1"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBLEm7S-Z0SWGtTeisisH1bXIOHf9H5UZoD62-gbCTfUrD3QCcm6eWYHPYdaPO9PKxoNXCE2KDBCQJwEp3ITLfpCC6vU_kCRnftoqkL-V5ba1iHvDJh2bmoaLu78oi1PlHiA77jm8oaz1NNIPjxdvaeoKnf7Z3LnfFIEnztUDepG78WZrwrsOPtex35-9bLwRVFpzvnWH35owGuCcvXeYsE15iWVuM5dy1gedDv8ZiVQi3ahcboidsFyQOktQoMf-dHRVG7hVey_go");'
+                ></div>
+              </div>
+            </div>
+            <div class="flex justify-center">
+              <div class="flex flex-1 gap-3 max-w-[480px] flex-col items-stretch px-4 py-3">
+                <button
+                  class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-[#4792a7] text-gray-50 text-sm font-bold leading-normal tracking-[0.015em] w-full"
+                >
+                  <span class="truncate">WhatsApp</span>
+                </button>
+                <button
+                  class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-[#eaeff0] text-[#111618] text-sm font-bold leading-normal tracking-[0.015em] w-full"
+                >
+                  <span class="truncate">Email</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
