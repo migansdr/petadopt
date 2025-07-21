@@ -1,0 +1,254 @@
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Inter%3Awght%40400%3B500%3B700%3B900&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900"
+    />
+
+    <title>Stitch Design</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  </head>
+  <body>
+    <div class="relative flex size-full min-h-screen flex-col bg-gray-50 group/design-root overflow-x-hidden" style='font-family: Inter, "Noto Sans", sans-serif;'>
+      <div class="layout-container flex h-full grow flex-col">
+        <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#eaeff0] px-10 py-3">
+          <div class="flex items-center gap-4 text-[#111618]">
+            <div class="size-4">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_6_319)">
+                  <path
+                    d="M8.57829 8.57829C5.52816 11.6284 3.451 15.5145 2.60947 19.7452C1.76794 23.9758 2.19984 28.361 3.85056 32.3462C5.50128 36.3314 8.29667 39.7376 11.8832 42.134C15.4698 44.5305 19.6865 45.8096 24 45.8096C28.3135 45.8096 32.5302 44.5305 36.1168 42.134C39.7033 39.7375 42.4987 36.3314 44.1494 32.3462C45.8002 28.361 46.2321 23.9758 45.3905 19.7452C44.549 15.5145 42.4718 11.6284 39.4217 8.57829L24 24L8.57829 8.57829Z"
+                    fill="currentColor"
+                  ></path>
+                </g>
+                <defs>
+                  <clipPath id="clip0_6_319"><rect width="48" height="48" fill="white"></rect></clipPath>
+                </defs>
+              </svg>
+            </div>
+            <h2 class="text-[#111618] text-lg font-bold leading-tight tracking-[-0.015em]">AdoptaEspaña</h2>
+          </div>
+          <div class="flex flex-1 justify-end gap-8">
+            <div class="flex items-center gap-9">
+              <a class="text-[#111618] text-sm font-medium leading-normal" href="#">Find a Pet</a>
+              <a class="text-[#111618] text-sm font-medium leading-normal" href="#">Shelters</a>
+              <a class="text-[#111618] text-sm font-medium leading-normal" href="#">Resources</a>
+            </div>
+            <button
+              class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-[#eaeff0] text-[#111618] text-sm font-bold leading-normal tracking-[0.015em]"
+            >
+              <span class="truncate">Become a Foster</span>
+            </button>
+            <div
+              class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
+              style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD6CEzYpGuNjx2TkP0rbDQpj0xBitcVUdpQj_7XIjNnJZccpQmG_WI_lQk8OvJy7jpugoC5IewAKAHp16suN3H_hW-qfHvv6DwWJusNp4bQZEATqZLJfY-DWPKx3_K8-fmgKf_MkT295N0ep4SuLTuz2SJV09V7Iod5UTdrV4rh8eHboqq2YA1hXk3NdATZ3VTjy9FNueNjrsuh59lHmcea66DkFRx9yEBwDmD-j27kFRryFHptDgjmwR_PZ60A30bMSDbTmDv25Lw");'
+            ></div>
+          </div>
+        </header>
+        <div class="px-40 flex flex-1 justify-center py-5">
+          <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+            <div class="flex p-4 @container">
+              <div class="flex w-full flex-col gap-4 items-center">
+                <div class="flex gap-4 flex-col items-center">
+                  <div
+                    class="bg-center bg-no-repeat aspect-square bg-cover rounded-full min-h-32 w-32"
+                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCr63A8lXJEbwce2E9JOvpz6fALz8UMpELjA0jf7dbZj12qVtF4ZNB9RFQYjG2r0WgLItLwuoXFGvzyRMYhO8C-7cOfXQAQAu-SSNpVZ-_veHjOlukh1O-sgRvTr1gXbMj6ICbYZQ7uTkBHVJwcFIvdtjKUK61L_5hc0HGiN7EQ2CFGa6OeFwlMxk1itlHYfZ_kUN24mgLWJbiopPHPMpkPQl6nyFX-AiZsDGKifzqaoC_2Scz88o1MnDJWDm11tmbL_A2Bz64lozg");'
+                  ></div>
+                  <div class="flex flex-col items-center justify-center justify-center">
+                    <p class="text-[#111618] text-[22px] font-bold leading-tight tracking-[-0.015em] text-center">Elena Ramirez</p>
+                    <p class="text-[#607d85] text-base font-normal leading-normal text-center">Animal lover and advocate</p>
+                    <p class="text-[#607d85] text-base font-normal leading-normal text-center">Joined 2021</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="pb-3">
+              <div class="flex border-b border-[#d6dfe1] px-4 gap-8">
+                <a class="flex flex-col items-center justify-center border-b-[3px] border-b-[#4792a7] text-[#111618] pb-[13px] pt-4" href="#">
+                  <p class="text-[#111618] text-sm font-bold leading-normal tracking-[0.015em]">Overview</p>
+                </a>
+                <a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-[#607d85] pb-[13px] pt-4" href="#">
+                  <p class="text-[#607d85] text-sm font-bold leading-normal tracking-[0.015em]">Favorites</p>
+                </a>
+                <a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-[#607d85] pb-[13px] pt-4" href="#">
+                  <p class="text-[#607d85] text-sm font-bold leading-normal tracking-[0.015em]">Applications</p>
+                </a>
+              </div>
+            </div>
+            <h2 class="text-[#111618] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">My Favorites</h2>
+            <div class="flex overflow-y-auto [-ms-scrollbar-style:none] [scrollbar-width:none] [&amp;::-webkit-scrollbar]:hidden">
+              <div class="flex items-stretch p-4 gap-3">
+                <div class="flex h-full flex-1 flex-col gap-4 rounded-lg min-w-40">
+                  <div
+                    class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl flex flex-col"
+                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAC0iMbLwJrUtcQXscQ3k8x-0szlLYBP4sascAPVkE-TWuLigUGZGUoDzq7l82I9IY7bVcD6KBztbTTYVYmBZS_4MM6bdRxE8YXrwmqfYs0bOFLuFZia0tm0a1U-o_KtSy63C9UZXBbwXCY40gFZW4FVNODuDYd80beaNyMn3YoPysCRt_OSc5aWk-v3MNsTBvrPW-hLPjM8Do-9iojKRDkAcIqudrMZwQT3HuShtQIwbeeE0Tt4v0BNxs34UXLFtkiGHl0gNQeh4w");'
+                  ></div>
+                  <div>
+                    <p class="text-[#111618] text-base font-medium leading-normal">Buddy</p>
+                    <p class="text-[#607d85] text-sm font-normal leading-normal">Golden Retriever, 2 years old</p>
+                  </div>
+                </div>
+                <div class="flex h-full flex-1 flex-col gap-4 rounded-lg min-w-40">
+                  <div
+                    class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl flex flex-col"
+                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD2-r4hDaAnC7Bbq2p9vhc3iXHXo6pSrta4XzBiZwyhX597gj1hw7aRclD_Vh4oXCZrfZ9bPvMmXKL5UKNc7BwD_ZBWmztVdG22zX5bETelDU7vR9ZI0u0HBWiT8hg7YyaP4CNdAf-X8cu9FnkenoQFqZkEtmePbUYFNQbGSVEcU33GWEzyjxN27S1zxxdmN5ZzA_s2HzajdhyeuoDDQ0GnjIGbomnM2qcGhkjYPD9mF0azz3hogveSZWg9syJwFXLdTLIUsEjp9MI");'
+                  ></div>
+                  <div>
+                    <p class="text-[#111618] text-base font-medium leading-normal">Luna</p>
+                    <p class="text-[#607d85] text-sm font-normal leading-normal">Siamese cat, 1 year old</p>
+                  </div>
+                </div>
+                <div class="flex h-full flex-1 flex-col gap-4 rounded-lg min-w-40">
+                  <div
+                    class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl flex flex-col"
+                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC2RKxGw2FhxMYrOHcNA4-Dv7cdsQDJOojzoZrpuntCJPgLltglUfmw9O-FDnAcLkcZIpq_a8_lCEvxkiRJXC2Er8HcbDjEW4drG2pugmCIM_GSRjEiLqvmv_DwaBBJst4QGrxbeNoSF_FCotDKmt7iUmzLCoJ_I2BHdZStuP5ksbdMKo_2uB2gFJPqSCMzWIKsGB7Ncer8ueRL20KgJyESM7LEUqJrIQIRFKtN20LUhW0yGG2Zpy_TBMgMClsHsnwdjTxZjWvWOQE");'
+                  ></div>
+                  <div>
+                    <p class="text-[#111618] text-base font-medium leading-normal">Charlie</p>
+                    <p class="text-[#607d85] text-sm font-normal leading-normal">Beagle, 3 years old</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <h2 class="text-[#111618] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">My Applications</h2>
+            <div class="px-4 py-3 @container">
+              <div class="flex overflow-hidden rounded-xl border border-[#d6dfe1] bg-gray-50">
+                <table class="flex-1">
+                  <thead>
+                    <tr class="bg-gray-50">
+                      <th class="table-114ba611-56f7-4345-8526-e8acb1073773-column-120 px-4 py-3 text-left text-[#111618] w-[400px] text-sm font-medium leading-normal">Pet</th>
+                      <th class="table-114ba611-56f7-4345-8526-e8acb1073773-column-240 px-4 py-3 text-left text-[#111618] w-60 text-sm font-medium leading-normal">Status</th>
+                      <th class="table-114ba611-56f7-4345-8526-e8acb1073773-column-360 px-4 py-3 text-left text-[#111618] w-[400px] text-sm font-medium leading-normal">
+                        Date Applied
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="border-t border-t-[#d6dfe1]">
+                      <td class="table-114ba611-56f7-4345-8526-e8acb1073773-column-120 h-[72px] px-4 py-2 w-[400px] text-[#111618] text-sm font-normal leading-normal">
+                        Max, Labrador Retriever
+                      </td>
+                      <td class="table-114ba611-56f7-4345-8526-e8acb1073773-column-240 h-[72px] px-4 py-2 w-60 text-sm font-normal leading-normal">
+                        <button
+                          class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-8 px-4 bg-[#eaeff0] text-[#111618] text-sm font-medium leading-normal w-full"
+                        >
+                          <span class="truncate">Pending</span>
+                        </button>
+                      </td>
+                      <td class="table-114ba611-56f7-4345-8526-e8acb1073773-column-360 h-[72px] px-4 py-2 w-[400px] text-[#607d85] text-sm font-normal leading-normal">
+                        2023-08-15
+                      </td>
+                    </tr>
+                    <tr class="border-t border-t-[#d6dfe1]">
+                      <td class="table-114ba611-56f7-4345-8526-e8acb1073773-column-120 h-[72px] px-4 py-2 w-[400px] text-[#111618] text-sm font-normal leading-normal">
+                        Bella, Persian Cat
+                      </td>
+                      <td class="table-114ba611-56f7-4345-8526-e8acb1073773-column-240 h-[72px] px-4 py-2 w-60 text-sm font-normal leading-normal">
+                        <button
+                          class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-8 px-4 bg-[#eaeff0] text-[#111618] text-sm font-medium leading-normal w-full"
+                        >
+                          <span class="truncate">Approved</span>
+                        </button>
+                      </td>
+                      <td class="table-114ba611-56f7-4345-8526-e8acb1073773-column-360 h-[72px] px-4 py-2 w-[400px] text-[#607d85] text-sm font-normal leading-normal">
+                        2023-07-20
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <style>
+                          @container(max-width:120px){.table-114ba611-56f7-4345-8526-e8acb1073773-column-120{display: none;}}
+                @container(max-width:240px){.table-114ba611-56f7-4345-8526-e8acb1073773-column-240{display: none;}}
+                @container(max-width:360px){.table-114ba611-56f7-4345-8526-e8acb1073773-column-360{display: none;}}
+              </style>
+            </div>
+            <h2 class="text-[#111618] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Recommended Pets</h2>
+            <div class="flex overflow-y-auto [-ms-scrollbar-style:none] [scrollbar-width:none] [&amp;::-webkit-scrollbar]:hidden">
+              <div class="flex items-stretch p-4 gap-3">
+                <div class="flex h-full flex-1 flex-col gap-4 rounded-lg min-w-40">
+                  <div
+                    class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl flex flex-col"
+                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDbvSHNW4qXF-pJJjB73SwiIoYv2htg2ibIa0c1X6xTu8YE-MJ9NPaax8iSVkl1SDjSw5B7Nt8e83VAcQEAGtTgaqSMGG8RoAMQ1cXnwY5DU01-KxtALgYl3kCbjsHiS18fs4VgC461-PF0ejwapnWBmqDf_NsH3Ia16fGwp_JDOkgH8RWvb9Nb7s0_xuj1pNiY3L2eMzBd5Zg0VhNxrmFkDx__sga9ZGDie7PrqeEiQE0ogDfzKBfgm0RP6LE2Y2D4sEdBDOAuaAg");'
+                  ></div>
+                  <div>
+                    <p class="text-[#111618] text-base font-medium leading-normal">Rocky</p>
+                    <p class="text-[#607d85] text-sm font-normal leading-normal">German Shepherd, 2 years old</p>
+                  </div>
+                </div>
+                <div class="flex h-full flex-1 flex-col gap-4 rounded-lg min-w-40">
+                  <div
+                    class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl flex flex-col"
+                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB-etkhg7w8XxlnnMmCcmyJCIb26e9e6kHUaiZyn_oZUy5ba0-uazfEUpAS29M6IyJRnuI2xIFCrRPWgFDJdVxDoXoq4lebZjN0F265LxDIA7o5_6fE-6EH_Z9pXO2rMdlP33NfQk9WhSEsjoZriFtBP4J0Jsx-5_9wRaJ1xuybe028PoC83zn5Oon34ks_sYF-Y8o15ooda1bKWFWu1SXqcq3gRa_n2VvEcGb3GP6Fuw3nNgF7Apq48WrEl5DRoBZH9GWmGIj150o");'
+                  ></div>
+                  <div>
+                    <p class="text-[#111618] text-base font-medium leading-normal">Simba</p>
+                    <p class="text-[#607d85] text-sm font-normal leading-normal">Maine Coon, 1 year old</p>
+                  </div>
+                </div>
+                <div class="flex h-full flex-1 flex-col gap-4 rounded-lg min-w-40">
+                  <div
+                    class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl flex flex-col"
+                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCTNtTggZKNWv9by1-Yckk3WGGjqTx1cf192esuGnvAotIYUyhTFiOFjVJ3Mqn1qZfBKGajaS7TLbxhqe3UQaDWvsHgKZ4RKIyyQVTQqqfeianJmFA_HLCQckQ1nttsWwyXBgDVUq03KaMrJ7QyTXiPW9gd55Yqsi3iov-ToWgKkT8tAket8FPVaD7g2G1Vsv7npCFjrzWA6M5no2fpSzGoyTWA7sTB0zSwscrTzd-5jNpkDymMv3bCllmXdEJ3dIfxY1DjI8e1Xjg");'
+                  ></div>
+                  <div>
+                    <p class="text-[#111618] text-base font-medium leading-normal">Coco</p>
+                    <p class="text-[#607d85] text-sm font-normal leading-normal">Dachshund, 3 years old</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <h2 class="text-[#111618] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Settings</h2>
+            <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+              <label class="flex flex-col min-w-40 flex-1">
+                <p class="text-[#111618] text-base font-medium leading-normal pb-2">Full Name</p>
+                <input
+                  class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-[#111618] focus:outline-0 focus:ring-0 border border-[#d6dfe1] bg-gray-50 focus:border-[#d6dfe1] h-14 placeholder:text-[#607d85] p-[15px] text-base font-normal leading-normal"
+                  value=""
+                />
+              </label>
+            </div>
+            <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+              <label class="flex flex-col min-w-40 flex-1">
+                <p class="text-[#111618] text-base font-medium leading-normal pb-2">Email</p>
+                <input
+                  class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-[#111618] focus:outline-0 focus:ring-0 border border-[#d6dfe1] bg-gray-50 focus:border-[#d6dfe1] h-14 placeholder:text-[#607d85] p-[15px] text-base font-normal leading-normal"
+                  value=""
+                />
+              </label>
+            </div>
+            <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+              <label class="flex flex-col min-w-40 flex-1">
+                <p class="text-[#111618] text-base font-medium leading-normal pb-2">Phone Number</p>
+                <input
+                  class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-[#111618] focus:outline-0 focus:ring-0 border border-[#d6dfe1] bg-gray-50 focus:border-[#d6dfe1] h-14 placeholder:text-[#607d85] p-[15px] text-base font-normal leading-normal"
+                  value=""
+                />
+              </label>
+            </div>
+            <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+              <label class="flex flex-col min-w-40 flex-1">
+                <p class="text-[#111618] text-base font-medium leading-normal pb-2">Bio</p>
+                <textarea
+                  class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-[#111618] focus:outline-0 focus:ring-0 border border-[#d6dfe1] bg-gray-50 focus:border-[#d6dfe1] min-h-36 placeholder:text-[#607d85] p-[15px] text-base font-normal leading-normal"
+                ></textarea>
+              </label>
+            </div>
+            <div class="flex px-4 py-3 justify-end">
+              <button
+                class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-[#4792a7] text-gray-50 text-sm font-bold leading-normal tracking-[0.015em]"
+              >
+                <span class="truncate">Update Profile</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
