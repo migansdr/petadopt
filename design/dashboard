@@ -1,0 +1,283 @@
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Inter%3Awght%40400%3B500%3B700%3B900&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900"
+    />
+
+    <title>Stitch Design</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  </head>
+  <body>
+    <div class="relative flex size-full min-h-screen flex-col bg-gray-50 group/design-root overflow-x-hidden" style='font-family: Inter, "Noto Sans", sans-serif;'>
+      <div class="layout-container flex h-full grow flex-col">
+        <div class="gap-1 px-6 flex flex-1 justify-center py-5">
+          <div class="layout-content-container flex flex-col w-80">
+            <div class="flex h-full min-h-[700px] flex-col justify-between bg-gray-50 p-4">
+              <div class="flex flex-col gap-4">
+                <h1 class="text-[#111618] text-base font-medium leading-normal">AdoptaEspaña</h1>
+                <div class="flex flex-col gap-2">
+                  <div class="flex items-center gap-3 px-3 py-2 rounded-lg bg-[#eaeff0]">
+                    <div class="text-[#111618]" data-icon="House" data-size="24px" data-weight="fill">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                        <path
+                          d="M224,115.55V208a16,16,0,0,1-16,16H168a16,16,0,0,1-16-16V168a8,8,0,0,0-8-8H112a8,8,0,0,0-8,8v40a16,16,0,0,1-16,16H48a16,16,0,0,1-16-16V115.55a16,16,0,0,1,5.17-11.78l80-75.48.11-.11a16,16,0,0,1,21.53,0,1.14,1.14,0,0,0,.11.11l80,75.48A16,16,0,0,1,224,115.55Z"
+                        ></path>
+                      </svg>
+                    </div>
+                    <p class="text-[#111618] text-sm font-medium leading-normal">Dashboard</p>
+                  </div>
+                  <div class="flex items-center gap-3 px-3 py-2">
+                    <div class="text-[#111618]" data-icon="PawPrint" data-size="24px" data-weight="regular">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                        <path
+                          d="M212,80a28,28,0,1,0,28,28A28,28,0,0,0,212,80Zm0,40a12,12,0,1,1,12-12A12,12,0,0,1,212,120ZM72,108a28,28,0,1,0-28,28A28,28,0,0,0,72,108ZM44,120a12,12,0,1,1,12-12A12,12,0,0,1,44,120ZM92,88A28,28,0,1,0,64,60,28,28,0,0,0,92,88Zm0-40A12,12,0,1,1,80,60,12,12,0,0,1,92,48Zm72,40a28,28,0,1,0-28-28A28,28,0,0,0,164,88Zm0-40a12,12,0,1,1-12,12A12,12,0,0,1,164,48Zm23.12,100.86a35.3,35.3,0,0,1-16.87-21.14,44,44,0,0,0-84.5,0A35.25,35.25,0,0,1,69,148.82,40,40,0,0,0,88,224a39.48,39.48,0,0,0,15.52-3.13,64.09,64.09,0,0,1,48.87,0,40,40,0,0,0,34.73-72ZM168,208a24,24,0,0,1-9.45-1.93,80.14,80.14,0,0,0-61.19,0,24,24,0,0,1-20.71-43.26,51.22,51.22,0,0,0,24.46-30.67,28,28,0,0,1,53.78,0,51.27,51.27,0,0,0,24.53,30.71A24,24,0,0,1,168,208Z"
+                        ></path>
+                      </svg>
+                    </div>
+                    <p class="text-[#111618] text-sm font-medium leading-normal">Pets</p>
+                  </div>
+                  <div class="flex items-center gap-3 px-3 py-2">
+                    <div class="text-[#111618]" data-icon="File" data-size="24px" data-weight="regular">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                        <path
+                          d="M213.66,82.34l-56-56A8,8,0,0,0,152,24H56A16,16,0,0,0,40,40V216a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V88A8,8,0,0,0,213.66,82.34ZM160,51.31,188.69,80H160ZM200,216H56V40h88V88a8,8,0,0,0,8,8h48V216Z"
+                        ></path>
+                      </svg>
+                    </div>
+                    <p class="text-[#111618] text-sm font-medium leading-normal">Applications</p>
+                  </div>
+                  <div class="flex items-center gap-3 px-3 py-2">
+                    <div class="text-[#111618]" data-icon="ChatCircleDots" data-size="24px" data-weight="regular">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                        <path
+                          d="M140,128a12,12,0,1,1-12-12A12,12,0,0,1,140,128ZM84,116a12,12,0,1,0,12,12A12,12,0,0,0,84,116Zm88,0a12,12,0,1,0,12,12A12,12,0,0,0,172,116Zm60,12A104,104,0,0,1,79.12,219.82L45.07,231.17a16,16,0,0,1-20.24-20.24l11.35-34.05A104,104,0,1,1,232,128Zm-16,0A88,88,0,1,0,51.81,172.06a8,8,0,0,1,.66,6.54L40,216,77.4,203.53a7.85,7.85,0,0,1,2.53-.42,8,8,0,0,1,4,1.08A88,88,0,0,0,216,128Z"
+                        ></path>
+                      </svg>
+                    </div>
+                    <p class="text-[#111618] text-sm font-medium leading-normal">Messages</p>
+                  </div>
+                  <div class="flex items-center gap-3 px-3 py-2">
+                    <div class="text-[#111618]" data-icon="User" data-size="24px" data-weight="regular">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                        <path
+                          d="M230.92,212c-15.23-26.33-38.7-45.21-66.09-54.16a72,72,0,1,0-73.66,0C63.78,166.78,40.31,185.66,25.08,212a8,8,0,1,0,13.85,8c18.84-32.56,52.14-52,89.07-52s70.23,19.44,89.07,52a8,8,0,1,0,13.85-8ZM72,96a56,56,0,1,1,56,56A56.06,56.06,0,0,1,72,96Z"
+                        ></path>
+                      </svg>
+                    </div>
+                    <p class="text-[#111618] text-sm font-medium leading-normal">Profile</p>
+                  </div>
+                </div>
+              </div>
+              <div class="flex flex-col gap-4">
+                <button
+                  class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-[#4792a7] text-gray-50 text-sm font-bold leading-normal tracking-[0.015em]"
+                >
+                  <span class="truncate">Add New Pet</span>
+                </button>
+                <div class="flex flex-col gap-1">
+                  <div class="flex items-center gap-3 px-3 py-2">
+                    <div class="text-[#111618]" data-icon="Question" data-size="24px" data-weight="regular">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                        <path
+                          d="M140,180a12,12,0,1,1-12-12A12,12,0,0,1,140,180ZM128,72c-22.06,0-40,16.15-40,36v4a8,8,0,0,0,16,0v-4c0-11,10.77-20,24-20s24,9,24,20-10.77,20-24,20a8,8,0,0,0-8,8v8a8,8,0,0,0,16,0v-.72c18.24-3.35,32-17.9,32-35.28C168,88.15,150.06,72,128,72Zm104,56A104,104,0,1,1,128,24,104.11,104.11,0,0,1,232,128Zm-16,0a88,88,0,1,0-88,88A88.1,88.1,0,0,0,216,128Z"
+                        ></path>
+                      </svg>
+                    </div>
+                    <p class="text-[#111618] text-sm font-medium leading-normal">Help and Support</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+            <div class="flex flex-wrap justify-between gap-3 p-4">
+              <p class="text-[#111618] tracking-light text-[32px] font-bold leading-tight min-w-72">Welcome, Refugio Animales Felices</p>
+            </div>
+            <div class="flex flex-wrap gap-4 p-4">
+              <div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-6 bg-[#eaeff0]">
+                <p class="text-[#111618] text-base font-medium leading-normal">Total Pets</p>
+                <p class="text-[#111618] tracking-light text-2xl font-bold leading-tight">120</p>
+              </div>
+              <div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-6 bg-[#eaeff0]">
+                <p class="text-[#111618] text-base font-medium leading-normal">Active Listings</p>
+                <p class="text-[#111618] tracking-light text-2xl font-bold leading-tight">85</p>
+              </div>
+              <div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-6 bg-[#eaeff0]">
+                <p class="text-[#111618] text-base font-medium leading-normal">Profile Views</p>
+                <p class="text-[#111618] tracking-light text-2xl font-bold leading-tight">2,345</p>
+              </div>
+            </div>
+            <h2 class="text-[#111618] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Quick Actions</h2>
+            <div class="flex justify-stretch">
+              <div class="flex flex-1 gap-3 flex-wrap px-4 py-3 justify-start">
+                <button
+                  class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-[#4792a7] text-gray-50 text-sm font-bold leading-normal tracking-[0.015em]"
+                >
+                  <span class="truncate">Add New Pet</span>
+                </button>
+                <button
+                  class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-[#eaeff0] text-[#111618] text-sm font-bold leading-normal tracking-[0.015em]"
+                >
+                  <span class="truncate">Manage Profile</span>
+                </button>
+              </div>
+            </div>
+            <h2 class="text-[#111618] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Your Pets</h2>
+            <div class="px-4 py-3 @container">
+              <div class="flex overflow-hidden rounded-lg border border-[#d6dfe1] bg-gray-50">
+                <table class="flex-1">
+                  <thead>
+                    <tr class="bg-gray-50">
+                      <th class="table-4ed790af-d108-43e5-8f79-13d0fba239ac-column-56 px-4 py-3 text-left text-[#111618] w-14 text-sm font-medium leading-normal">Pet</th>
+                      <th class="table-4ed790af-d108-43e5-8f79-13d0fba239ac-column-176 px-4 py-3 text-left text-[#111618] w-[400px] text-sm font-medium leading-normal">Name</th>
+                      <th class="table-4ed790af-d108-43e5-8f79-13d0fba239ac-column-296 px-4 py-3 text-left text-[#111618] w-60 text-sm font-medium leading-normal">Status</th>
+                      <th class="table-4ed790af-d108-43e5-8f79-13d0fba239ac-column-416 px-4 py-3 text-left text-[#111618] w-60 text-[#607d85] text-sm font-medium leading-normal">
+                        Actions
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="border-t border-t-[#d6dfe1]">
+                      <td class="table-4ed790af-d108-43e5-8f79-13d0fba239ac-column-56 h-[72px] px-4 py-2 w-14 text-sm font-normal leading-normal">
+                        <div
+                          class="bg-center bg-no-repeat aspect-square bg-cover rounded-full w-10"
+                          style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCph9TB9b-7sPpmkch0uuQEBl6ZaJRSNWwzWZnQXJyCp0meHE5EmhG41-w7qZm53mGRS20S2rv7I9wa82ejjzMsLOCiSAfdEihFg9vIUE0NUchUmO1lI1bugU8R7uqBixe52iAupsyOMV8gs7hnVLRLbzMQyTDIELlfO-CMH-jGVij16q-vIYQyFLdZbUkcA75UYebohgcsVbgjA3AqGqJftC0tpNOYOCgIGWH77ncvBTCVgfyp0mNCk17IvVkmYMHAi3Zwv8ea5GM");'
+                        ></div>
+                      </td>
+                      <td class="table-4ed790af-d108-43e5-8f79-13d0fba239ac-column-176 h-[72px] px-4 py-2 w-[400px] text-[#111618] text-sm font-normal leading-normal">Buddy</td>
+                      <td class="table-4ed790af-d108-43e5-8f79-13d0fba239ac-column-296 h-[72px] px-4 py-2 w-60 text-sm font-normal leading-normal">
+                        <button
+                          class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-8 px-4 bg-[#eaeff0] text-[#111618] text-sm font-medium leading-normal w-full"
+                        >
+                          <span class="truncate">Available</span>
+                        </button>
+                      </td>
+                      <td class="table-4ed790af-d108-43e5-8f79-13d0fba239ac-column-416 h-[72px] px-4 py-2 w-60 text-[#607d85] text-sm font-bold leading-normal tracking-[0.015em]">
+                        Edit | Delete | View
+                      </td>
+                    </tr>
+                    <tr class="border-t border-t-[#d6dfe1]">
+                      <td class="table-4ed790af-d108-43e5-8f79-13d0fba239ac-column-56 h-[72px] px-4 py-2 w-14 text-sm font-normal leading-normal">
+                        <div
+                          class="bg-center bg-no-repeat aspect-square bg-cover rounded-full w-10"
+                          style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBGg7-fVK0MrCEqPGYP0899A0NW02_wQgSZyXulpqe2irflW3kSCNRz-62DYI4PcIQHUNZ5PGhO29hVq7-7J8nmtvGcFEMuf9saAxinFgcTF3TmjvGb4Lb3HFfFojjvWqk1i0inJDiB8YZvuV-Y6Tuj5lQ2iFaJlLRfQKShy5iwu2z7mscLfL5fBfdVgljsQW4-DjbYsCvr6uzvuUmFg6y8LXG8j07hhNk17yakzy6lr8yuCTqWRyvWc7D5hXMpA48L0ArvGJXPGx4");'
+                        ></div>
+                      </td>
+                      <td class="table-4ed790af-d108-43e5-8f79-13d0fba239ac-column-176 h-[72px] px-4 py-2 w-[400px] text-[#111618] text-sm font-normal leading-normal">Luna</td>
+                      <td class="table-4ed790af-d108-43e5-8f79-13d0fba239ac-column-296 h-[72px] px-4 py-2 w-60 text-sm font-normal leading-normal">
+                        <button
+                          class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-8 px-4 bg-[#eaeff0] text-[#111618] text-sm font-medium leading-normal w-full"
+                        >
+                          <span class="truncate">Pending Adoption</span>
+                        </button>
+                      </td>
+                      <td class="table-4ed790af-d108-43e5-8f79-13d0fba239ac-column-416 h-[72px] px-4 py-2 w-60 text-[#607d85] text-sm font-bold leading-normal tracking-[0.015em]">
+                        Edit | Delete | View
+                      </td>
+                    </tr>
+                    <tr class="border-t border-t-[#d6dfe1]">
+                      <td class="table-4ed790af-d108-43e5-8f79-13d0fba239ac-column-56 h-[72px] px-4 py-2 w-14 text-sm font-normal leading-normal">
+                        <div
+                          class="bg-center bg-no-repeat aspect-square bg-cover rounded-full w-10"
+                          style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAcwheNnTcxbRxbsijnKlXwHmIAqOZxpEwrZ2o-ik_JvMzF1P3QVIZypfrCEmXNYlZbhtcpk6q6e1uhKksM2NZfkJpHFnsX0r7OVeMyhhGFKN_XY6MPA7lqcYCjtlcCEoKYO-OSzhw-UQ0JQbSBVm7srwlf4dxurDOX4Xxii7Y43tdKdJq_ii-2W7vo0L0L02QXk0DnUpFFNxa7LpRqi9EI4a_zcVVrjHQM-ckuPTHWebyLU8TXnZP0m0GjBmCaSzSwtOsk2z9WM5o");'
+                        ></div>
+                      </td>
+                      <td class="table-4ed790af-d108-43e5-8f79-13d0fba239ac-column-176 h-[72px] px-4 py-2 w-[400px] text-[#111618] text-sm font-normal leading-normal">Charlie</td>
+                      <td class="table-4ed790af-d108-43e5-8f79-13d0fba239ac-column-296 h-[72px] px-4 py-2 w-60 text-sm font-normal leading-normal">
+                        <button
+                          class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-8 px-4 bg-[#eaeff0] text-[#111618] text-sm font-medium leading-normal w-full"
+                        >
+                          <span class="truncate">Adopted</span>
+                        </button>
+                      </td>
+                      <td class="table-4ed790af-d108-43e5-8f79-13d0fba239ac-column-416 h-[72px] px-4 py-2 w-60 text-[#607d85] text-sm font-bold leading-normal tracking-[0.015em]">
+                        Edit | Delete | View
+                      </td>
+                    </tr>
+                    <tr class="border-t border-t-[#d6dfe1]">
+                      <td class="table-4ed790af-d108-43e5-8f79-13d0fba239ac-column-56 h-[72px] px-4 py-2 w-14 text-sm font-normal leading-normal">
+                        <div
+                          class="bg-center bg-no-repeat aspect-square bg-cover rounded-full w-10"
+                          style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBcrICt3LFfe_PB4vcjajN211CjxVxQ2k4XG_A7PaSzAwRYtC0-EbW0B7u1rL_wAaeCKK93Rvr6UdsDQ5XVIdFGPy_FS37AQQpMIJ9McpSy7ueBeLb1PYrFjiHEn4jzEsyLAHbCznwYns5amvsr-Rfd-UUZu6NcD8dy9rYxuYYDjUHzq3Scigws4gdtzFBhsYAJUEUSV77qSJwu9tuQi-Ip4dGJKhoj7FuDzxM1y7bCJgg70AIbyPWySDvPbzSfncLTYVGg67yMn0M");'
+                        ></div>
+                      </td>
+                      <td class="table-4ed790af-d108-43e5-8f79-13d0fba239ac-column-176 h-[72px] px-4 py-2 w-[400px] text-[#111618] text-sm font-normal leading-normal">Snowball</td>
+                      <td class="table-4ed790af-d108-43e5-8f79-13d0fba239ac-column-296 h-[72px] px-4 py-2 w-60 text-sm font-normal leading-normal">
+                        <button
+                          class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-8 px-4 bg-[#eaeff0] text-[#111618] text-sm font-medium leading-normal w-full"
+                        >
+                          <span class="truncate">Available</span>
+                        </button>
+                      </td>
+                      <td class="table-4ed790af-d108-43e5-8f79-13d0fba239ac-column-416 h-[72px] px-4 py-2 w-60 text-[#607d85] text-sm font-bold leading-normal tracking-[0.015em]">
+                        Edit | Delete | View
+                      </td>
+                    </tr>
+                    <tr class="border-t border-t-[#d6dfe1]">
+                      <td class="table-4ed790af-d108-43e5-8f79-13d0fba239ac-column-56 h-[72px] px-4 py-2 w-14 text-sm font-normal leading-normal">
+                        <div
+                          class="bg-center bg-no-repeat aspect-square bg-cover rounded-full w-10"
+                          style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAsf-PZ0wEo7Q-gZ3sjxIj60qnrouCkZxr1dM8FjX3eu3-D-XUwF1Rdb4QwYlHq9mqslt8HIdl6CHCYTaj48CELS8U-kxo1DuK5KEkgZ0qamN_WRe5FkbVfVppXB66624pvAfZu_4E-WWyUcyQ20q95Cnwjnpnv1gbIniYr0oPCg4_P3YAGfOBp0t0xMB5ywIM5cef1uKG7r5rZ6zzr05NMPvou5XiOLIdC_e6D8pOZt7k0ccGC_77rLceOWRMR8jzhj6geETKilA0");'
+                        ></div>
+                      </td>
+                      <td class="table-4ed790af-d108-43e5-8f79-13d0fba239ac-column-176 h-[72px] px-4 py-2 w-[400px] text-[#111618] text-sm font-normal leading-normal">Max</td>
+                      <td class="table-4ed790af-d108-43e5-8f79-13d0fba239ac-column-296 h-[72px] px-4 py-2 w-60 text-sm font-normal leading-normal">
+                        <button
+                          class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-8 px-4 bg-[#eaeff0] text-[#111618] text-sm font-medium leading-normal w-full"
+                        >
+                          <span class="truncate">Available</span>
+                        </button>
+                      </td>
+                      <td class="table-4ed790af-d108-43e5-8f79-13d0fba239ac-column-416 h-[72px] px-4 py-2 w-60 text-[#607d85] text-sm font-bold leading-normal tracking-[0.015em]">
+                        Edit | Delete | View
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <style>
+                          @container(max-width:56px){.table-4ed790af-d108-43e5-8f79-13d0fba239ac-column-56{display: none;}}
+                @container(max-width:176px){.table-4ed790af-d108-43e5-8f79-13d0fba239ac-column-176{display: none;}}
+                @container(max-width:296px){.table-4ed790af-d108-43e5-8f79-13d0fba239ac-column-296{display: none;}}
+                @container(max-width:416px){.table-4ed790af-d108-43e5-8f79-13d0fba239ac-column-416{display: none;}}
+              </style>
+            </div>
+            <h2 class="text-[#111618] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Recent Activity</h2>
+            <div class="flex items-center gap-4 bg-gray-50 px-4 min-h-[72px] py-2">
+              <div class="text-[#111618] flex items-center justify-center rounded-lg bg-[#eaeff0] shrink-0 size-12" data-icon="PawPrint" data-size="24px" data-weight="regular">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                  <path
+                    d="M212,80a28,28,0,1,0,28,28A28,28,0,0,0,212,80Zm0,40a12,12,0,1,1,12-12A12,12,0,0,1,212,120ZM72,108a28,28,0,1,0-28,28A28,28,0,0,0,72,108ZM44,120a12,12,0,1,1,12-12A12,12,0,0,1,44,120ZM92,88A28,28,0,1,0,64,60,28,28,0,0,0,92,88Zm0-40A12,12,0,1,1,80,60,12,12,0,0,1,92,48Zm72,40a28,28,0,1,0-28-28A28,28,0,0,0,164,88Zm0-40a12,12,0,1,1-12,12A12,12,0,0,1,164,48Zm23.12,100.86a35.3,35.3,0,0,1-16.87-21.14,44,44,0,0,0-84.5,0A35.25,35.25,0,0,1,69,148.82,40,40,0,0,0,88,224a39.48,39.48,0,0,0,15.52-3.13,64.09,64.09,0,0,1,48.87,0,40,40,0,0,0,34.73-72ZM168,208a24,24,0,0,1-9.45-1.93,80.14,80.14,0,0,0-61.19,0,24,24,0,0,1-20.71-43.26,51.22,51.22,0,0,0,24.46-30.67,28,28,0,0,1,53.78,0,51.27,51.27,0,0,0,24.53,30.71A24,24,0,0,1,168,208Z"
+                  ></path>
+                </svg>
+              </div>
+              <div class="flex flex-col justify-center">
+                <p class="text-[#111618] text-base font-medium leading-normal line-clamp-1">New pet added: Buddy</p>
+                <p class="text-[#607d85] text-sm font-normal leading-normal line-clamp-2">Added 2 days ago</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-4 bg-gray-50 px-4 min-h-[72px] py-2">
+              <div class="text-[#111618] flex items-center justify-center rounded-lg bg-[#eaeff0] shrink-0 size-12" data-icon="Envelope" data-size="24px" data-weight="regular">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                  <path
+                    d="M224,48H32a8,8,0,0,0-8,8V192a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A8,8,0,0,0,224,48Zm-96,85.15L52.57,64H203.43ZM98.71,128,40,181.81V74.19Zm11.84,10.85,12,11.05a8,8,0,0,0,10.82,0l12-11.05,58,53.15H52.57ZM157.29,128,216,74.18V181.82Z"
+                  ></path>
+                </svg>
+              </div>
+              <div class="flex flex-col justify-center">
+                <p class="text-[#111618] text-base font-medium leading-normal line-clamp-1">New inquiry for Luna</p>
+                <p class="text-[#607d85] text-sm font-normal leading-normal line-clamp-2">Received 1 day ago</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
