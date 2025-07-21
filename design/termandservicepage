@@ -1,0 +1,162 @@
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Inter%3Awght%40400%3B500%3B700%3B900&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900"
+    />
+
+    <title>Stitch Design</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  </head>
+  <body>
+    <div class="relative flex size-full min-h-screen flex-col bg-slate-50 group/design-root overflow-x-hidden" style='font-family: Inter, "Noto Sans", sans-serif;'>
+      <div class="layout-container flex h-full grow flex-col">
+        <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#e7eef3] px-10 py-3">
+          <div class="flex items-center gap-4 text-[#0d161b]">
+            <div class="size-4">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_6_319)">
+                  <path
+                    d="M8.57829 8.57829C5.52816 11.6284 3.451 15.5145 2.60947 19.7452C1.76794 23.9758 2.19984 28.361 3.85056 32.3462C5.50128 36.3314 8.29667 39.7376 11.8832 42.134C15.4698 44.5305 19.6865 45.8096 24 45.8096C28.3135 45.8096 32.5302 44.5305 36.1168 42.134C39.7033 39.7375 42.4987 36.3314 44.1494 32.3462C45.8002 28.361 46.2321 23.9758 45.3905 19.7452C44.549 15.5145 42.4718 11.6284 39.4217 8.57829L24 24L8.57829 8.57829Z"
+                    fill="currentColor"
+                  ></path>
+                </g>
+                <defs>
+                  <clipPath id="clip0_6_319"><rect width="48" height="48" fill="white"></rect></clipPath>
+                </defs>
+              </svg>
+            </div>
+            <h2 class="text-[#0d161b] text-lg font-bold leading-tight tracking-[-0.015em]">AdoptaEspaña</h2>
+          </div>
+          <div class="flex flex-1 justify-end gap-8">
+            <div class="flex items-center gap-9">
+              <a class="text-[#0d161b] text-sm font-medium leading-normal" href="#">Find a Pet</a>
+              <a class="text-[#0d161b] text-sm font-medium leading-normal" href="#">Shelters</a>
+              <a class="text-[#0d161b] text-sm font-medium leading-normal" href="#">Resources</a>
+              <a class="text-[#0d161b] text-sm font-medium leading-normal" href="#">About Us</a>
+            </div>
+            <div class="flex gap-2">
+              <button
+                class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-[#128ee7] text-slate-50 text-sm font-bold leading-normal tracking-[0.015em]"
+              >
+                <span class="truncate">Adopt</span>
+              </button>
+              <button
+                class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-[#e7eef3] text-[#0d161b] text-sm font-bold leading-normal tracking-[0.015em]"
+              >
+                <span class="truncate">Sign Up</span>
+              </button>
+            </div>
+          </div>
+        </header>
+        <div class="px-40 flex flex-1 justify-center py-5">
+          <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+            <div class="flex flex-wrap justify-between gap-3 p-4">
+              <p class="text-[#0d161b] tracking-light text-[32px] font-bold leading-tight min-w-72">Terms of Service &amp; Privacy Policy</p>
+            </div>
+            <h3 class="text-[#0d161b] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">Table of Contents</h3>
+            <div class="flex items-center gap-4 bg-slate-50 px-4 min-h-14 justify-between">
+              <p class="text-[#0d161b] text-base font-normal leading-normal flex-1 truncate">Terms of Service</p>
+              <div class="shrink-0">
+                <div class="text-[#0d161b] flex size-7 items-center justify-center" data-icon="ArrowRight" data-size="24px" data-weight="regular">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                    <path
+                      d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <div class="flex items-center gap-4 bg-slate-50 px-4 min-h-14 justify-between">
+              <p class="text-[#0d161b] text-base font-normal leading-normal flex-1 truncate">Privacy Policy</p>
+              <div class="shrink-0">
+                <div class="text-[#0d161b] flex size-7 items-center justify-center" data-icon="ArrowRight" data-size="24px" data-weight="regular">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                    <path
+                      d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <h2 class="text-[#0d161b] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Terms of Service</h2>
+            <p class="text-[#0d161b] text-base font-normal leading-normal pb-3 pt-1 px-4">
+              Welcome to AdoptaEspaña! By accessing or using our platform, you agree to comply with and be bound by the following terms and conditions. Please read these terms
+              carefully before using our services.
+            </p>
+            <h3 class="text-[#0d161b] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">1. Acceptance of Terms</h3>
+            <p class="text-[#0d161b] text-base font-normal leading-normal pb-3 pt-1 px-4">
+              By using AdoptaEspaña, you agree to these Terms of Service and our Privacy Policy. If you do not agree, please do not use our platform.
+            </p>
+            <h3 class="text-[#0d161b] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">2. Use of the Platform</h3>
+            <p class="text-[#0d161b] text-base font-normal leading-normal pb-3 pt-1 px-4">
+              You may use AdoptaEspaña to browse pets available for adoption, connect with shelters, and access resources related to pet adoption. You agree to use the platform
+              responsibly and lawfully.
+            </p>
+            <h3 class="text-[#0d161b] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">3. User Accounts</h3>
+            <p class="text-[#0d161b] text-base font-normal leading-normal pb-3 pt-1 px-4">
+              To access certain features, you may need to create an account. You are responsible for maintaining the confidentiality of your account information and for all
+              activities that occur under your account.
+            </p>
+            <h3 class="text-[#0d161b] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">4. Adoption Process</h3>
+            <p class="text-[#0d161b] text-base font-normal leading-normal pb-3 pt-1 px-4">
+              Adoption processes are managed by individual shelters. AdoptaEspaña facilitates connections but does not guarantee adoptions. Each shelter has its own criteria and
+              procedures.
+            </p>
+            <h3 class="text-[#0d161b] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">5. Privacy</h3>
+            <p class="text-[#0d161b] text-base font-normal leading-normal pb-3 pt-1 px-4">
+              Your privacy is important to us. Please review our Privacy Policy to understand how we collect, use, and protect your information.
+            </p>
+            <h3 class="text-[#0d161b] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">6. Modifications to Terms</h3>
+            <p class="text-[#0d161b] text-base font-normal leading-normal pb-3 pt-1 px-4">
+              We may update these terms from time to time. We will notify you of any significant changes. Your continued use of the platform after changes constitutes acceptance of
+              the new terms.
+            </p>
+            <h3 class="text-[#0d161b] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">7. Contact Us</h3>
+            <p class="text-[#0d161b] text-base font-normal leading-normal pb-3 pt-1 px-4">
+              If you have any questions about these terms, please contact us at support@adoptaespana.com.
+            </p>
+            <h2 class="text-[#0d161b] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Privacy Policy</h2>
+            <p class="text-[#0d161b] text-base font-normal leading-normal pb-3 pt-1 px-4">
+              This Privacy Policy explains how AdoptaEspaña collects, uses, and protects your personal information. By using our platform, you consent to the practices described in
+              this policy.
+            </p>
+            <h3 class="text-[#0d161b] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">1. Information We Collect</h3>
+            <p class="text-[#0d161b] text-base font-normal leading-normal pb-3 pt-1 px-4">
+              We collect information you provide directly, such as when you create an account, and information collected automatically, such as your IP address and browsing
+              activity.
+            </p>
+            <h3 class="text-[#0d161b] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">2. How We Use Your Information</h3>
+            <p class="text-[#0d161b] text-base font-normal leading-normal pb-3 pt-1 px-4">
+              We use your information to provide and improve our services, personalize your experience, and communicate with you. We do not share your personal information with
+              third parties except as necessary to provide our services or as required by law.
+            </p>
+            <h3 class="text-[#0d161b] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">3. Data Security</h3>
+            <p class="text-[#0d161b] text-base font-normal leading-normal pb-3 pt-1 px-4">
+              We implement security measures to protect your information from unauthorized access, alteration, or disclosure. However, no method of transmission over the internet
+              is completely secure.
+            </p>
+            <h3 class="text-[#0d161b] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">4. Your Rights</h3>
+            <p class="text-[#0d161b] text-base font-normal leading-normal pb-3 pt-1 px-4">
+              You have the right to access, correct, or delete your personal information. You may also opt out of receiving communications from us.
+            </p>
+            <h3 class="text-[#0d161b] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">5. Changes to This Policy</h3>
+            <p class="text-[#0d161b] text-base font-normal leading-normal pb-3 pt-1 px-4">
+              We may update this policy from time to time. We will notify you of any significant changes. Your continued use of the platform after changes constitutes acceptance of
+              the new policy.
+            </p>
+            <h3 class="text-[#0d161b] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">6. Contact Us</h3>
+            <p class="text-[#0d161b] text-base font-normal leading-normal pb-3 pt-1 px-4">
+              If you have any questions about this policy, please contact us at privacy@adoptaespana.com.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
