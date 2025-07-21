@@ -1,0 +1,224 @@
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Inter%3Awght%40400%3B500%3B700%3B900&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900"
+    />
+
+    <title>Stitch Design</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  </head>
+  <body>
+    <div class="relative flex size-full min-h-screen flex-col bg-gray-50 group/design-root overflow-x-hidden" style='font-family: Inter, "Noto Sans", sans-serif;'>
+      <div class="layout-container flex h-full grow flex-col">
+        <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#eaeff1] px-10 py-3">
+          <div class="flex items-center gap-8">
+            <div class="flex items-center gap-4 text-[#111718]">
+              <div class="size-4">
+                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g clip-path="url(#clip0_6_319)">
+                    <path
+                      d="M8.57829 8.57829C5.52816 11.6284 3.451 15.5145 2.60947 19.7452C1.76794 23.9758 2.19984 28.361 3.85056 32.3462C5.50128 36.3314 8.29667 39.7376 11.8832 42.134C15.4698 44.5305 19.6865 45.8096 24 45.8096C28.3135 45.8096 32.5302 44.5305 36.1168 42.134C39.7033 39.7375 42.4987 36.3314 44.1494 32.3462C45.8002 28.361 46.2321 23.9758 45.3905 19.7452C44.549 15.5145 42.4718 11.6284 39.4217 8.57829L24 24L8.57829 8.57829Z"
+                      fill="currentColor"
+                    ></path>
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_6_319"><rect width="48" height="48" fill="white"></rect></clipPath>
+                  </defs>
+                </svg>
+              </div>
+              <h2 class="text-[#111718] text-lg font-bold leading-tight tracking-[-0.015em]">AdoptaEspaña</h2>
+            </div>
+            <div class="flex items-center gap-9">
+              <a class="text-[#111718] text-sm font-medium leading-normal" href="#">Inicio</a>
+              <a class="text-[#111718] text-sm font-medium leading-normal" href="#">Perros</a>
+              <a class="text-[#111718] text-sm font-medium leading-normal" href="#">Gatos</a>
+              <a class="text-[#111718] text-sm font-medium leading-normal" href="#">Otros</a>
+            </div>
+          </div>
+          <div class="flex flex-1 justify-end gap-8">
+            <label class="flex flex-col min-w-40 !h-10 max-w-64">
+              <div class="flex w-full flex-1 items-stretch rounded-xl h-full">
+                <div
+                  class="text-[#5d7f89] flex border-none bg-[#eaeff1] items-center justify-center pl-4 rounded-l-xl border-r-0"
+                  data-icon="MagnifyingGlass"
+                  data-size="24px"
+                  data-weight="regular"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                    <path
+                      d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"
+                    ></path>
+                  </svg>
+                </div>
+                <input
+                  placeholder="Search"
+                  class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-[#111718] focus:outline-0 focus:ring-0 border-none bg-[#eaeff1] focus:border-none h-full placeholder:text-[#5d7f89] px-4 rounded-l-none border-l-0 pl-2 text-base font-normal leading-normal"
+                  value=""
+                />
+              </div>
+            </label>
+            <button
+              class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-[#368095] text-gray-50 text-sm font-bold leading-normal tracking-[0.015em]"
+            >
+              <span class="truncate">Publicar</span>
+            </button>
+            <div
+              class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
+              style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA0b9qQ-GPrIjVheoWK-_Hfr9lSF0eHT3A5EOlISpLBHNS2yoYg6t40d_7LM2MtUKGsvCztVKPuYOb9FH1j5wCTj00XObT-RkZn_66IUhS51NWFf3Neh-OXFs0-Oghertn1bKytxbHkkQMQUgs0leRKaXPc__lil0uETqf-Wm-3mAgLpEQ6tUoPsstxNXt553RzunvXEtXen8wKJBjLKcwBHlJQ_emQ3QEyFzHqj_9IFG0I0F1fdiqmIxanGBUczreCHiCxxMmqv5I");'
+            ></div>
+          </div>
+        </header>
+        <div class="px-40 flex flex-1 justify-center py-5">
+          <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+            <div class="flex gap-3 p-3 flex-wrap pr-4">
+              <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-[#eaeff1] pl-4 pr-4">
+                <p class="text-[#111718] text-sm font-medium leading-normal">Perro</p>
+              </div>
+              <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-[#eaeff1] pl-4 pr-4">
+                <p class="text-[#111718] text-sm font-medium leading-normal">Cachorro</p>
+              </div>
+              <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-[#eaeff1] pl-4 pr-4">
+                <p class="text-[#111718] text-sm font-medium leading-normal">Hembra</p>
+              </div>
+              <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-[#eaeff1] pl-4 pr-4">
+                <p class="text-[#111718] text-sm font-medium leading-normal">Pequeño</p>
+              </div>
+              <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-[#eaeff1] pl-4 pr-4">
+                <p class="text-[#111718] text-sm font-medium leading-normal">Comunidad de Madrid</p>
+              </div>
+            </div>
+            <h2 class="text-[#111718] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">123 resultados</h2>
+            <div class="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3 p-4">
+              <div class="flex flex-col gap-3 pb-3">
+                <div
+                  class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCI9CalmQ8XirR-Zh9I8jKzXM6kfWegXVCtIeTVneK5zCJHjU-0f2MB9XIzEKOc2m1v4h3hbNtRVEfsWjqIYAK6WP5ryxx5eKbICbFGCvmKV-gOVTowDZeQQpcCjw2MpNWZ-aZ0lULXyNtS0NVngAm3CtmADLAuLvtGJs_FCcxtZHWP2a-mZ4FNbRkeDA94VGlZbRtkP3AkxjeqBdZVyRRmh28aPys6XH3vrriGoU3tjhe8MJJdw-M_2_iXE9BUj_ZzJ7lc3Xe4cQc");'
+                ></div>
+                <div>
+                  <p class="text-[#111718] text-base font-medium leading-normal">Luna</p>
+                  <p class="text-[#5d7f89] text-sm font-normal leading-normal">Golden Retriever, 2 años</p>
+                </div>
+              </div>
+              <div class="flex flex-col gap-3 pb-3">
+                <div
+                  class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB61eepmtUWVAhY_CTtJML4N5UP0sJZWGQyoiHlgZXxOj47rHE6nsjyf_SejFYvltcO9tK_rtVLgKa4r335-SFej2npC5D1uNLhnOUFaWU3QXofNkMZ4ctRMJHSl0D5PwCb-DwDdiD0breKkoUWFhBTRMSF7gCSjk6h0hK765oybIliy8Gs01_4mZ63DuYZKzPVF3ZhWWsJmqGlyj9jzqovoEm9ghlLMb5aDuZ-hLO1i-lqrO9bO7xRvJyHQp7Su61WxNwbConQcBs");'
+                ></div>
+                <div>
+                  <p class="text-[#111718] text-base font-medium leading-normal">Max</p>
+                  <p class="text-[#5d7f89] text-sm font-normal leading-normal">Labrador, 1 año</p>
+                </div>
+              </div>
+              <div class="flex flex-col gap-3 pb-3">
+                <div
+                  class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAs-Zqt7Or-bdhck6BIUFWdl0FAFRnFHOR5Dk5fnA-iGsNx3_5ZpdnVX5LCNlqrhGgtxwb_YPq5WNnOWb-D5jbHuz5ign1yKH2OPj7syUFIoRzceYteBMHp7NeTsjFWfAhrKa_aZSNtP6iHhtymLgZicpKGAV5l_o42RVq12tGOKT-YKV043TjTmc6-ti21LTs6i0Qvyxenq8gnRks8fTXXhBtzouUjdBbwB9QuB7nPyzd2mgvm8yy-ZhLE1xQyYXyU50UNTgfwb5E");'
+                ></div>
+                <div>
+                  <p class="text-[#111718] text-base font-medium leading-normal">Bella</p>
+                  <p class="text-[#5d7f89] text-sm font-normal leading-normal">Siamesa, 3 años</p>
+                </div>
+              </div>
+              <div class="flex flex-col gap-3 pb-3">
+                <div
+                  class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAEeH0Bc7321Ldsd8DruoDfNAEkAl386YEq01hc4DYCqebommzEHkXfsmb6UKhyRgfFqreHIeob3KOFJqlElmsOXlGGpruwYLApEdZnLOEZ9SturB0ur8mIgP_alxUlIK28KUL7Nti9oKStv6fxcUNMesuTEVhk-p7yLauqIqHrwK98jgqweZevpmaEnaSzSftcmkWSeD2z28ilFGalUhoSy8eRm-6E1O8FXaJmFs2428mgaX4t0i_d6TquHgfLosTCTbZfYrF6ICM");'
+                ></div>
+                <div>
+                  <p class="text-[#111718] text-base font-medium leading-normal">Rocky</p>
+                  <p class="text-[#5d7f89] text-sm font-normal leading-normal">Bulldog Francés, 4 años</p>
+                </div>
+              </div>
+              <div class="flex flex-col gap-3 pb-3">
+                <div
+                  class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBcM9zEjmGlPjeCZwp3QFTJRY8UGb-GK82j9nEkw37Y3GoBq6p1Dhq0qYGgj_lX4_WUDO6QT2UIvCtZc4r0T2tPEgCsoY0F4AYPOMWqaK1nfkJc2F3129tlCQPvShDT7cTlXV4ydH0sKDL55Crtdrc8iEuO3cWDOw9eoCopl8Ij3qLoAcbJufe4lH4hzr5_gS_Y0iaqXz4OiQihJ0X135AcSYrGN5Lt3tcrffAv0MomfKG1pZ7KL6Wh75SRLw_FjfChxJN8aPeDV3Y");'
+                ></div>
+                <div>
+                  <p class="text-[#111718] text-base font-medium leading-normal">Daisy</p>
+                  <p class="text-[#5d7f89] text-sm font-normal leading-normal">Persa, 2 años</p>
+                </div>
+              </div>
+              <div class="flex flex-col gap-3 pb-3">
+                <div
+                  class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBTUFwJL_6ggTnw3Z--U_vBcjLrgNTwQ01hQxZT12mxBh-hLuYDcoCK3bkuYgsfeGKl1bj9yi9rboyJLvwKy-YPdYkjyL7biFG8kn3Eny-gPA6INrb7TTyo_llYTFePcP9Y9SmQgaXaWvGN4hZ9wMIzJsdnGWGl39oIEWeO4IcB6NKfxjQgqINjVE2u3WPr30eiiFhhfZi_-DGzizhI7r9G-topcC7bUAuk5XqiJ9ZV_qaZ-RFsn-SU-J8ktAGAaK4eVseXOP8avEU");'
+                ></div>
+                <div>
+                  <p class="text-[#111718] text-base font-medium leading-normal">Charlie</p>
+                  <p class="text-[#5d7f89] text-sm font-normal leading-normal">Beagle, 5 años</p>
+                </div>
+              </div>
+              <div class="flex flex-col gap-3 pb-3">
+                <div
+                  class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDQmEgpNEzkkwXatkpQbLMnEbYA_BA0lBm2mbab0nGKULnTMzoQMMnc707In0HbcPB6TV9i-GAYwhLjL1ktylb-Gu0nAMeduJ8zMSUXoeOW_2TOcqM6Pr7IuErjv42nJPMnx6UYI5dht8t8s_xvlxpXzi81vVS6Nd5JTcndgSF5WxQ8AeFo85UfOWvLyTvA10twUXxx5t1Yt3GhMEnyKVfspU-ujC9x_IbtrvJ0d3SJm8fQjMMe7AikRRf4V-_rTEuBmuH3C2lek3s");'
+                ></div>
+                <div>
+                  <p class="text-[#111718] text-base font-medium leading-normal">Lucy</p>
+                  <p class="text-[#5d7f89] text-sm font-normal leading-normal">Maine Coon, 1 año</p>
+                </div>
+              </div>
+              <div class="flex flex-col gap-3 pb-3">
+                <div
+                  class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDYA3GzQ-rXfbAOYIpPr2ZR3C-J1M4JmoYlWft32G6Ky7c-PsGL8tfkxjyZP49vpJ5nl5QsgK0YZXhbLZD0tCBjnI3biB1-uR2qAzs4wWHKVe6oN3TEWBmzqQCC4UrrsN7PQqNDyvNUzkhndmm305RZnH0we90LgG_qtnnCiZGessehp6egi0sqt8dnNvb_u2kaLroy4Prc6xN-gQqf8Liquvg69FyZ3-BkML7Uob5rqyPNgfPxUDnsbg87f_SGFa8Zrx6ip6N0yBg");'
+                ></div>
+                <div>
+                  <p class="text-[#111718] text-base font-medium leading-normal">Cooper</p>
+                  <p class="text-[#5d7f89] text-sm font-normal leading-normal">Pastor Alemán, 3 años</p>
+                </div>
+              </div>
+              <div class="flex flex-col gap-3 pb-3">
+                <div
+                  class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDG4I_ffoxda5G3WTePXC7Z2sBImWWK1FWk8CNHftMEyFqxgv7nTswt1HrOx-4H8RSXjS6J5GQZALUXT8d9kbvS_JnzqsB49nxR0tqgbtCmJTZlmjhDQ6SBc2HxJ6rata03O2f73jd7QMHW8-Mv11XOPIje3Kd_xKtg06z08wOu4XLpN0buLEDQG29-W3NPhto44BhS1TRktk7cgG2fwgMU0tkigAOS5gPE8yRGPbivdGJIP5k18kRjFbcB7WN-jA30Ak_8y5qNqW4");'
+                ></div>
+                <div>
+                  <p class="text-[#111718] text-base font-medium leading-normal">Molly</p>
+                  <p class="text-[#5d7f89] text-sm font-normal leading-normal">Ragdoll, 2 años</p>
+                </div>
+              </div>
+              <div class="flex flex-col gap-3 pb-3">
+                <div
+                  class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCJYOnoQPkG1ibBHvTfy0RTZMdettHoCQJzfGoQStC7_0mr10TCnsylueCuXYEhDLkT69nE1lGS062WYUGYmhJtc35aXeq4kwYqJdcfi8yJ4pkUokc0-GVjfiHE-_WHWTAD4SgCpVmXGSiqHHJAA_Pl9DxOQb__XCYRsPULYbjpvFOX14SffkWFCTxlfz5kGapP9EU54Q4iJ2mu7qEJr4DvUAUptYOGmAS7HHyWXjvPg772c4I5EwuUGhIGSklT-rru5_yvlkoRR0Q");'
+                ></div>
+                <div>
+                  <p class="text-[#111718] text-base font-medium leading-normal">Buddy</p>
+                  <p class="text-[#5d7f89] text-sm font-normal leading-normal">Boxer, 4 años</p>
+                </div>
+              </div>
+              <div class="flex flex-col gap-3 pb-3">
+                <div
+                  class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAisu6qxd6b1LOk0TNrxKWhC7rr-TPlkBTMkm2z8qiOItIkv4oqlxqozrCgI-1NwBOcNVCakn0PY3zCPlxPLaOBDMXGlWYcC8xG6pr7MPAEzJrWaHMK2nInGXfmoLTlkPZc0T1EoN_BbNPb8cu7hLxx56rQqHbm9ptpR0rQhPtABBaLmxwWBKBRSN-bUnFxxnpShdSsbvBqzNVHTWvB-40ulzvBcYSqJnai6B426aXmy0_b31CJjaFqKsvOPDU_ndpFpZbL1EL4Fmk");'
+                ></div>
+                <div>
+                  <p class="text-[#111718] text-base font-medium leading-normal">Chloe</p>
+                  <p class="text-[#5d7f89] text-sm font-normal leading-normal">Sphynx, 1 año</p>
+                </div>
+              </div>
+              <div class="flex flex-col gap-3 pb-3">
+                <div
+                  class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDdPHkajPk_jwF98z4k8cRja7b5_vqn17inFV4WTSqDmAnaugpPNmf7xXmhP77rWcMzoMFpbdiVAVcg4ealaCoUXn1PqpIJ8ufwvCZ6bsVoVzWnVNWjOZoMx8VvdjwNHzMPRttl9CCT-sF1ZwGIJiwuJajK22gs9W8XxTybOi2GA3xZg993yzNY5cxC9_G5Y2L4E-kFmb-oP7NvlxWQphVbxTMflOoxUXHZ1MI3c00SH-fwlKrOi3xNjAOZyztfc_iczlTkfSS_WEc");'
+                ></div>
+                <div>
+                  <p class="text-[#111718] text-base font-medium leading-normal">Oliver</p>
+                  <p class="text-[#5d7f89] text-sm font-normal leading-normal">Dachshund, 2 años</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
