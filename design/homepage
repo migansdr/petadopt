@@ -1,0 +1,248 @@
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Inter%3Awght%40400%3B500%3B700%3B900&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900"
+    />
+
+    <title>Stitch Design</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  </head>
+  <body>
+    <div class="relative flex size-full min-h-screen flex-col bg-gray-50 group/design-root overflow-x-hidden" style='font-family: Inter, "Noto Sans", sans-serif;'>
+      <div class="layout-container flex h-full grow flex-col">
+        <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#eaeff0] px-10 py-3">
+          <div class="flex items-center gap-4 text-[#111618]">
+            <div class="size-4">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_6_319)">
+                  <path
+                    d="M8.57829 8.57829C5.52816 11.6284 3.451 15.5145 2.60947 19.7452C1.76794 23.9758 2.19984 28.361 3.85056 32.3462C5.50128 36.3314 8.29667 39.7376 11.8832 42.134C15.4698 44.5305 19.6865 45.8096 24 45.8096C28.3135 45.8096 32.5302 44.5305 36.1168 42.134C39.7033 39.7375 42.4987 36.3314 44.1494 32.3462C45.8002 28.361 46.2321 23.9758 45.3905 19.7452C44.549 15.5145 42.4718 11.6284 39.4217 8.57829L24 24L8.57829 8.57829Z"
+                    fill="currentColor"
+                  ></path>
+                </g>
+                <defs>
+                  <clipPath id="clip0_6_319"><rect width="48" height="48" fill="white"></rect></clipPath>
+                </defs>
+              </svg>
+            </div>
+            <h2 class="text-[#111618] text-lg font-bold leading-tight tracking-[-0.015em]">AdoptaEspaña</h2>
+          </div>
+          <div class="flex flex-1 justify-end gap-8">
+            <div class="flex items-center gap-9">
+              <a class="text-[#111618] text-sm font-medium leading-normal" href="#">Find a Pet</a>
+              <a class="text-[#111618] text-sm font-medium leading-normal" href="#">How to Adopt</a>
+              <a class="text-[#111618] text-sm font-medium leading-normal" href="#">Shelters</a>
+              <a class="text-[#111618] text-sm font-medium leading-normal" href="#">Resources</a>
+            </div>
+            <div class="flex gap-2">
+              <button
+                class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-[#4792a7] text-gray-50 text-sm font-bold leading-normal tracking-[0.015em]"
+              >
+                <span class="truncate">Sign Up</span>
+              </button>
+              <button
+                class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-[#eaeff0] text-[#111618] text-sm font-bold leading-normal tracking-[0.015em]"
+              >
+                <span class="truncate">Log In</span>
+              </button>
+            </div>
+          </div>
+        </header>
+        <div class="px-40 flex flex-1 justify-center py-5">
+          <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+            <div class="@container">
+              <div class="@[480px]:p-4">
+                <div
+                  class="flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-lg items-center justify-center p-4"
+                  style='background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuCveh65eyKtHuLIm2SWh9vuJWh6IRqmmhD8XVeqeYXnTbDTCU9dGCv8W8qBhjS3gBs2NNfUBOHOOoHtwxRcuUrmBqfH6enlrqqXSwozEWax_IMv4W-5x__fUKVAP-WNl7AtaqVAzIGWTB7wHhvEo46qDhsmesU6BOXIVb-uAyFXkZOBH668w_JPm9kscj0VWxLeFblJoofm5YHWvaJDLpB2exw0En4ohU7D5Frq_V8UWdw8chJ8ScGS8SgdMWmEvnPQz48kxZGPLio");'
+                >
+                  <div class="flex flex-col gap-2 text-center">
+                    <h1
+                      class="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]"
+                    >
+                      Find Your Perfect Pet Companion
+                    </h1>
+                    <h2 class="text-white text-sm font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal">
+                      Connect with shelters across Spain and discover pets waiting for a loving home.
+                    </h2>
+                  </div>
+                  <button
+                    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-[#4792a7] text-gray-50 text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em]"
+                  >
+                    <span class="truncate">Start Your Search</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="flex gap-3 p-3 flex-wrap pr-4">
+              <button class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#eaeff0] pl-4 pr-2">
+                <p class="text-[#111618] text-sm font-medium leading-normal">Species</p>
+                <div class="text-[#111618]" data-icon="CaretDown" data-size="20px" data-weight="regular">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                    <path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"></path>
+                  </svg>
+                </div>
+              </button>
+              <button class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#eaeff0] pl-4 pr-2">
+                <p class="text-[#111618] text-sm font-medium leading-normal">Age</p>
+                <div class="text-[#111618]" data-icon="CaretDown" data-size="20px" data-weight="regular">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                    <path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"></path>
+                  </svg>
+                </div>
+              </button>
+              <button class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#eaeff0] pl-4 pr-2">
+                <p class="text-[#111618] text-sm font-medium leading-normal">Size</p>
+                <div class="text-[#111618]" data-icon="CaretDown" data-size="20px" data-weight="regular">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                    <path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"></path>
+                  </svg>
+                </div>
+              </button>
+              <button class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#eaeff0] pl-4 pr-2">
+                <p class="text-[#111618] text-sm font-medium leading-normal">Province</p>
+                <div class="text-[#111618]" data-icon="CaretDown" data-size="20px" data-weight="regular">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                    <path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"></path>
+                  </svg>
+                </div>
+              </button>
+            </div>
+            <div class="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3 p-4">
+              <div class="flex flex-col gap-3 pb-3">
+                <div
+                  class="w-full bg-center bg-no-repeat aspect-[3/4] bg-cover rounded-lg"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAIMGfrydoby83pGNLja9H87AfZYPNmBr2WA8HfgrW5EpLkWObe__O1wF4CRtzmKmWGb_miufUE7EbNdH-qFcFUcmjHVSCLqnrIX6j_v8CzqKWJpWFwskNKYNN74DTzZ62wAlnM_lHaa5c8QNrX2KDhsw_ZdgJmgy483S-wW_6OrBSu99fZytNmZ4Cz0i7X7VeIUgfXZYm0csJSeBSPFf61G46CH79UE_o8OP_7KJ_rPkwi9B3G0Ecak4wnuG6AcSERBi2E2UwDCB8");'
+                ></div>
+                <div>
+                  <p class="text-[#111618] text-base font-medium leading-normal">Bella</p>
+                  <p class="text-[#607d85] text-sm font-normal leading-normal">Dog, 2 years</p>
+                </div>
+              </div>
+              <div class="flex flex-col gap-3 pb-3">
+                <div
+                  class="w-full bg-center bg-no-repeat aspect-[3/4] bg-cover rounded-lg"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBddydtkldaOXHCBxPHQnhUVXczoeZyuGWfukef7ZlOzz9byOa-bQnFx6p58W9Bo1oNcppfQQhsb_aXpNSapxWaKuWPzD4DjujMV8m4XFcXe2xKd5zbowyO8Wjg5FZxoAVmZDkQae_6em72dIfjX0WWEUGIZTCVPEJco4AEAEOO-hI_qXjWdlacj_D8Q-syNxIgWsq94YmHCjY78dAZwivROkMagqRgBUk7R9vev5dXqDUsGCUS6R4n2ILmU7BXt_te0siG1-ug12M");'
+                ></div>
+                <div>
+                  <p class="text-[#111618] text-base font-medium leading-normal">Max</p>
+                  <p class="text-[#607d85] text-sm font-normal leading-normal">Dog, 1 year</p>
+                </div>
+              </div>
+              <div class="flex flex-col gap-3 pb-3">
+                <div
+                  class="w-full bg-center bg-no-repeat aspect-[3/4] bg-cover rounded-lg"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAXXdfTckGCM7PAztU2AlGfL8M9ykJvaHNlZN8JVY1KS1SEUUtWtBGMVdAYYoe6btbaTzdyrzw9L7FEkLD9orhg4QOX_5qzb4yyPgLzMhoHR2gbyFVmbxhCjPZMMPYagHo7tGzo3IWgI08s5k0GxdMInlh7VSxwgmGYfY-ZD-7F9NXQ5DoGq5kKnHdzVSCZ898QPexF8TDNR9Edk-_0LqYxqgYEsOuGPjXwuvhDTSCX-sJaUA7cSHTfRVDTVTOvBHq0SFG4dgLC8u4");'
+                ></div>
+                <div>
+                  <p class="text-[#111618] text-base font-medium leading-normal">Luna</p>
+                  <p class="text-[#607d85] text-sm font-normal leading-normal">Cat, 3 years</p>
+                </div>
+              </div>
+              <div class="flex flex-col gap-3 pb-3">
+                <div
+                  class="w-full bg-center bg-no-repeat aspect-[3/4] bg-cover rounded-lg"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAQODu-Q0foPksB576P1mdFyy1bntvHA7RzjnKP_gHoVLyU_tWGmveg1gZfTSJB6wwXhQDQ8cezURfFy-gnNPbvllfhqACJZxsJvOa7Gftbek_sgbBDWPqbxFJPbAYvV7HX5bJO4fRwbOQjroLtRXt-wSf21GcbAiRArpa0zjF11lqP2lU56yMvSFTw0wqzLnc_l0SMVtFOkL_r3Wt2YlADizHXD3qVMTQ7goDVthph2-7m36XqwBFDEDi_lE2ZXpmjwENewlNl9pA");'
+                ></div>
+                <div>
+                  <p class="text-[#111618] text-base font-medium leading-normal">Rocky</p>
+                  <p class="text-[#607d85] text-sm font-normal leading-normal">Dog, 4 years</p>
+                </div>
+              </div>
+              <div class="flex flex-col gap-3 pb-3">
+                <div
+                  class="w-full bg-center bg-no-repeat aspect-[3/4] bg-cover rounded-lg"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA63tHE3cxGYZn3D8BisuODQNn8-PMrGvz5Er9OLt9Qjx-BB6gglIy19ycS55-dkuYN4IEHBUcZDw33eGGOv4uPL3tzqSXTo8F8mrOzf5Z7LtTuDjOMESscP-cMzjEcXzboVf8sELERVDPyYCYZN3_187fLefDMeBZOil914mTkA9ssb8yj01e9KYyJVvXVgwNOoNzl_hN4O1MNqw5EY_hiJ-7RIktVX7ZsxlaIxLCkCjXVPMGaqrxrkkbEsQDtDVgTojUGH4MQjOs");'
+                ></div>
+                <div>
+                  <p class="text-[#111618] text-base font-medium leading-normal">Daisy</p>
+                  <p class="text-[#607d85] text-sm font-normal leading-normal">Cat, 1 year</p>
+                </div>
+              </div>
+              <div class="flex flex-col gap-3 pb-3">
+                <div
+                  class="w-full bg-center bg-no-repeat aspect-[3/4] bg-cover rounded-lg"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCEFvBQHegvqJdBnh7p2rUlmzrTDWKamKAoerJwxcaSe5DgJDrN7eON5fvvTzX5aPb0uZufJIX2JqT7TWnMoXqCErQcjlUUAO23ROD2EeUg3qpWo5A-OerLHLJpvgSxicKu2Yuf6Aw7MG2xwg2szlWcJE8rxXtywGkRo4AqjuKKEShO50At7MILeuxFjZn1OR37cucowucEi9_Hz4QvpUzmFreZ456z3YHngpOW6ocpvJp7PLuJF5cd_TcCfh0Ra-dbzN0RLS4bQvs");'
+                ></div>
+                <div>
+                  <p class="text-[#111618] text-base font-medium leading-normal">Charlie</p>
+                  <p class="text-[#607d85] text-sm font-normal leading-normal">Dog, 2 years</p>
+                </div>
+              </div>
+              <div class="flex flex-col gap-3 pb-3">
+                <div
+                  class="w-full bg-center bg-no-repeat aspect-[3/4] bg-cover rounded-lg"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBsun_P-LzkoEQYMjBNRR2FycTMXD45vKjM6vWBJGcYOYTXCtXX1JDMc8dv6f2cG8fccvP8MrJJM44ft-0XUO7qN1gY7bZG0z4UsXOuIZ-lZbfos-NlmxJ9nI9GEUU1TpXsaOcRE7qOatZa8CJD769pXA_s-mkiy0sYkJfuNkBAEJlcqUWVYKcE_6nnD-2nGm61yqhcCkkD3_-WqPPV0pv6FnVAEczucTkJrYxvVCsJig-cI6HddynQkT14QctKrD3JogbflY9-puA");'
+                ></div>
+                <div>
+                  <p class="text-[#111618] text-base font-medium leading-normal">Milo</p>
+                  <p class="text-[#607d85] text-sm font-normal leading-normal">Cat, 2 years</p>
+                </div>
+              </div>
+              <div class="flex flex-col gap-3 pb-3">
+                <div
+                  class="w-full bg-center bg-no-repeat aspect-[3/4] bg-cover rounded-lg"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB8rFXQMYM7cxtMGHYgGrSPtJtlDc0i0tW2xjxCP8BrBfEkZAnvMaZmE2bKLRMeM0AdsPOjQrYxI1MY9vC2wQeBxFEZu01h6j0N7v4g9haVQPrheSEckDMC6R_rlH9V8JeC02BRprQ-bTvFX6xu8uB9aSaPelKfZt63CfJ0ZnUabRfotmCCWmgzXWkpK5yO_VbLi5uRzZ7oEPZG74IuQ_PU4v1qpn_nOL1bHs-QubQuApK6wF00WeCgE7dt9GyAXl9c4WB7sizJ5P4");'
+                ></div>
+                <div>
+                  <p class="text-[#111618] text-base font-medium leading-normal">Zoe</p>
+                  <p class="text-[#607d85] text-sm font-normal leading-normal">Cat, 1 year</p>
+                </div>
+              </div>
+              <div class="flex flex-col gap-3 pb-3">
+                <div
+                  class="w-full bg-center bg-no-repeat aspect-[3/4] bg-cover rounded-lg"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAXfvGrClzz4tmz2k-zfs9PRpYvcZffKeSt2iwQM4Ux3rzeohJeUKeaOxGshDBjEJbb86mNY7Tx1xBBdP5mvZE-_jRqlq0o7BLOwjk--5LTKoMcEqaz_cr_-oribq72kTT4lCuxyHSgPoOk0DD3Hd0EOqaffZVCalKJS83Hy_MD9zOKVfb5YPqDMbNk09ioA6IbshROdKxywzakkjwjUhYU1-WjW1gwq2PQa5bSB-bV4DYo4oSMdDMgx-e8UYhAJmu9Sn3aurj1bws");'
+                ></div>
+                <div>
+                  <p class="text-[#111618] text-base font-medium leading-normal">Cooper</p>
+                  <p class="text-[#607d85] text-sm font-normal leading-normal">Dog, 3 years</p>
+                </div>
+              </div>
+            </div>
+            <div class="flex items-center justify-center p-4">
+              <a href="#" class="flex size-10 items-center justify-center">
+                <div class="text-[#111618]" data-icon="CaretLeft" data-size="18px" data-weight="regular">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" fill="currentColor" viewBox="0 0 256 256">
+                    <path d="M165.66,202.34a8,8,0,0,1-11.32,11.32l-80-80a8,8,0,0,1,0-11.32l80-80a8,8,0,0,1,11.32,11.32L91.31,128Z"></path>
+                  </svg>
+                </div>
+              </a>
+              <a class="text-sm font-bold leading-normal tracking-[0.015em] flex size-10 items-center justify-center text-[#111618] rounded-full bg-[#eaeff0]" href="#">1</a>
+              <a class="text-sm font-normal leading-normal flex size-10 items-center justify-center text-[#111618] rounded-full" href="#">2</a>
+              <a class="text-sm font-normal leading-normal flex size-10 items-center justify-center text-[#111618] rounded-full" href="#">3</a>
+              <a class="text-sm font-normal leading-normal flex size-10 items-center justify-center text-[#111618] rounded-full" href="#">4</a>
+              <a class="text-sm font-normal leading-normal flex size-10 items-center justify-center text-[#111618] rounded-full" href="#">5</a>
+              <a href="#" class="flex size-10 items-center justify-center">
+                <div class="text-[#111618]" data-icon="CaretRight" data-size="18px" data-weight="regular">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" fill="currentColor" viewBox="0 0 256 256">
+                    <path d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"></path>
+                  </svg>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <footer class="flex justify-center">
+          <div class="flex max-w-[960px] flex-1 flex-col">
+            <footer class="flex flex-col gap-6 px-5 py-10 text-center @container">
+              <div class="flex flex-wrap items-center justify-center gap-6 @[480px]:flex-row @[480px]:justify-around">
+                <a class="text-[#607d85] text-base font-normal leading-normal min-w-40" href="#">Legal</a>
+                <a class="text-[#607d85] text-base font-normal leading-normal min-w-40" href="#">Contact</a>
+                <a class="text-[#607d85] text-base font-normal leading-normal min-w-40" href="#">Shelters</a>
+                <a class="text-[#607d85] text-base font-normal leading-normal min-w-40" href="#">Professionals</a>
+              </div>
+              <p class="text-[#607d85] text-base font-normal leading-normal">© 2024 AdoptaEspaña. All rights reserved.</p>
+            </footer>
+          </div>
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>
