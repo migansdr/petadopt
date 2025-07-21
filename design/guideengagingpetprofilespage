@@ -1,0 +1,133 @@
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Plus+Jakarta+Sans%3Awght%40400%3B500%3B700%3B800"
+    />
+
+    <title>Stitch Design</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  </head>
+  <body>
+    <div class="relative flex size-full min-h-screen flex-col bg-[#fcfaf8] group/design-root overflow-x-hidden" style='font-family: "Plus Jakarta Sans", "Noto Sans", sans-serif;'>
+      <div class="layout-container flex h-full grow flex-col">
+        <div class="gap-1 px-6 flex flex-1 justify-center py-5">
+          <div class="layout-content-container flex flex-col w-80">
+            <div class="flex h-full min-h-[700px] flex-col justify-between bg-[#fcfaf8] p-4">
+              <div class="flex flex-col gap-4">
+                <div class="flex flex-col">
+                  <h1 class="text-[#1b140e] text-base font-medium leading-normal">Shelter Hub</h1>
+                  <p class="text-[#976e4e] text-sm font-normal leading-normal">Manage your shelter</p>
+                </div>
+                <div class="flex flex-col gap-2">
+                  <div class="flex items-center gap-3 px-3 py-2">
+                    <div class="text-[#1b140e]" data-icon="House" data-size="24px" data-weight="regular">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                        <path
+                          d="M218.83,103.77l-80-75.48a1.14,1.14,0,0,1-.11-.11,16,16,0,0,0-21.53,0l-.11.11L37.17,103.77A16,16,0,0,0,32,115.55V208a16,16,0,0,0,16,16H96a16,16,0,0,0,16-16V160h32v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V115.55A16,16,0,0,0,218.83,103.77ZM208,208H160V160a16,16,0,0,0-16-16H112a16,16,0,0,0-16,16v48H48V115.55l.11-.1L128,40l79.9,75.43.11.1Z"
+                        ></path>
+                      </svg>
+                    </div>
+                    <p class="text-[#1b140e] text-sm font-medium leading-normal">Dashboard</p>
+                  </div>
+                  <div class="flex items-center gap-3 px-3 py-2">
+                    <div class="text-[#1b140e]" data-icon="PawPrint" data-size="24px" data-weight="regular">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                        <path
+                          d="M212,80a28,28,0,1,0,28,28A28,28,0,0,0,212,80Zm0,40a12,12,0,1,1,12-12A12,12,0,0,1,212,120ZM72,108a28,28,0,1,0-28,28A28,28,0,0,0,72,108ZM44,120a12,12,0,1,1,12-12A12,12,0,0,1,44,120ZM92,88A28,28,0,1,0,64,60,28,28,0,0,0,92,88Zm0-40A12,12,0,1,1,80,60,12,12,0,0,1,92,48Zm72,40a28,28,0,1,0-28-28A28,28,0,0,0,164,88Zm0-40a12,12,0,1,1-12,12A12,12,0,0,1,164,48Zm23.12,100.86a35.3,35.3,0,0,1-16.87-21.14,44,44,0,0,0-84.5,0A35.25,35.25,0,0,1,69,148.82,40,40,0,0,0,88,224a39.48,39.48,0,0,0,15.52-3.13,64.09,64.09,0,0,1,48.87,0,40,40,0,0,0,34.73-72ZM168,208a24,24,0,0,1-9.45-1.93,80.14,80.14,0,0,0-61.19,0,24,24,0,0,1-20.71-43.26,51.22,51.22,0,0,0,24.46-30.67,28,28,0,0,1,53.78,0,51.27,51.27,0,0,0,24.53,30.71A24,24,0,0,1,168,208Z"
+                        ></path>
+                      </svg>
+                    </div>
+                    <p class="text-[#1b140e] text-sm font-medium leading-normal">Pets</p>
+                  </div>
+                  <div class="flex items-center gap-3 px-3 py-2">
+                    <div class="text-[#1b140e]" data-icon="File" data-size="24px" data-weight="regular">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                        <path
+                          d="M213.66,82.34l-56-56A8,8,0,0,0,152,24H56A16,16,0,0,0,40,40V216a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V88A8,8,0,0,0,213.66,82.34ZM160,51.31,188.69,80H160ZM200,216H56V40h88V88a8,8,0,0,0,8,8h48V216Z"
+                        ></path>
+                      </svg>
+                    </div>
+                    <p class="text-[#1b140e] text-sm font-medium leading-normal">Applications</p>
+                  </div>
+                  <div class="flex items-center gap-3 px-3 py-2">
+                    <div class="text-[#1b140e]" data-icon="Chats" data-size="24px" data-weight="regular">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                        <path
+                          d="M216,80H184V48a16,16,0,0,0-16-16H40A16,16,0,0,0,24,48V176a8,8,0,0,0,13,6.22L72,154V184a16,16,0,0,0,16,16h93.59L219,230.22a8,8,0,0,0,5,1.78,8,8,0,0,0,8-8V96A16,16,0,0,0,216,80ZM66.55,137.78,40,159.25V48H168v88H71.58A8,8,0,0,0,66.55,137.78ZM216,207.25l-26.55-21.47a8,8,0,0,0-5-1.78H88V152h80a16,16,0,0,0,16-16V96h32Z"
+                        ></path>
+                      </svg>
+                    </div>
+                    <p class="text-[#1b140e] text-sm font-medium leading-normal">Messages</p>
+                  </div>
+                  <div class="flex items-center gap-3 px-3 py-2">
+                    <div class="text-[#1b140e]" data-icon="Users" data-size="24px" data-weight="regular">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                        <path
+                          d="M117.25,157.92a60,60,0,1,0-66.5,0A95.83,95.83,0,0,0,3.53,195.63a8,8,0,1,0,13.4,8.74,80,80,0,0,1,134.14,0,8,8,0,0,0,13.4-8.74A95.83,95.83,0,0,0,117.25,157.92ZM40,108a44,44,0,1,1,44,44A44.05,44.05,0,0,1,40,108Zm210.14,98.7a8,8,0,0,1-11.07-2.33A79.83,79.83,0,0,0,172,168a8,8,0,0,1,0-16,44,44,0,1,0-16.34-84.87,8,8,0,1,1-5.94-14.85,60,60,0,0,1,55.53,105.64,95.83,95.83,0,0,1,47.22,37.71A8,8,0,0,1,250.14,206.7Z"
+                        ></path>
+                      </svg>
+                    </div>
+                    <p class="text-[#1b140e] text-sm font-medium leading-normal">Professionals</p>
+                  </div>
+                  <div class="flex items-center gap-3 px-3 py-2 rounded-full bg-[#f3ece7]">
+                    <div class="text-[#1b140e]" data-icon="BookOpen" data-size="24px" data-weight="fill">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                        <path
+                          d="M240,64V192a16,16,0,0,1-16,16H160a24,24,0,0,0-24,24,8,8,0,0,1-16,0,24,24,0,0,0-24-24H32a16,16,0,0,1-16-16V64A16,16,0,0,1,32,48H88a32,32,0,0,1,32,32v88a8,8,0,0,0,16,0V80a32,32,0,0,1,32-32h56A16,16,0,0,1,240,64Z"
+                        ></path>
+                      </svg>
+                    </div>
+                    <p class="text-[#1b140e] text-sm font-medium leading-normal">Guide</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+            <div class="flex flex-wrap justify-between gap-3 p-4">
+              <p class="text-[#1b140e] tracking-light text-[32px] font-bold leading-tight min-w-72">Crafting Compelling Pet Profiles</p>
+            </div>
+            <h2 class="text-[#1b140e] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Introduction</h2>
+            <p class="text-[#1b140e] text-base font-normal leading-normal pb-3 pt-1 px-4">
+              Start with an emotionally engaging introduction. Use storytelling to connect adopters with the pet's personality and background. For example, instead of saying 'This
+              is Max,' try 'Meet Max, a playful Labrador with a heartwarming story of resilience.'
+            </p>
+            <h2 class="text-[#1b140e] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Photography</h2>
+            <p class="text-[#1b140e] text-base font-normal leading-normal pb-3 pt-1 px-4">
+              Use high-quality photos that capture the pet's personality. Show them in various poses and settings to highlight their unique traits. Avoid blurry or poorly lit
+              images. Consider professional photography for the best results.
+            </p>
+            <div class="flex w-full grow bg-[#fcfaf8] @container p-4">
+              <div class="w-full gap-1 overflow-hidden bg-[#fcfaf8] @[480px]:gap-2 aspect-[3/2] rounded-xl grid grid-cols-[2fr_1fr_1fr]">
+                <div
+                  class="w-full bg-center bg-no-repeat bg-cover aspect-auto rounded-none row-span-2"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAm3pqv_pN9U1RHM-dFgXxuU7UAS59o03_nreU3O3qCw9SE3uZQxPPvbyGRUHxHROey5ekozHaC5anbfitnH-LBy-W0YgkR01hwt6RnxjdSiAHBn5AhewVq-NtzfRZkmDv3OKMhs8n9auQMsktgGu_znSs-00TPc5jCLx2KcOAxGOPN5SceqT2YqWb9Y6yGiqFfcK4dHMsQ1_icSa5x3n6OrV0xr2D-Kw_KHVaAeL_XlnGNYmCpwADNLnbKCWY43OkqlbhmI5l7QFg");'
+                ></div>
+                <div
+                  class="w-full bg-center bg-no-repeat bg-cover aspect-auto rounded-none col-span-2 row-span-2"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBt05YJjl0G7NpuryosoCKBNVq8feEdv23bJD2jly8FnOqg1syEOiXP_o_oVsNrS82WGp0_k8zNgeHaxtNVg1Ff64uEqwtLXb1zdXrHcaYF4pe7IG-Rl5rKQdoFyEqRsjUqu9ACxzEGZrwvSIZzg7Z8NhGTtOOrqY-VY6uZjhDVnWPQWl07YgYc1r_VV6UQM6i5-WGG4iBtMeY3KjCtHcaLKVW32QqtcDYOfmoiOzrv-9mMzgwL_TXfZ2T0rFd58PTEr_L3PGOglso");'
+                ></div>
+              </div>
+            </div>
+            <h2 class="text-[#1b140e] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Descriptions</h2>
+            <p class="text-[#1b140e] text-base font-normal leading-normal pb-3 pt-1 px-4">
+              Write personalized and evocative descriptions. Focus on the adopter's experience and the pet's unique qualities. Instead of listing facts, describe how the pet will
+              enrich their life. For example, 'Max isn't just a dog; he's a loyal companion ready to fill your days with joy and adventure.'
+            </p>
+            <h2 class="text-[#1b140e] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Emotional Trigger Words</h2>
+            <p class="text-[#1b140e] text-base font-normal leading-normal pb-3 pt-1 px-4">
+              Incorporate emotional trigger words to create a stronger connection. Words like 'loving,' 'playful,' 'loyal,' 'gentle,' and 'adventurous' can evoke positive emotions
+              and make the pet more appealing. Use these words thoughtfully to accurately reflect the pet's personality.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
