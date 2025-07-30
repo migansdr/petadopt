@@ -1,86 +1,55 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Icon from 'components/AppIcon';
-import Image from 'components/AppImage';
 
 const AuthenticationLoginRegister = () => {
   const [isLogin, setIsLogin] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
-  const [rememberMe, setRememberMe] = useState(false);
   const [formData, setFormData] = useState({
     shelterName: '',
     email: '',
     password: '',
-    confirmPassword: ''
+    confirmPassword: '',
+    location: '',
+    phone: '',
+    description: ''
   });
   const [errors, setErrors] = useState({});
-  const [successMessage, setSuccessMessage] = useState('');
-  
   const navigate = useNavigate();
 
-  // Mock credentials for demonstration
   const mockCredentials = {
     email: 'refugio@ejemplo.com',
     password: 'refugio123'
   };
 
   useEffect(() => {
-    // Clear form when switching modes
     setFormData({
-      shelterName: '',
-      email: '',
-      password: '',
-      confirmPassword: ''
+      shelterName: '', email: '', password: '', confirmPassword: '',
+      location: '', phone: '', description: ''
     });
     setErrors({});
-    setSuccessMessage('');
   }, [isLogin]);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
-    
-    // Clear error for this field when user starts typing
+    setFormData(prev => ({ ...prev, [name]: value }));
     if (errors[name]) {
-      setErrors(prev => ({
-        ...prev,
-        [name]: ''
-      }));
+      setErrors(prev => ({ ...prev, [name]: '' }));
     }
   };
 
   const validateForm = () => {
     const newErrors = {};
-
-    if (!isLogin && !formData.shelterName.trim()) {
-      newErrors.shelterName = 'El nombre del refugio es obligatorio';
-    }
-
-    if (!formData.email.trim()) {
-      newErrors.email = 'El email es obligatorio';
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      newErrors.email = 'Por favor, introduce un email válido';
-    }
-
-    if (!formData.password) {
-      newErrors.password = 'La contraseña es obligatoria';
-    } else if (formData.password.length < 6) {
-      newErrors.password = 'La contraseña debe tener al menos 6 caracteres';
-    }
-
-    if (!isLogin && formData.password !== formData.confirmPassword) {
-      newErrors.confirmPassword = 'Las contraseñas no coinciden';
-    }
-
+    if (!isLogin && !formData.shelterName.trim()) newErrors.shelterName = 'Shelter name is required';
+    if (!formData.email.trim()) newErrors.email = 'Email is required';
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) newErrors.email = 'Invalid email format';
+    if (!formData.password) newErrors.password = 'Password is required';
+    else if (formData.password.length < 6) newErrors.password = 'Password must be at least 6 characters';
+    if (!isLogin && formData.password !== formData.confirmPassword) newErrors.confirmPassword = 'Passwords do not match';
     return newErrors;
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
     const validationErrors = validateForm();
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
@@ -89,365 +58,127 @@ const AuthenticationLoginRegister = () => {
 
     setIsLoading(true);
     setErrors({});
+    await new Promise(resolve => setTimeout(resolve, 1500)); // Simulate API call
 
-    try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1500));
-
-      if (isLogin) {
-        // Check mock credentials
-        if (formData.email === mockCredentials.email && formData.password === mockCredentials.password) {
-          // Store authentication state
-          localStorage.setItem('isAuthenticated', 'true');
-          localStorage.setItem('shelterInfo', JSON.stringify({
-            name: 'Refugio Esperanza',
-            email: formData.email,
-            id: 'shelter_001'
-          }));
-          
-          setSuccessMessage('¡Inicio de sesión exitoso! Redirigiendo...');
-          setTimeout(() => {
-            navigate('/shelter-dashboard');
-          }, 1000);
-        } else {
-          setErrors({
-            general: `Credenciales incorrectas. Usa: ${mockCredentials.email} / ${mockCredentials.password}`
-          });
-        }
+    if (isLogin) {
+      if (formData.email === mockCredentials.email && formData.password === mockCredentials.password) {
+        localStorage.setItem('isAuthenticated', 'true');
+        navigate('/shelter-dashboard');
       } else {
-        // Registration success
-        setSuccessMessage('¡Registro exitoso! Ahora puedes iniciar sesión.');
-        setTimeout(() => {
-          setIsLogin(true);
-        }, 2000);
+        setErrors({ general: 'Invalid credentials' });
       }
-    } catch (error) {
-      setErrors({
-        general: 'Ha ocurrido un error. Por favor, inténtalo de nuevo.'
-      });
-    } finally {
-      setIsLoading(false);
+    } else {
+      // Mock registration success
+      alert('Registration successful! Please log in.');
+      setIsLogin(true);
     }
+    setIsLoading(false);
   };
 
-  const handleBackToHome = () => {
-    navigate('/public-pet-adoption-homepage');
-  };
+  const LoginForm = () => (
+    <div className="layout-content-container flex flex-col w-[512px] max-w-[512px] py-5 max-w-[960px] flex-1">
+      <h2 className="text-[#0d151b] tracking-light text-[28px] font-bold leading-tight px-4 text-center pb-3 pt-5">Welcome back</h2>
+      <div className="pb-3">
+        <div className="flex border-b border-[#cfdde7] px-4 gap-8">
+          <button onClick={() => setIsLogin(true)} className="flex flex-col items-center justify-center border-b-[3px] border-b-[#1287e7] text-[#0d151b] pb-[13px] pt-4">
+            <p className="text-[#0d151b] text-sm font-bold leading-normal tracking-[0.015em]">Login</p>
+          </button>
+          <button onClick={() => setIsLogin(false)} className="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-[#4c779a] pb-[13px] pt-4">
+            <p className="text-[#4c779a] text-sm font-bold leading-normal tracking-[0.015em]">Register</p>
+          </button>
+        </div>
+      </div>
+      <form onSubmit={handleSubmit}>
+        {errors.general && <p className="text-red-500 px-4 py-2">{errors.general}</p>}
+        <div className="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+          <label className="flex flex-col min-w-40 flex-1">
+            <p className="text-[#0d151b] text-base font-medium leading-normal pb-2">Email</p>
+            <input name="email" type="email" onChange={handleInputChange} placeholder="Enter your email" className={`form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-[#0d151b] focus:outline-0 focus:ring-0 border ${errors.email ? 'border-red-500' : 'border-[#cfdde7]'} bg-slate-50 h-14 placeholder:text-[#4c779a] p-[15px] text-base font-normal leading-normal`} />
+            {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
+          </label>
+        </div>
+        <div className="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+          <label className="flex flex-col min-w-40 flex-1">
+            <p className="text-[#0d151b] text-base font-medium leading-normal pb-2">Password</p>
+            <input name="password" type="password" onChange={handleInputChange} placeholder="Enter your password" className={`form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-[#0d151b] focus:outline-0 focus:ring-0 border ${errors.password ? 'border-red-500' : 'border-[#cfdde7]'} bg-slate-50 h-14 placeholder:text-[#4c779a] p-[15px] text-base font-normal leading-normal`} />
+            {errors.password && <p className="text-red-500 text-sm mt-1">{errors.password}</p>}
+          </label>
+        </div>
+        <p className="text-[#4c779a] text-sm font-normal leading-normal pb-3 pt-1 px-4 underline cursor-pointer">Forgot Password?</p>
+        <div className="flex px-4 py-3">
+          <button type="submit" disabled={isLoading} className="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 flex-1 bg-[#1287e7] text-slate-50 text-sm font-bold leading-normal tracking-[0.015em]">
+            <span className="truncate">{isLoading ? 'Logging in...' : 'Login'}</span>
+          </button>
+        </div>
+        <p onClick={() => setIsLogin(false)} className="text-[#4c779a] text-sm font-normal leading-normal pb-3 pt-1 px-4 text-center underline cursor-pointer">Don't have an account? Register</p>
+      </form>
+    </div>
+  );
 
-  const handleForgotPassword = () => {
-    alert('Funcionalidad de recuperación de contraseña próximamente disponible');
-  };
+  const RegisterForm = () => (
+    <div className="layout-content-container flex flex-col w-[512px] max-w-[512px] py-5 max-w-[960px] flex-1">
+        <h2 className="text-[#0e151b] tracking-light text-[28px] font-bold leading-tight px-4 text-left pb-3 pt-5">Register your shelter</h2>
+        <form onSubmit={handleSubmit}>
+            <div className="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+              <label className="flex flex-col min-w-40 flex-1">
+                <p className="text-[#0e151b] text-base font-medium leading-normal pb-2">Shelter Name</p>
+                <input name="shelterName" onChange={handleInputChange} placeholder="Enter your shelter's name" className={`form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#0e151b] focus:outline-0 focus:ring-0 border ${errors.shelterName ? 'border-red-500' : 'border-[#d0dce7]'} bg-slate-50 h-14 placeholder:text-[#4e7697] p-[15px] text-base font-normal leading-normal`} />
+                {errors.shelterName && <p className="text-red-500 text-sm mt-1">{errors.shelterName}</p>}
+              </label>
+            </div>
+            <div className="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+              <label className="flex flex-col min-w-40 flex-1">
+                <p className="text-[#0e151b] text-base font-medium leading-normal pb-2">Contact Email</p>
+                <input name="email" type="email" onChange={handleInputChange} placeholder="Enter your contact email" className={`form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#0e151b] focus:outline-0 focus:ring-0 border ${errors.email ? 'border-red-500' : 'border-[#d0dce7]'} bg-slate-50 h-14 placeholder:text-[#4e7697] p-[15px] text-base font-normal leading-normal`} />
+                {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
+              </label>
+            </div>
+            <div className="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+              <label className="flex flex-col min-w-40 flex-1">
+                <p className="text-[#0e151b] text-base font-medium leading-normal pb-2">Password</p>
+                <input name="password" type="password" onChange={handleInputChange} placeholder="Create a password" className={`form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#0e151b] focus:outline-0 focus:ring-0 border ${errors.password ? 'border-red-500' : 'border-[#d0dce7]'} bg-slate-50 h-14 placeholder:text-[#4e7697] p-[15px] text-base font-normal leading-normal`} />
+                {errors.password && <p className="text-red-500 text-sm mt-1">{errors.password}</p>}
+              </label>
+            </div>
+             <div className="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+              <label className="flex flex-col min-w-40 flex-1">
+                <p className="text-[#0e151b] text-base font-medium leading-normal pb-2">Confirm Password</p>
+                <input name="confirmPassword" type="password" onChange={handleInputChange} placeholder="Confirm your password" className={`form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#0e151b] focus:outline-0 focus:ring-0 border ${errors.confirmPassword ? 'border-red-500' : 'border-[#d0dce7]'} bg-slate-50 h-14 placeholder:text-[#4e7697] p-[15px] text-base font-normal leading-normal`} />
+                {errors.confirmPassword && <p className="text-red-500 text-sm mt-1">{errors.confirmPassword}</p>}
+              </label>
+            </div>
+            <div className="flex justify-stretch">
+              <div className="flex flex-1 gap-3 flex-wrap px-4 py-3 justify-end">
+                <button type="button" onClick={() => setIsLogin(true)} className="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-[#e7eef3] text-[#0e151b] text-sm font-bold leading-normal tracking-[0.015em]">
+                  <span className="truncate">Back to Login</span>
+                </button>
+                <button type="submit" disabled={isLoading} className="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-[#1989e5] text-slate-50 text-sm font-bold leading-normal tracking-[0.015em]">
+                  <span className="truncate">{isLoading ? 'Registering...' : 'Register'}</span>
+                </button>
+              </div>
+            </div>
+        </form>
+    </div>
+  );
 
   return (
-    <div className="min-h-screen bg-background">
-      {/* Header */}
-      <header className="bg-background border-b border-border-light">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
-            {/* Logo */}
-            <button
-              onClick={handleBackToHome}
-              className="flex items-center space-x-2 text-primary hover:text-primary-600 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary-300 rounded-lg p-1"
-            >
-              <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-                <Icon name="Heart" size={20} color="white" />
+    <div className="relative flex size-full min-h-screen flex-col bg-slate-50 group/design-root overflow-x-hidden" style={{fontFamily: 'Inter, "Noto Sans", sans-serif'}}>
+      <div className="layout-container flex h-full grow flex-col">
+        <header className="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#e7eef3] px-10 py-3">
+            <div onClick={() => navigate('/')} className="flex items-center gap-4 text-[#0d151b] cursor-pointer">
+              <div className="size-4">
+                  <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <g clipPath="url(#clip0_6_319)"><path d="M8.57829 8.57829C5.52816 11.6284 3.451 15.5145 2.60947 19.7452C1.76794 23.9758 2.19984 28.361 3.85056 32.3462C5.50128 36.3314 8.29667 39.7376 11.8832 42.134C15.4698 44.5305 19.6865 45.8096 24 45.8096C28.3135 45.8096 32.5302 44.5305 36.1168 42.134C39.7033 39.7375 42.4987 36.3314 44.1494 32.3462C45.8002 28.361 46.2321 23.9758 45.3905 19.7452C44.549 15.5145 42.4718 11.6284 39.4217 8.57829L24 24L8.57829 8.57829Z" fill="currentColor"></path></g>
+                      <defs><clipPath id="clip0_6_319"><rect width="48" height="48" fill="white"></rect></clipPath></defs>
+                  </svg>
               </div>
-              <span className="font-heading font-bold text-xl text-text-primary">
-                AdoptaEspaña
-              </span>
-            </button>
-
-            {/* Back to Home */}
-            <button
-              onClick={handleBackToHome}
-              className="flex items-center space-x-2 text-text-secondary hover:text-primary transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary-300 rounded-lg px-3 py-2"
-            >
-              <Icon name="ArrowLeft" size={18} />
-              <span className="hidden sm:inline font-medium">Volver al inicio</span>
-            </button>
-          </div>
-        </div>
-      </header>
-
-      {/* Main Content */}
-      <main className="flex-1 py-8 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-md mx-auto lg:max-w-4xl">
-          <div className="lg:grid lg:grid-cols-2 lg:gap-12 lg:items-center">
-            {/* Form Section */}
-            <div className="w-full">
-              {/* Mode Toggle */}
-              <div className="mb-8">
-                <div className="flex bg-surface rounded-lg p-1 border border-border-light">
-                  <button
-                    onClick={() => setIsLogin(true)}
-                    className={`flex-1 py-3 px-4 rounded-md font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary-300 ${
-                      isLogin
-                        ? 'bg-primary text-white shadow-sm'
-                        : 'text-text-secondary hover:text-primary'
-                    }`}
-                  >
-                    Iniciar Sesión
-                  </button>
-                  <button
-                    onClick={() => setIsLogin(false)}
-                    className={`flex-1 py-3 px-4 rounded-md font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary-300 ${
-                      !isLogin
-                        ? 'bg-primary text-white shadow-sm'
-                        : 'text-text-secondary hover:text-primary'
-                    }`}
-                  >
-                    Registrarse
-                  </button>
-                </div>
-              </div>
-
-              {/* Form Header */}
-              <div className="text-center mb-8">
-                <h1 className="text-2xl sm:text-3xl font-heading font-bold text-text-primary mb-2">
-                  {isLogin ? 'Bienvenido de vuelta' : 'Únete a nosotros'}
-                </h1>
-                <p className="text-text-secondary">
-                  {isLogin 
-                    ? 'Accede a tu panel de refugio para gestionar las mascotas' :'Crea tu cuenta para comenzar a ayudar mascotas a encontrar hogar'
-                  }
-                </p>
-              </div>
-
-              {/* Success Message */}
-              {successMessage && (
-                <div className="mb-6 p-4 bg-success-light border border-success rounded-lg flex items-center space-x-3 animate-fade-in">
-                  <Icon name="CheckCircle" size={20} className="text-success flex-shrink-0" />
-                  <span className="text-success font-medium">{successMessage}</span>
-                </div>
-              )}
-
-              {/* General Error */}
-              {errors.general && (
-                <div className="mb-6 p-4 bg-error-light border border-error rounded-lg flex items-center space-x-3 animate-fade-in">
-                  <Icon name="AlertCircle" size={20} className="text-error flex-shrink-0" />
-                  <span className="text-error font-medium">{errors.general}</span>
-                </div>
-              )}
-
-              {/* Form */}
-              <form onSubmit={handleSubmit} className="space-y-6">
-                {/* Shelter Name (Register only) */}
-                {!isLogin && (
-                  <div>
-                    <label htmlFor="shelterName" className="block text-sm font-medium text-text-primary mb-2">
-                      Nombre del Refugio *
-                    </label>
-                    <div className="relative">
-                      <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                        <Icon name="Building2" size={20} className="text-text-muted" />
-                      </div>
-                      <input
-                        type="text"
-                        id="shelterName"
-                        name="shelterName"
-                        value={formData.shelterName}
-                        onChange={handleInputChange}
-                        className={`input-field pl-10 ${errors.shelterName ? 'border-error focus:ring-error-300 focus:border-error' : ''}`}
-                        placeholder="Ej: Refugio Esperanza"
-                      />
-                    </div>
-                    {errors.shelterName && (
-                      <p className="mt-2 text-sm text-error flex items-center space-x-1">
-                        <Icon name="AlertCircle" size={16} />
-                        <span>{errors.shelterName}</span>
-                      </p>
-                    )}
-                  </div>
-                )}
-
-                {/* Email */}
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-text-primary mb-2">
-                    Email del Refugio *
-                  </label>
-                  <div className="relative">
-                    <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                      <Icon name="Mail" size={20} className="text-text-muted" />
-                    </div>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleInputChange}
-                      className={`input-field pl-10 ${errors.email ? 'border-error focus:ring-error-300 focus:border-error' : ''}`}
-                      placeholder="refugio@ejemplo.com"
-                    />
-                  </div>
-                  {errors.email && (
-                    <p className="mt-2 text-sm text-error flex items-center space-x-1">
-                      <Icon name="AlertCircle" size={16} />
-                      <span>{errors.email}</span>
-                    </p>
-                  )}
-                </div>
-
-                {/* Password */}
-                <div>
-                  <label htmlFor="password" className="block text-sm font-medium text-text-primary mb-2">
-                    Contraseña *
-                  </label>
-                  <div className="relative">
-                    <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                      <Icon name="Lock" size={20} className="text-text-muted" />
-                    </div>
-                    <input
-                      type="password"
-                      id="password"
-                      name="password"
-                      value={formData.password}
-                      onChange={handleInputChange}
-                      className={`input-field pl-10 ${errors.password ? 'border-error focus:ring-error-300 focus:border-error' : ''}`}
-                      placeholder="••••••••"
-                    />
-                  </div>
-                  {errors.password && (
-                    <p className="mt-2 text-sm text-error flex items-center space-x-1">
-                      <Icon name="AlertCircle" size={16} />
-                      <span>{errors.password}</span>
-                    </p>
-                  )}
-                </div>
-
-                {/* Confirm Password (Register only) */}
-                {!isLogin && (
-                  <div>
-                    <label htmlFor="confirmPassword" className="block text-sm font-medium text-text-primary mb-2">
-                      Confirmar Contraseña *
-                    </label>
-                    <div className="relative">
-                      <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                        <Icon name="Lock" size={20} className="text-text-muted" />
-                      </div>
-                      <input
-                        type="password"
-                        id="confirmPassword"
-                        name="confirmPassword"
-                        value={formData.confirmPassword}
-                        onChange={handleInputChange}
-                        className={`input-field pl-10 ${errors.confirmPassword ? 'border-error focus:ring-error-300 focus:border-error' : ''}`}
-                        placeholder="••••••••"
-                      />
-                    </div>
-                    {errors.confirmPassword && (
-                      <p className="mt-2 text-sm text-error flex items-center space-x-1">
-                        <Icon name="AlertCircle" size={16} />
-                        <span>{errors.confirmPassword}</span>
-                      </p>
-                    )}
-                  </div>
-                )}
-
-                {/* Remember Me (Login only) */}
-                {isLogin && (
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center">
-                      <input
-                        id="rememberMe"
-                        name="rememberMe"
-                        type="checkbox"
-                        checked={rememberMe}
-                        onChange={(e) => setRememberMe(e.target.checked)}
-                        className="h-4 w-4 text-primary focus:ring-primary-300 border-border rounded"
-                      />
-                      <label htmlFor="rememberMe" className="ml-2 block text-sm text-text-secondary">
-                        Recordarme
-                      </label>
-                    </div>
-                    <button
-                      type="button"
-                      onClick={handleForgotPassword}
-                      className="text-sm text-primary hover:text-primary-600 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary-300 rounded px-1 py-1"
-                    >
-                      ¿Olvidaste tu contraseña?
-                    </button>
-                  </div>
-                )}
-
-                {/* Submit Button */}
-                <button
-                  type="submit"
-                  disabled={isLoading}
-                  className="w-full btn-primary flex items-center justify-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed"
-                >
-                  {isLoading ? (
-                    <>
-                      <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>
-                      <span>{isLogin ? 'Iniciando sesión...' : 'Registrando...'}</span>
-                    </>
-                  ) : (
-                    <>
-                      <Icon name={isLogin ? "LogIn" : "UserPlus"} size={20} />
-                      <span>{isLogin ? 'Iniciar Sesión' : 'Crear Cuenta'}</span>
-                    </>
-                  )}
-                </button>
-              </form>
-
-              {/* Information Text */}
-              <div className="mt-8 p-4 bg-primary-50 rounded-lg border border-primary-200">
-                <div className="flex items-start space-x-3">
-                  <Icon name="Info" size={20} className="text-primary flex-shrink-0 mt-0.5" />
-                  <div>
-                    <h3 className="font-medium text-primary mb-1">
-                      Acceso para Refugios
-                    </h3>
-                    <p className="text-sm text-primary-700">
-                      {isLogin 
-                        ? 'Una vez autenticado, podrás acceder a tu panel privado para subir y gestionar las mascotas disponibles para adopción.'
-                        : 'Al registrarte obtienes acceso completo para subir fotos de mascotas, gestionar sus perfiles y conectar con adoptantes potenciales.'
-                      }
-                    </p>
-                  </div>
-                </div>
-              </div>
+              <h2 className="text-[#0d151b] text-lg font-bold leading-tight tracking-[-0.015em]">AdoptaEspaña</h2>
             </div>
-
-            {/* Illustration Section (Desktop only) */}
-            <div className="hidden lg:block">
-              <div className="relative">
-                <div className="aspect-square rounded-2xl overflow-hidden bg-gradient-to-br from-primary-100 to-secondary-100 p-8">
-                  <Image
-                    src="https://images.unsplash.com/photo-1601758228041-f3b2795255f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                    alt="Refugio de mascotas"
-                    className="w-full h-full object-cover rounded-xl shadow-lg"
-                  />
-                </div>
-                
-                {/* Floating Cards */}
-                <div className="absolute -top-4 -right-4 bg-white rounded-lg shadow-lg p-4 border border-border-light">
-                  <div className="flex items-center space-x-2">
-                    <div className="w-8 h-8 bg-success rounded-full flex items-center justify-center">
-                      <Icon name="Heart" size={16} color="white" />
-                    </div>
-                    <div>
-                      <p className="text-sm font-medium text-text-primary">+150</p>
-                      <p className="text-xs text-text-secondary">Adopciones</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="absolute -bottom-4 -left-4 bg-white rounded-lg shadow-lg p-4 border border-border-light">
-                  <div className="flex items-center space-x-2">
-                    <div className="w-8 h-8 bg-accent rounded-full flex items-center justify-center">
-                      <Icon name="Users" size={16} color="white" />
-                    </div>
-                    <div>
-                      <p className="text-sm font-medium text-text-primary">25+</p>
-                      <p className="text-xs text-text-secondary">Refugios</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+        </header>
+        <div className="px-40 flex flex-1 justify-center py-5">
+            {isLogin ? <LoginForm /> : <RegisterForm />}
         </div>
-      </main>
+      </div>
     </div>
   );
 };
